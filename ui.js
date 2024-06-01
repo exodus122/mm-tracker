@@ -361,7 +361,11 @@ function junk() {
 				if(SongItems.indexOf(str) != -1)
 					return;
 				
-				if (PeekableItemLocations.indexOf(str) != -1) {
+				if (document.getElementById("settings_option").value == "EASTER" && PeekableItemLocationsEaster.indexOf(str) != -1) {
+					item = SpoilerLocToItem[str]
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else if (PeekableItemLocations.indexOf(str) != -1) {
 					item = SpoilerLocToItem[str]
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				}
@@ -660,7 +664,7 @@ function clickSummary(loc) {
 				if(SongItems.indexOf(str) != -1)
 					return;
 				
-				if (document.getElementById("settings_option").value == "EASTER" && EasterPeekableItemLocations.indexOf(str) != -1) {
+				if (document.getElementById("settings_option").value == "EASTER" && PeekableItemLocationsEaster.indexOf(str) != -1) {
 					item = SpoilerLocToItem[str]
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				}
