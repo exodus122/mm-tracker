@@ -549,7 +549,7 @@ function update_summary_text() {
 			summary_text_elem.className = "checked_text_summary_ool";
 		}
 		
-		if(Known[Items[i]])
+		if(ItemLocations[Items[i]] != undefined)
 			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 		else
 			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";

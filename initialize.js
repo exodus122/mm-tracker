@@ -374,7 +374,7 @@ Game.checks_remaining = 0;
 Game.logically_accessible = 0;
 
 if (localStorage.getItem("settings_option")) {document.getElementById("settings_option").value = localStorage.getItem("settings_option");}
-if (document.getElementById("settings_option").value == "EASTER") {Logic.bottle1 = true; Game.bottle1 = true; CouldHave.bottle1 = true; Logic.bottle2 = true; Game.bottle2 = true; CouldHave.bottle2 = true;}
+if (document.getElementById("settings_option").value == "EASTER") {Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;}
 if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER") { document.getElementById("Starting Song").value = "epo";}
 
 var modal = document.getElementById("myModal");
