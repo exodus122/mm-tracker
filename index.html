@@ -18,16 +18,16 @@
 			<div id="normalColumn8" class="column"></div>
 			<div id="songColumn" class="column">
 				<div id="songdiv"></div><br>
-				<textarea spellcheck="false" rows="12" cols="13" id="hintInput"></textarea><br><br>
+				<textarea spellcheck="false" rows="16" cols="13" id="hintInput"></textarea><br><br>
 				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
 				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
 				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
 				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br>
 				<label class="settingsLabels" for="settings_option">Mode</label>
 				<select class="settingsOptions" id="settings_option">
-					<option value="S4">S4</option>
-					<option value="SCRUBS">Scrubs</option>
+					<option value="EASTER">Easter</option>
 					<option value="BLITZ">Blitz</option>
+					<option value="S4">S4</option>
 					<option value="S3">S3</option>
 				</select><br><br class="half_break">
 				<label class="settingsLabels" for="gossips_option">Gossips</label>
@@ -35,11 +35,6 @@
 					<option value="OFF">Off</option>
 					<option value="ON">On</option>
 				</select><br>
-				<!--<label class="settingsLabels" for="small_keys_option">SMALL KEYS</label>
-				<select class="settingsOptions" id="small_keys_option">
-				  <option value="KEYSY">KEYSY</option>
-				  <option value="VANILLA">VANILLA</option>
-				</select><br><br class="half_break">-->
 			</div>
 			<div id="itemColumn" class="itemColumn">
 				<small id="checks_remaining" class="check_text" style="color:lightblue">Remaining:</small>

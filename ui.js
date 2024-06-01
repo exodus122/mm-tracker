@@ -123,14 +123,13 @@ function update_checks() {
 		document.getElementById("text_" + Locations[i]).style.display = "none";
 		document.getElementById("br_" + Locations[i]).style.display = "none";
 		
-		//if (document.getElementById("small_keys_option").value != "KEYSY" && Locations[i].startsWith("key_")) {continue;}
 		if (Locations[i] == "Fisherman Pictograph") {continue;}
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "SCRUBS" && scrubs_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "EASTER" && easter_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
@@ -661,7 +660,11 @@ function clickSummary(loc) {
 				if(SongItems.indexOf(str) != -1)
 					return;
 				
-				if (PeekableItemLocations.indexOf(str) != -1) {
+				if (document.getElementById("settings_option").value == "EASTER" && EasterPeekableItemLocations.indexOf(str) != -1) {
+					item = SpoilerLocToItem[str]
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else if (PeekableItemLocations.indexOf(str) != -1) {
 					item = SpoilerLocToItem[str]
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				}
@@ -752,11 +755,6 @@ function update_settings() {
 		document.getElementById("woth_input4").style.display = "inline";
 		document.getElementById("woth_input5").style.display = "inline";
 		document.getElementById("barren_input4").style.display = "none";
-	}
-	else if(document.getElementById("settings_option").value == "SCRUBS") {
-		document.getElementById("woth_input4").style.display = "none";
-		document.getElementById("woth_input5").style.display = "none";
-		document.getElementById("barren_input4").style.display = "inline";
 	}
 	else {
 		document.getElementById("woth_input4").style.display = "none";

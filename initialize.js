@@ -1,5 +1,5 @@
 var AreaIndexes = [
-	0,0,5,13,22,26,38,45,67,74,85,89,92,97,107,117,122,
+	0,0,5,14,23,27,39,46,68,75,85,89,92,97,107,117,122,
 	132,134,144,152,159,162,166,171,174,178,183,191,196,199,200,203,
 	212,227,239,264
 ];
@@ -321,6 +321,10 @@ document.getElementById("greatfairy_mask_location_br").style.display = "none";
 var hintbox = document.getElementById("hintInput");
 if (document.getElementById("settings_option").value == "S3")
 	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
+else if (document.getElementById("settings_option").value == "S4")
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
+else if (document.getElementById("settings_option").value == "EASTER")
+	hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
 
 var Logic = {};
 var Game = {};

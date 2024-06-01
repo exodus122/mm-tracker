@@ -356,7 +356,7 @@ color:rgb(155,161,0);
 	padding-top: 0px;
 	text-align:top;
 	overflow-y: auto;
-	height: 370px;
+	height: 360px;
 }
 .woth_info_title {
 	font-size: 16px;
@@ -412,6 +412,6 @@ color:rgb(155,161,0);
 .evansong {
 	position: absolute;
 	left: 815px;
-	top: 640px;
+	top: 650px;
 	width: 250px;
 }

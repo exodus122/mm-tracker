@@ -398,7 +398,7 @@ function woth_and_barren_processing() {
 				//document.getElementById("text_" + "Keaton Quiz").dispatchEvent(new Event('mousedown'));
 				document.getElementById("Keaton Quiz").value = "x";
 			}
-			if(AreaNames[i] == "NCT" && Check["Woodfall Map Purchase"] == "unknown") {
+			if(AreaNames[i] == "Road Swamp" && Check["Woodfall Map Purchase"] == "unknown") {
 				//document.getElementById("text_" + "Woodfall Map Purchase").style.border = "solid 1px red";
 				//document.getElementById("text_" + "Woodfall Map Purchase").dispatchEvent(new Event('mousedown'));
 				document.getElementById("Woodfall Map Purchase").value = "x";

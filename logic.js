@@ -1960,7 +1960,7 @@ function update_location_logic() {
 	
 	
 	// CSMC changes
-	if(document.getElementById("settings_option").value != "SCRUBS") {
+	if(true) {
 		Location_Access["South Clock Town Final Day Chest"] = true;
 		Location_Access["Bombers' Hideout Chest"] = true;
 		Location_Access["Termina Field Underwater Chest"] = true;
@@ -2006,5 +2006,26 @@ function update_location_logic() {
 		Location_Could_Peek["Stone Tower Map Chest"] = CouldHave.stt_access && ((CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.zora_mask && CouldHave.shoot_light_arrow));
 		Location_Could_Peek["Stone Tower Eyegore Room Chest"] = CouldHave.stt_access && (CouldHave.istt_access || (CouldHave.shoot_light_arrow && CouldHave.zora_mask) || (CouldHave.explosive && CouldHave.goron_mask));
 		Location_Could_Peek["Stone Tower Death Armos Maze Chest"] = CouldHave.stt_access || (CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive));
+	}
+	
+	// Easter Logic Changes
+	if(document.getElementById("settings_option").value == "EASTER") {
+		Location_Access["Kafei"] = true;
+		Location_Access["Curiosity Shop Man #1"] = true;
+		Location_Access["Postman's Freedom Reward"] = true;
+		Location_Access["Swamp Spider House Reward"] = Game.poison_swamp_access;
+		Location_Access["Hungry Goron"] = Game.north_access;
+		Location_Could_Peek["Kafei"] = true;
+		Location_Could_Peek["Curiosity Shop Man #1"] = true;
+		Location_Could_Peek["Postman's Freedom Reward"] = true;
+		Location_Could_Peek["Swamp Spider House Reward"] = CouldHave.poison_swamp_access;
+		Location_Could_Peek["Hungry Goron"] = CouldHave.north_access;
+	}
+	
+	// Lullaby is required for hungry goron sometimes now
+	if(document.getElementById("settings_option").value != "S3" && document.getElementById("settings_option").value != "S4") {
+		Location_Logic["Hungry Goron"] = Logic.north_access && Logic.goron_mask && Logic.magic && (Logic.lullaby || Logic.shoot_fire_arrow);
+		Location_Obtain["Hungry Goron"] = Game.north_access && Game.goron_mask && Game.magic && (Game.lullaby || Game.shoot_fire_arrow);
+		Location_Could_Obtain["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic && (CouldHave.lullaby || CouldHave.shoot_fire_arrow);
 	}
 }
