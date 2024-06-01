@@ -584,7 +584,7 @@ function Undo() {
 	}
 	
 	forcedDisplay[Check[lastCheck[lastCheck.length-1]]] = false;
-	ItemLocations[Check[lastCheck[lastCheck.length-1]]] = "unknown";
+	ItemLocations[Check[lastCheck[lastCheck.length-1]]] = undefined;
 	ItemLocation[Check[lastCheck[lastCheck.length-1]]] = "";
 	Game[Check[lastCheck[lastCheck.length-1]]] = false;
 	CouldHave[Check[lastCheck[lastCheck.length-1]]] = false;
