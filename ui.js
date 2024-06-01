@@ -531,33 +531,28 @@ function update_summary_text() {
 	for (var i = 1; i < checkSummaryText.length; i++) {
 		var summary_text_elem = document.getElementById(Items[i]+"_location");
 		if(Logic[Items[i]]) {
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
-
 			if (!Game[Items[i]])
 				summary_text_elem.className = "checked_text_summary_not_have";
 			else
 				summary_text_elem.className = "checked_text_summary";
-
 		}
 		else if(Game[Items[i]]) {
 			summary_text_elem.className = "checked_text_summary_have_ool";
-			if(Known[Items[i]])
-				summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
-			else
-				summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 		}
 		else if(CouldHave[Items[i]]) {
 			summary_text_elem.className = "checked_text_summary_could_have";
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 		}
 		else if(Known[Items[i]]) {
 			summary_text_elem.className = "checked_text_summary_known";
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 		}
 		else {
 			summary_text_elem.className = "checked_text_summary_ool";
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 		}
+		
+		if(Known[Items[i]])
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
+		else
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 	}
 }
 
@@ -765,4 +760,6 @@ function update_settings() {
 		document.getElementById("woth_input5").style.display = "none";
 		document.getElementById("barren_input4").style.display = "none";
 	}
+	
+	localStorage.setItem("settings_option", document.getElementById("settings_option").value);
 }
