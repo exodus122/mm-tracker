@@ -323,6 +323,8 @@ document.getElementById("dongero_mask_location_br").style.display = "none";
 document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
 
+if (localStorage.getItem("settings_option")) {document.getElementById("settings_option").value = localStorage.getItem("settings_option");}
+
 var hintbox = document.getElementById("hintInput");
 if (document.getElementById("settings_option").value == "S3")
 	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
@@ -378,7 +380,6 @@ Game.magic2_img = "./images/Magic2.png";
 Game.checks_remaining = 0;
 Game.logically_accessible = 0;
 
-if (localStorage.getItem("settings_option")) {document.getElementById("settings_option").value = localStorage.getItem("settings_option");}
 if (document.getElementById("settings_option").value == "EASTER") {Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;}
 if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER") { document.getElementById("Starting Song").value = "epo";}
 
