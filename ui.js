@@ -127,10 +127,10 @@ function update_checks() {
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_skip_checks_wft.includes(Locations[i])) {Check["Odolwa Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_skip_checks_sht.includes(Locations[i])) {Check["Goht Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_skip_checks_gbt.includes(Locations[i])) {Check["Gyorg Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_skip_checks_stt.includes(Locations[i])) {Check["Twinmold Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_skip_checks_wft.includes(Locations[i])) {Check["Woodfall Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_skip_checks_sht.includes(Locations[i])) {Check["Snowhead Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_skip_checks_gbt.includes(Locations[i])) {Check["Great Bay Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_skip_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "EASTER" && easter_skip_checks.includes(Locations[i])) {continue;}
@@ -519,25 +519,25 @@ var temp_img = document.getElementById("bomb1_img");
 	
 	// boss remains
 	var temp_img = document.getElementById("odolwasremains_img");
-	if(Check["Odolwa Heart Container"] != "unknown")
+	if(Check["Woodfall Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("gohtsremains_img");
-	if(Check["Goht Heart Container"] != "unknown")
+	if(Check["Snowhead Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("gyorgsremains_img");
-	if(Check["Gyorg Heart Container"] != "unknown")
+	if(Check["Great Bay Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("twinmoldsremains_img");
-	if(Check["Twinmold Heart Container"] != "unknown")
+	if(Check["Stone Tower Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;

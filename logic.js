@@ -558,12 +558,12 @@ function update_location_logic() {
 	Location_Logic["Woodfall Small Key Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Compass Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Boss Key Chest"] = Logic.wft_access && Logic.bow;
-	Location_Logic["Odolwa Heart Container"] = Logic.wft_access && Logic.bow;
+	Location_Logic["Woodfall Heart Container"] = Logic.wft_access && Logic.bow;
 	
 	// Snowhead Temple
 	Location_Logic["Fire Arrow Chest"] = Logic.sht_access && (Logic.hookshot || Logic.explosive || Logic.shoot_fire_arrow);
 	Location_Logic["Snowhead Boss Key Chest"] = Logic.sht_access && Logic.shoot_fire_arrow;
-	Location_Logic["Goht Heart Container"] = Logic.sht_access && Logic.shoot_fire_arrow;
+	Location_Logic["Snowhead Heart Container"] = Logic.sht_access && Logic.shoot_fire_arrow;
 	Location_Logic["Snowhead Basement"] = Logic.sht_access;
 	Location_Logic["Snowhead Block Room Chest"] = Logic.sht_access;
 	Location_Logic["Snowhead Bridge Room Chest"] = Logic.sht_access && (Logic.hookshot || Logic.shoot_fire_arrow);
@@ -589,7 +589,7 @@ function update_location_logic() {
 	Location_Logic["Great Bay Map Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Compass Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Small Key Chest"] = Logic.gbt_access;
-	Location_Logic["Gyorg Heart Container"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
+	Location_Logic["Great Bay Heart Container"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
 	
 	// Stone Tower Temple
 	Location_Logic["Stone Tower Statue Eye"] = Logic.stt_access && Logic.bow;
@@ -618,7 +618,7 @@ function update_location_logic() {
 	Location_Logic["Stone Tower Death Armos Maze Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Wizzrobe"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Boss Key Chest"] = Logic.istt_access && Logic.deku_mask;
-	Location_Logic["Twinmold Heart Container"] = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
+	Location_Logic["Stone Tower Heart Container"] = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
 		
 	// Songs
 	Location_Logic["Starting Song"] = true;
@@ -887,12 +887,12 @@ function update_location_logic() {
 	Location_Access["Woodfall Small Key Chest"] = Game.wft_access;
 	Location_Access["Woodfall Compass Chest"] = Game.wft_access;
 	Location_Access["Woodfall Boss Key Chest"] = Game.wft_access && Game.bow;
-	Location_Access["Odolwa Heart Container"] = Game.wft_access && Game.bow;
+	Location_Access["Woodfall Heart Container"] = Game.wft_access && Game.bow;
 		
 	// Snowhead Temple
 	// sht_access is goron+bow+lullaby
 	Location_Access["Fire Arrow Chest"] = Game.sht_access && (Game.shoot_fire_arrow || (Game.hookshot && Game.magic) || Game.explosive);
-	Location_Access["Goht Heart Container"] = Game.sht_access && Game.shoot_fire_arrow;
+	Location_Access["Snowhead Heart Container"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Access["Snowhead Boss Key Chest"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Access["Snowhead Basement"] = Game.sht_access;
 	Location_Access["Snowhead Block Room Chest"] = Game.sht_access && (Game.magic || Game.hookshot || Game.explosive || Game.zora_mask);
@@ -919,7 +919,7 @@ function update_location_logic() {
 	Location_Access["Great Bay Map Chest"] = Game.gbt_access;
 	Location_Access["Great Bay Compass Chest"] = Game.gbt_access;
 	Location_Access["Great Bay Small Key Chest"] = Game.gbt_access;
-	Location_Access["Gyorg Heart Container"] = Game.gbt_access && Game.shoot_ice_arrow;
+	Location_Access["Great Bay Heart Container"] = Game.gbt_access && Game.shoot_ice_arrow;
 	
 	// Stone Tower Temple
 	Location_Access["Stone Tower Statue Eye"] = Game.stt_access && Game.bow;
@@ -948,7 +948,7 @@ function update_location_logic() {
 	Location_Access["Stone Tower Death Armos Maze Chest"] = Game.istt_access && (Game.deku_mask || Game.explosive);
 	Location_Access["Stone Tower Wizzrobe"] = Game.istt_access && Game.deku_mask;
 	Location_Access["Stone Tower Boss Key Chest"] = Game.istt_access;
-	Location_Access["Twinmold Heart Container"] = Game.istt_access;
+	Location_Access["Stone Tower Heart Container"] = Game.istt_access;
 		
 	// Songs
 	Location_Access["Starting Song"] = true;
@@ -1226,11 +1226,11 @@ function update_location_logic() {
 	Location_Obtain["Woodfall Small Key Chest"] = Game.wft_access;
 	Location_Obtain["Woodfall Compass Chest"] = Game.wft_access;
 	Location_Obtain["Woodfall Boss Key Chest"] = Game.wft_access && Game.bow;
-	Location_Obtain["Odolwa Heart Container"] = Game.wft_access && Game.bow;
+	Location_Obtain["Woodfall Heart Container"] = Game.wft_access && Game.bow;
 		
 	// Snowhead Temple
 	Location_Obtain["Fire Arrow Chest"] = Game.sht_access && (Game.shoot_fire_arrow || (Game.hookshot && Game.magic) || Game.explosive);
-	Location_Obtain["Goht Heart Container"] = Game.sht_access && Game.shoot_fire_arrow;
+	Location_Obtain["Snowhead Heart Container"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Obtain["Snowhead Boss Key Chest"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Obtain["Snowhead Basement"] = Game.sht_access;
 	Location_Obtain["Snowhead Compass Chest"] = Game.sht_access;
@@ -1257,7 +1257,7 @@ function update_location_logic() {
 	Location_Obtain["Great Bay Map Chest"] = Game.gbt_access;
 	Location_Obtain["Great Bay Compass Chest"] = Game.gbt_access;
 	Location_Obtain["Great Bay Small Key Chest"] = Game.gbt_access;
-	Location_Obtain["Gyorg Heart Container"] = Game.gbt_access && Game.shoot_ice_arrow;
+	Location_Obtain["Great Bay Heart Container"] = Game.gbt_access && Game.shoot_ice_arrow;
 	
 	// Stone Tower Temple
 	Location_Obtain["Stone Tower Statue Eye"] = Game.stt_access && Game.bow;
@@ -1286,7 +1286,7 @@ function update_location_logic() {
 	Location_Obtain["Stone Tower Death Armos Maze Chest"] = Game.istt_access && (Game.deku_mask || Game.explosive);
 	Location_Obtain["Stone Tower Wizzrobe"] = Game.istt_access && Game.deku_mask;
 	Location_Obtain["Stone Tower Boss Key Chest"] = Game.istt_access;
-	Location_Obtain["Twinmold Heart Container"] = Game.istt_access;
+	Location_Obtain["Stone Tower Heart Container"] = Game.istt_access;
 		
 	// Songs
 	Location_Obtain["Starting Song"] = true;
@@ -1556,11 +1556,11 @@ function update_location_logic() {
 	Location_Could_Obtain["Woodfall Small Key Chest"] = CouldHave.wft_access;
 	Location_Could_Obtain["Woodfall Compass Chest"] = CouldHave.wft_access;
 	Location_Could_Obtain["Woodfall Boss Key Chest"] = CouldHave.wft_access && CouldHave.bow;
-	Location_Could_Obtain["Odolwa Heart Container"] = CouldHave.wft_access && CouldHave.bow;
+	Location_Could_Obtain["Woodfall Heart Container"] = CouldHave.wft_access && CouldHave.bow;
 		
 	// Snowhead Temple
 	Location_Could_Obtain["Fire Arrow Chest"] = CouldHave.sht_access && (CouldHave.shoot_fire_arrow || (CouldHave.hookshot && CouldHave.magic) || CouldHave.explosive);
-	Location_Could_Obtain["Goht Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
+	Location_Could_Obtain["Snowhead Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Obtain["Snowhead Boss Key Chest"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Obtain["Snowhead Basement"] = CouldHave.sht_access;
 	Location_Could_Obtain["Snowhead Compass Chest"] = CouldHave.sht_access;
@@ -1587,7 +1587,7 @@ function update_location_logic() {
 	Location_Could_Obtain["Great Bay Map Chest"] = CouldHave.gbt_access;
 	Location_Could_Obtain["Great Bay Compass Chest"] = CouldHave.gbt_access;
 	Location_Could_Obtain["Great Bay Small Key Chest"] = CouldHave.gbt_access;
-	Location_Could_Obtain["Gyorg Heart Container"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
+	Location_Could_Obtain["Great Bay Heart Container"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
 	
 	// Stone Tower Temple
 	Location_Could_Obtain["Stone Tower Statue Eye"] = CouldHave.stt_access && CouldHave.bow;
@@ -1616,7 +1616,7 @@ function update_location_logic() {
 	Location_Could_Obtain["Stone Tower Death Armos Maze Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Obtain["Stone Tower Wizzrobe"] = CouldHave.istt_access && CouldHave.deku_mask;
 	Location_Could_Obtain["Stone Tower Boss Key Chest"] = CouldHave.istt_access;
-	Location_Could_Obtain["Twinmold Heart Container"] = CouldHave.istt_access;
+	Location_Could_Obtain["Stone Tower Heart Container"] = CouldHave.istt_access;
 		
 	// Songs
 	Location_Could_Obtain["Starting Song"] = true;
@@ -1885,11 +1885,11 @@ function update_location_logic() {
 	Location_Could_Peek["Woodfall Small Key Chest"] = CouldHave.wft_access;
 	Location_Could_Peek["Woodfall Compass Chest"] = CouldHave.wft_access;
 	Location_Could_Peek["Woodfall Boss Key Chest"] = CouldHave.wft_access && CouldHave.bow;
-	Location_Could_Peek["Odolwa Heart Container"] = CouldHave.wft_access && CouldHave.bow;
+	Location_Could_Peek["Woodfall Heart Container"] = CouldHave.wft_access && CouldHave.bow;
 		
 	// Snowhead Temple
 	Location_Could_Peek["Fire Arrow Chest"] = CouldHave.sht_access && (CouldHave.shoot_fire_arrow || (CouldHave.hookshot && CouldHave.magic) || CouldHave.explosive);
-	Location_Could_Peek["Goht Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
+	Location_Could_Peek["Snowhead Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Peek["Snowhead Boss Key Chest"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Peek["Snowhead Basement"] = CouldHave.sht_access;
 	Location_Could_Peek["Snowhead Block Room Chest"] = CouldHave.sht_access && (CouldHave.magic || CouldHave.hookshot || CouldHave.explosive || CouldHave.zora_mask);
@@ -1916,7 +1916,7 @@ function update_location_logic() {
 	Location_Could_Peek["Great Bay Map Chest"] = CouldHave.gbt_access;
 	Location_Could_Peek["Great Bay Compass Chest"] = CouldHave.gbt_access;
 	Location_Could_Peek["Great Bay Small Key Chest"] = CouldHave.gbt_access;
-	Location_Could_Peek["Gyorg Heart Container"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
+	Location_Could_Peek["Great Bay Heart Container"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
 	
 	// Stone Tower Temple
 	Location_Could_Peek["Stone Tower Statue Eye"] = CouldHave.stt_access && CouldHave.bow;
@@ -1945,7 +1945,7 @@ function update_location_logic() {
 	Location_Could_Peek["Stone Tower Death Armos Maze Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Peek["Stone Tower Wizzrobe"] = CouldHave.istt_access && CouldHave.deku_mask;
 	Location_Could_Peek["Stone Tower Boss Key Chest"] = CouldHave.istt_access;
-	Location_Could_Peek["Twinmold Heart Container"] = CouldHave.istt_access;
+	Location_Could_Peek["Stone Tower Heart Container"] = CouldHave.istt_access;
 		
 	// Songs
 	Location_Could_Peek["Starting Song"] = true;

@@ -95,19 +95,19 @@ var Locations = [
 	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
 	
 	// Woodfall Temple
-	"Woodfall Entrance Platform", "Woodfall Compass Chest", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container",  
+	"Woodfall Entrance Platform", "Woodfall Compass Chest", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Woodfall Heart Container",  
 	
 	// Snowhead Temple
-	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Fire Arrow Chest", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container",
+	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Fire Arrow Chest", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Snowhead Heart Container",
 	
 	// Great Bay Temple
-	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Boss Key Chest", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container", 
+	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Boss Key Chest", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Great Bay Heart Container", 
 	
 	// Stone Tower Temple
 	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
 	
 	// Inverted Stone Tower Temple
-	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Stone Tower Boss Key Chest", "Giant's Mask Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Stone Tower Boss Key Chest", "Giant's Mask Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Stone Tower Heart Container", 
 	
 	// Songs
 	"Starting Song", "Skull Kid Song", "Imprisoned Monkey", "Swamp Music Statue", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
@@ -238,16 +238,16 @@ var blitz_skip_checks = [
 	"Swamp Archery #2"
 ];
 var blitz_skip_checks_wft = [
-	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container", 
+	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Woodfall Heart Container", 
 ];
 var blitz_skip_checks_sht = [
-	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container", "Mountain Waterfall Chest", "Mountain Spring Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race"
+	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Snowhead Heart Container", "Mountain Waterfall Chest", "Mountain Spring Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race"
 ];
 var blitz_skip_checks_gbt = [
-	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Great Bay Boss Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container"
+	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Great Bay Boss Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Great Bay Heart Container"
 ];
 var blitz_skip_checks_stt = [
-	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", "Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Boss Key Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container"
+	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", "Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Boss Key Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Stone Tower Heart Container"
 ];
 
 var s3_skip_checks = [
