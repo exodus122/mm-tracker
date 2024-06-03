@@ -10,8 +10,6 @@ function readLog() {
 	
 	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER")
 		document.getElementById("Starting Song").value = "epo";
-	if(document.getElementById("settings_option").value == "BLITZ")
-		document.getElementById("Boss Blue Warp").value = "oaT";
 	
 	for(i = 0; i < SpoilerLines.length; i++) {
 		if(SpoilerLines[i].indexOf("->") >= 0) {
