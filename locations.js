@@ -237,6 +237,18 @@ var blitz_skip_checks = [
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	"Swamp Archery #2"
 ];
+var blitz_skip_checks_wft = [
+	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container", 
+];
+var blitz_skip_checks_sht = [
+	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container", "Mountain Waterfall Chest", "Mountain Spring Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race"
+];
+var blitz_skip_checks_gbt = [
+	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Great Bay Boss Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container"
+];
+var blitz_skip_checks_stt = [
+	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", "Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Boss Key Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container"
+];
 
 var s3_skip_checks = [
 	"Swamp Music Statue", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest", "Swamp Archery #2"

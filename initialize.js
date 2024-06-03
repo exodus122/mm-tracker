@@ -118,6 +118,11 @@ var backUp = [];
 var toFocus = null;
 var overrideFocus = false;
 
+var wft_junked = false;
+var sht_junked = false;
+var gbt_junked = false;
+var stt_junked = false;
+
 var parent = document.getElementById("normalColumn1");
 for (var i = 0; i < Locations.length; i++) {
 	if (i == AreaIndexes[5]) { parent = document.getElementById("normalColumn2"); }

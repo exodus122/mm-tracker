@@ -127,6 +127,10 @@ function update_checks() {
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_skip_checks_wft.includes(Locations[i])) {Check["Odolwa Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_skip_checks_sht.includes(Locations[i])) {Check["Goht Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_skip_checks_gbt.includes(Locations[i])) {Check["Gyorg Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_skip_checks_stt.includes(Locations[i])) {Check["Twinmold Heart Container"] = "junk"; continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "EASTER" && easter_skip_checks.includes(Locations[i])) {continue;}
@@ -259,6 +263,26 @@ function highlight(x) {
 		x.style.opacity =1;
 	}
 	
+}
+
+function click_remains(x) {
+	if(event.button == 2) {
+	
+		let theRemains = x.id.slice(0, -4);
+		
+		if(theRemains == "odolwasremains") {
+			wft_junked = true;
+		}
+		if(theRemains == "gohtsremains") {
+			sht_junked = true;
+		}
+		if(theRemains == "gyorgsremains") {
+			gbt_junked = true;
+		}
+		if(theRemains == "twinmoldsremains") {
+			stt_junked = true;
+		}
+	}
 }
 
 function junk() {
