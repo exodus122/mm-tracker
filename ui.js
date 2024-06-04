@@ -35,6 +35,8 @@ function process_inputs() {
 			};
 		}
 		
+		if(key.startsWith("h_")) { continue; }
+		
 		if(Check[key] != "unknown") {continue;}
 		if (isUpperCase(document.getElementById(key).value.charAt(2)) && document.getElementById(key).value.length == 3) {
 			peeked = true;
@@ -92,7 +94,7 @@ function process_inputs() {
 								if(i >= AreaIndexes[k])
 									break;
 								
-								if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+								if (document.getElementById(Locations[i]).style.display != "none" && Location_Peek[Locations[i]]) {
 									document.getElementById(Locations[i]).focus();
 									break;
 								}
@@ -142,7 +144,7 @@ function update_checks() {
 		
 		if(key.startsWith("h_")) {
 			document.getElementById(str).className = "gossip_text";
-			if (/*Location_Access[key] && */Check[key] != "junk") {
+			if (/*Location_Peek[key] && */Check[key] != "junk") {
 				document.getElementById(str).style.display = "inline-block";
 				document.getElementById(str2).style.display = "inline-block";
 				document.getElementById(key).style.display = "inline-block";
@@ -167,7 +169,7 @@ function update_checks() {
 				Game.checks_remaining += 1;
 			
 			if(Location_Logic[key]) {
-				if (Location_Access[key] && Location_Obtain[key]) {
+				if (Location_Peek[key] && Location_Obtain[key]) {
 					document.getElementById(str).className= "logic_check_text"; 
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;
@@ -195,7 +197,7 @@ function update_checks() {
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "yellow";
 			}
-			else if (Location_Access[key]) {
+			else if (Location_Peek[key]) {
 				document.getElementById(str).className= "peek_check_text";
 				document.getElementById(str).style.opacity = 1;
 				document.getElementById(str).style.fontWeight = "normal";
@@ -345,7 +347,7 @@ function junk() {
 				if(i >= AreaIndexes[j])
 					break;
 				
-				if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+				if (document.getElementById(Locations[i]).style.display != "none" && Location_Peek[Locations[i]]) {
 					toFocus = document.getElementById(Locations[i]);
 					break;
 				}

@@ -337,7 +337,7 @@ var Logic = {};
 var Game = {};
 var CouldHave={};
 var Location_Logic = {};
-var Location_Access = {};
+var Location_Peek = {};
 var Location_Obtain = {};
 var Location_Could_Obtain={};
 var Location_Could_Peek={};
@@ -362,7 +362,7 @@ var simBarrenCounter = 1;
 
 for (var i = 0; i < Locations.length; i++) {
 	Location_Logic[Locations[i]] = false;
-	Location_Access[Locations[i]] = false;
+	Location_Peek[Locations[i]] = false;
 	Check[Locations[i]] = "unknown";
 	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
 }
