@@ -169,7 +169,7 @@ function update_checks() {
 				Game.checks_remaining += 1;
 			
 			if(Location_Logic[key]) {
-				if (Location_Peek[key] && Location_Obtain[key]) {
+				if (Location_Peek[key] && Location_Access[key]) {
 					document.getElementById(str).className= "logic_check_text"; 
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;
@@ -191,7 +191,7 @@ function update_checks() {
 				}
 				
 			}
-			else if (Location_Obtain[key]) {
+			else if (Location_Access[key]) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.opacity = .7;
 				document.getElementById(str).style.fontWeight = "normal";
@@ -203,7 +203,7 @@ function update_checks() {
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color ="orange";
 			}
-			else if (Location_Could_Obtain[key]) {
+			else if (Location_Could_Access[key]) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.opacity = .3;
