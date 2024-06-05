@@ -180,6 +180,46 @@ function simProcessHint(gossip) {
 					document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
 			}
 		}
+		else if(hint.includes("Swamp Archery") && hint.includes("then")) {
+			for(var i = 0; i < hintStrings2.length; i++)
+				hint = hint.replace(hintStrings2[i], ":");
+			hint = hint.replace("...", "");
+			hint = hint.replaceAll(" then ", ":");
+			hint = hint.replaceAll(" then the ", ":");
+			
+			let loc = hint.split(":")[0];
+			
+			if(Locations.indexOf("Swamp Archery #1") < 0) {
+				console.log("Could not fill in the hint. Swamp Archery is not a known location.");
+				return;
+			}
+			if(hintIndexes.indexOf("Swamp Archery #1") == -1) {
+				console.log("Could not fill in the hint. Swamp Archery is not in the list of hinted locations.");
+				return;
+			}
+			
+			let loc_inputs = ["", "sar", "sar2"]
+			
+			for(var j = 1; j <=2; j++) {
+				let item = hint.split(":")[j];
+				if(item.startsWith("a "))
+					item = item.replace("a ", "");
+				if(item.startsWith("an "))
+					item = item.replace("an ", "");
+				if(item.startsWith("the "))
+					item = item.replace("the ", "");
+				
+				let loc_input = loc_inputs[j];
+				let item_input = "x";
+				if(SpoilerItemToInput[item] != undefined)
+					item_input = SpoilerItemToInput[item];
+				
+				if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+					document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
+				else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
+					document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+			}
+		}
 		else {
 			for(var i = 0; i < hintStrings2.length; i++)
 				hint = hint.replace(hintStrings2[i], ":");
@@ -281,6 +321,7 @@ var SpoilerItemToInput = {
 	"Song of Storms" : "sos",
 	"Sonata of Awakening" : "son",
 	"Goron Lullaby" : "lul",
+	"Goron Lullaby Upgrade" : "lul",
 	"New Wave Bossa Nova" : "nov",
 	"Elegy of Emptiness" : "ele",
 	"Oath to Order" : "oat"
