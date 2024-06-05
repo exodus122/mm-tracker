@@ -23,10 +23,8 @@ function readLog() {
 			}
 		}
 	}
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4")
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER")
 		SpoilerLocToItem["Starting Song"] = "Epona's Song";
-	if(document.getElementById("settings_option").value == "BLITZ")
-		SpoilerLocToItem["Boss Blue Warp"] = "Oath to Order";
 }
 function onChooseFile(event, onLoadFileHandler) {
 	if (typeof window.FileReader !== 'function')
