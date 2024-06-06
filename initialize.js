@@ -90,7 +90,20 @@ var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
 
-var alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
+var alwaysHints = [];
+
+if (document.getElementById("settings_option").value == "EASTER") {
+	alwaysHints = ["Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Seahorses"];
+}
+else if (document.getElementById("settings_option").value == "BLITZ") {
+	alwaysHints = [];
+}
+else if (document.getElementById("settings_option").value == "S3") {
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
+}
+else if (document.getElementById("settings_option").value == "S4") {
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
+}
 
 var Hinted = {};
 var hintedInput = "";
