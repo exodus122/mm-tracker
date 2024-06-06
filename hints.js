@@ -1,4 +1,4 @@
-function handleAlternateHintInput() {
+function process_hint_inputs() {
 	var lines = document.getElementById("hintInput").value.split('\n');
 	var str = "";
 	for (var i= 0; i < hintInputs.length; i++) {

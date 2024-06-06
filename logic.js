@@ -54,62 +54,10 @@ function update_item_logic() {
 	if(Known.magic_bean2 == true) {Logic.magic_bean2 = Location_Logic[ItemLocation.magic_bean2];}
 	Logic.magic_bean = Logic.magic_bean1 || Logic.magic_bean2;
 	
-	// Singleton Items
-	if(Known.fire_arrow == true) {Logic.fire_arrow = Location_Logic[ItemLocation.fire_arrow];} else{Logic.fire_arrow = false;}
-	if(Known.ice_arrow == true) {Logic.ice_arrow = Location_Logic[ItemLocation.ice_arrow];} else{Logic.ice_arrow = false;}
-	if(Known.light_arrow == true) {Logic.light_arrow = Location_Logic[ItemLocation.light_arrow];} else{Logic.light_arrow = false;}
-	if(Known.powder_keg == true) {Logic.powder_keg = Location_Logic[ItemLocation.powder_keg];} else{Logic.powder_keg = false;}
-	if(Known.pictobox == true) {Logic.pictobox = Location_Logic[ItemLocation.pictobox];} else{Logic.pictobox = false;}
-	if(Known.lens == true) {Logic.lens = Location_Logic[ItemLocation.lens];} else{Logic.lens = false;}
-	if(Known.hookshot == true) {Logic.hookshot = Location_Logic[ItemLocation.hookshot];} else{Logic.hookshot = false;}
-	if(Known.great_fairy_sword == true) {Logic.great_fairy_sword = Location_Logic[ItemLocation.great_fairy_sword];} else{Logic.great_fairy_sword = false;}
-	
-	if(Known.postmans_hat == true) {Logic.postmans_hat = Location_Logic[ItemLocation.postmans_hat];} else{Logic.postmans_hat = false;}
-	if(Known.allnight_mask == true) {Logic.allnight_mask = Location_Logic[ItemLocation.allnight_mask];} else{Logic.allnight_mask = false;}
-	if(Known.blast_mask == true) {Logic.blast_mask = Location_Logic[ItemLocation.blast_mask];} else{Logic.blast_mask = false;}
-	if(Known.stone_mask == true) {Logic.stone_mask = Location_Logic[ItemLocation.stone_mask];} else{Logic.stone_mask = false;} // logically useless
-	if(Known.greatfairy_mask == true) {Logic.greatfairy_mask = Location_Logic[ItemLocation.greatfairy_mask];} else{Logic.greatfairy_mask = false;} // logically useless
-	if(Known.deku_mask == true) {Logic.deku_mask = Location_Logic[ItemLocation.deku_mask];} else{Logic.deku_mask = false;}
-	if(Known.keaton_mask == true) {Logic.keaton_mask = Location_Logic[ItemLocation.keaton_mask];} else{Logic.keaton_mask = false;}
-	if(Known.bremen_mask == true) {Logic.bremen_mask = Location_Logic[ItemLocation.bremen_mask];} else{Logic.bremen_mask = false;}
-	if(Known.bunny_hood == true) {Logic.bunny_hood = Location_Logic[ItemLocation.bunny_hood];} else{Logic.bunny_hood = false;}
-	if(Known.dongero_mask == true) {Logic.dongero_mask = Location_Logic[ItemLocation.dongero_mask];} else{Logic.dongero_mask = false;}
-	if(Known.mask_of_scents == true) {Logic.mask_of_scents = Location_Logic[ItemLocation.mask_of_scents];} else{Logic.mask_of_scents = false;} // logically useless
-	if(Known.goron_mask == true) {Logic.goron_mask = Location_Logic[ItemLocation.goron_mask];} else{Logic.goron_mask = false;}
-	if(Known.romani_mask == true) {Logic.romani_mask = Location_Logic[ItemLocation.romani_mask];} else{Logic.romani_mask = false;}
-	if(Known.circusleaders_mask == true) {Logic.circusleaders_mask = Location_Logic[ItemLocation.circusleaders_mask];} else{Logic.circusleaders_mask = false;} // logically useless
-	if(Known.kafei_mask == true) {Logic.kafei_mask = Location_Logic[ItemLocation.kafei_mask];} else{Logic.kafei_mask = false;}
-	if(Known.couples_mask == true) {Logic.couples_mask = Location_Logic[ItemLocation.couples_mask];} else{Logic.couples_mask = false;}
-	if(Known.mask_of_truth == true) {Logic.mask_of_truth = Location_Logic[ItemLocation.mask_of_truth];} else{Logic.mask_of_truth = false;}
-	if(Known.zora_mask == true) {Logic.zora_mask = Location_Logic[ItemLocation.zora_mask];} else{Logic.zora_mask = false;}
-	if(Known.kamaro_mask == true) {Logic.kamaro_mask = Location_Logic[ItemLocation.kamaro_mask];} else{Logic.kamaro_mask = false;}
-	if(Known.gibdo_mask == true) {Logic.gibdo_mask = Location_Logic[ItemLocation.gibdo_mask];} else{Logic.gibdo_mask = false;}
-	if(Known.garo_mask == true) {Logic.garo_mask = Location_Logic[ItemLocation.garo_mask];} else{Logic.garo_mask = false;}
-	if(Known.captains_hat == true) {Logic.captains_hat = Location_Logic[ItemLocation.captains_hat];} else{Logic.captains_hat = false;}
-	if(Known.giants_mask == true) {Logic.giants_mask = Location_Logic[ItemLocation.giants_mask];} else{Logic.giants_mask = false;}
-	if(Known.fiercedeity_mask == true) {Logic.fiercedeity_mask = Location_Logic[ItemLocation.fiercedeity_mask];} else{Logic.fiercedeity_mask = false;} // logically useless
-	
-	if(Known.moons_tear == true) {Logic.moons_tear = Location_Logic[ItemLocation.moons_tear];} else{Logic.moons_tear = false;}
-	if(Known.land_title_deed == true) {Logic.land_title_deed = Location_Logic[ItemLocation.land_title_deed];} else{Logic.land_title_deed = false;}
-	if(Known.swamp_title_deed == true) {Logic.swamp_title_deed = Location_Logic[ItemLocation.swamp_title_deed];} else{Logic.swamp_title_deed = false;}
-	if(Known.mountain_title_deed == true) {Logic.mountain_title_deed = Location_Logic[ItemLocation.mountain_title_deed];} else{Logic.mountain_title_deed = false;}
-	if(Known.ocean_title_deed == true) {Logic.ocean_title_deed = Location_Logic[ItemLocation.ocean_title_deed];} else{Logic.ocean_title_deed = false;}
-	
-	if(Known.room_key == true) {Logic.room_key = Location_Logic[ItemLocation.room_key];} else{Logic.room_key = false;}
-	if(Known.special_delivery == true) {Logic.special_delivery = Location_Logic[ItemLocation.special_delivery];} else{Logic.special_delivery = false;}
-	if(Known.letter_to_kafei == true) {Logic.letter_to_kafei = Location_Logic[ItemLocation.letter_to_kafei];} else{Logic.letter_to_kafei = false;}
-	if(Known.pendant_of_memories == true) {Logic.pendant_of_memories = Location_Logic[ItemLocation.pendant_of_memories];} else{Logic.pendant_of_memories = false;}
-	
-	if(Known.eponas_song == true) {Logic.eponas_song = Location_Logic[ItemLocation.eponas_song];} else{Logic.eponas_song = false;}
-	if(Known.song_of_storms == true) {Logic.song_of_storms = Location_Logic[ItemLocation.song_of_storms];} else{Logic.song_of_storms = false;}
-	if(Known.song_of_healing == true) {Logic.song_of_healing = Location_Logic[ItemLocation.song_of_healing];} else{Logic.song_of_healing = false;}
-	if(Known.sonata == true) {Logic.sonata = Location_Logic[ItemLocation.sonata];} else{Logic.sonata = false;}
-	if(Known.lullaby == true) {Logic.lullaby = Location_Logic[ItemLocation.lullaby];} else{Logic.lullaby = false;}
-	if(Known.nwbn == true) {Logic.nwbn = Location_Logic[ItemLocation.nwbn];} else{Logic.nwbn = false;}
-	if(Known.elegy == true) {Logic.elegy = Location_Logic[ItemLocation.elegy];} else{Logic.elegy = false;}
-	if(Known.oath == true) {Logic.oath = Location_Logic[ItemLocation.oath];} else{Logic.oath = false;}
-	
-	if(Known.mirror_shield == true) {Logic.mirror_shield = Location_Logic[ItemLocation.mirror_shield];} else{Logic.mirror_shield = false;}
+	// Single Items
+	for(let i = 0; i < SingleItems.length; i++) {
+		if(Known[SingleItems[i]] == true) {Logic[SingleItems[i]] = Location_Logic[ItemLocation[SingleItems[i]]];} else{Logic[SingleItems[i]] = false;}
+	}
 	
 	
 	// Misc Shortcuts
@@ -562,9 +510,6 @@ function update_location_logic() {
 	Location_Logic["Ikana King"] = Logic.ikana_canyon_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask && Logic.lens));
 	Location_Logic["Skull Kid Song"] = (Logic.deku_mask && Logic.magic) || Logic.bow || Logic.zora_mask || Logic.hookshot;
 	
-	
-	let Access = Location_Access;
-	let Has = Game;
 	
 	for(let i = 0, Access = Location_Access, Has = Game; i < 2; i++) {
 		// South Clock Town

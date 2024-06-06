@@ -109,7 +109,7 @@ function process_inputs() {
 	}
 }
 
-function update_checks() {
+function update_check_display() {
 	
 	if(toFocus != null) {
 		toFocus.focus();
@@ -544,9 +544,9 @@ var temp_img = document.getElementById("bomb1_img");
 	else
 		temp_img.style.opacity =.2;
 	
-	for(var i = 0; i < SingletonItems.length; i++) {
-		var temp_img = document.getElementById(SingletonItems[i]+"_img");
-		if(Game[SingletonItems[i]])
+	for(var i = 0; i < SingleItems.length; i++) {
+		var temp_img = document.getElementById(SingleItems[i]+"_img");
+		if(Game[SingleItems[i]])
 			temp_img.style.opacity =1;
 		else
 			temp_img.style.opacity =.2;
