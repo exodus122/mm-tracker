@@ -111,43 +111,6 @@ function update_item_logic() {
 	
 	if(Known.mirror_shield == true) {Logic.mirror_shield = Location_Logic[ItemLocation.mirror_shield];} else{Logic.mirror_shield = false;}
 	
-	Game.razor_sword = Game.sword1 || Game.sword2;
-	Game.gilded_sword = Game.sword1 && Game.sword2;
-	
-	Game.adults_wallet = Game.wallet1 || Game.wallet2;
-	Game.giants_wallet = Game.wallet1 && Game.wallet2;
-	
-	Game.magic = Game.magic1 || Game.magic2;
-	Game.double_magic = Game.magic1 && Game.magic2;
-	
-	Game.bow = Game.bow1 || Game.bow2 || Game.bow3;
-	Game.bomb = Game.bomb1 || Game.bomb2 || Game.bomb3;
-	Game.magic_bean = Game.magic_bean1 || Game.magic_bean2;
-	Game.any_bottle = Game.bottle1 || Game.bottle2 || Game.bottle3 || Game.bottle4 || Game.bottle5 || Game.bottle_gold_dust;
-	
-	for (var q = 0; q < 20; q++) {
-		for (var i = 0; i < Items.length; i++) {
-			if(Location_Could_Access[ItemLocation[Items[i]]] || Game[Items[i]])
-				CouldHave[Items[i]] = true;
-			else
-				CouldHave[Items[i]] = false;
-		}
-	}
-	
-	CouldHave.razor_sword = CouldHave.sword1 || CouldHave.sword2;
-	CouldHave.gilded_sword = CouldHave.sword1 && CouldHave.sword2;
-	
-	CouldHave.adults_wallet = CouldHave.wallet1 || CouldHave.wallet2;
-	CouldHave.giants_wallet = CouldHave.wallet1 && CouldHave.wallet2;
-	
-	CouldHave.magic = CouldHave.magic1 || CouldHave.magic2;
-	CouldHave.double_magic = CouldHave.magic1 && CouldHave.magic2;
-	
-	CouldHave.bow = CouldHave.bow1 || CouldHave.bow2 || CouldHave.bow3;
-	CouldHave.bomb = CouldHave.bomb1 || CouldHave.bomb2 || CouldHave.bomb3;
-	CouldHave.magic_bean = CouldHave.magic_bean1 || CouldHave.magic_bean2;
-	CouldHave.any_bottle = CouldHave.bottle1 || CouldHave.bottle2 || CouldHave.bottle3 || CouldHave.bottle4 || CouldHave.bottle5 || CouldHave.bottle_gold_dust;
-	
 	
 	// Misc Shortcuts
 	Logic.explosive = Logic.bomb || Logic.blast_mask;
@@ -197,103 +160,78 @@ function update_item_logic() {
 	Logic.zora_egg = Logic.any_bottle && Logic.pirates_fortress_access && Logic.hookshot && Logic.pinnacle_rock_access && ((Logic.deku_mask && Logic.magic) || Logic.bow);
 	Logic.big_poe = Logic.any_bottle && Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.bomb && (Logic.shoot_light_arrow || (Logic.limitless_magic_beans && (Logic.bow || Logic.zora_mask)));
 	
+	for (var j = 0; j < Items.length; j++) {
+		if(Location_Could_Access[ItemLocation[Items[j]]] || Game[Items[j]])
+			CouldHave[Items[j]] = true;
+		else
+			CouldHave[Items[j]] = false;
+	}
 	
-	// Misc Shortcuts
-	Game.explosive = Game.bomb || Game.blast_mask;
-	Game.night_inn_access = Game.deku_mask || Game.room_key || Game.explosive || Game.bow || Game.hookshot || Game.zora_mask;
-	Game.ranch_day_1_access = Game.goron_mask && Game.powder_keg;
-	Game.water_for_magic_bean = Game.any_bottle || Game.song_of_storms;
-	Game.shoot_fire_arrow = Game.bow && Game.fire_arrow && Game.magic;
-	Game.shoot_ice_arrow = Game.bow && Game.ice_arrow && Game.magic;
-	Game.shoot_light_arrow = Game.bow && Game.light_arrow && Game.magic;
-	
-	// Swamp area shortcuts
-	Game.cross_poisoned_water = Game.deku_mask || Game.zora_mask || Game.goron_mask;
-	Game.poison_swamp_access = Game.cross_poisoned_water && (Game.hookshot || Game.bow || Game.pictobox || Game.zora_mask || Game.any_bottle);
-	Game.limitless_magic_beans = Game.poison_swamp_access && Game.deku_mask;
-	Game.any_magic_bean = (Game.poison_swamp_access && Game.deku_mask) || Game.magic_bean; 
-	
-	Game.wft_access = Game.deku_mask && Game.sonata && Game.poison_swamp_access;
-	Game.woodfall_clear = Game.wft_access && Game.bow; 
-	
-	// Mountain area shortcuts
-	Game.north_access = Game.bow && (Game.explosive || Game.shoot_fire_arrow || Game.goron_mask);
-	Game.hot_spring_water = Game.north_access && Game.any_bottle && (Game.goron_mask || Game.shoot_fire_arrow || Game.snowhead_clear || (Game.ikana_canyon_access && Game.gibdo_mask && Game.any_blue_potion));
-	
-	Game.sht_access = Game.north_access && Game.goron_mask && Game.lullaby;
-	Game.snowhead_clear = Game.sht_access && Game.shoot_fire_arrow;
-	
-	// Great Bay area shortcuts
-	Game.west_access = Game.eponas_song;
-	Game.ocean_skulltulas = Game.explosive && Game.west_access && Game.hookshot;
-	Game.pirates_fortress_access = Game.west_access && Game.zora_mask;
-	Game.pinnacle_rock_access = Game.zora_mask;
-	Game.seahorse = Game.pictobox && Game.west_access && Game.pirates_fortress_access;
-	Game.gbt_access = Game.pirates_fortress_access && Game.nwbn && Game.hookshot;
-	Game.great_bay_clear = Game.gbt_access && Game.shoot_ice_arrow; 
+	for(let i = 0, Has = Game; i < 2; i++) {
+		Has.razor_sword = Has.sword1 || Has.sword2;
+		Has.gilded_sword = Has.sword1 && Has.sword2;
+		
+		Has.adults_wallet = Has.wallet1 || Has.wallet2;
+		Has.giants_wallet = Has.wallet1 && Has.wallet2;
+		
+		Has.magic = Has.magic1 || Has.magic2;
+		Has.double_magic = Has.magic1 && Has.magic2;
+		
+		Has.bow = Has.bow1 || Has.bow2 || Has.bow3;
+		Has.bomb = Has.bomb1 || Has.bomb2 || Has.bomb3;
+		Has.magic_bean = Has.magic_bean1 || Has.magic_bean2;
+		Has.any_bottle = Has.bottle1 || Has.bottle2 || Has.bottle3 || Has.bottle4 || Has.bottle5 || Has.bottle_gold_dust;
+		
+		// Misc Shortcuts
+		Has.explosive = Has.bomb || Has.blast_mask;
+		Has.night_inn_access = Has.deku_mask || Has.room_key || Has.explosive || Has.bow || Has.hookshot || Has.zora_mask;
+		Has.ranch_day_1_access = Has.goron_mask && Has.powder_keg;
+		Has.water_for_magic_bean = Has.any_bottle || Has.song_of_storms;
+		Has.shoot_fire_arrow = Has.bow && Has.fire_arrow && Has.magic;
+		Has.shoot_ice_arrow = Has.bow && Has.ice_arrow && Has.magic;
+		Has.shoot_light_arrow = Has.bow && Has.light_arrow && Has.magic;
+		
+		// Swamp area shortcuts
+		Has.cross_poisoned_water = Has.deku_mask || Has.zora_mask || Has.goron_mask;
+		Has.poison_swamp_access = Has.cross_poisoned_water && (Has.hookshot || Has.bow || Has.pictobox || Has.zora_mask || Has.any_bottle);
+		Has.limitless_magic_beans = Has.poison_swamp_access && Has.deku_mask;
+		Has.any_magic_bean = (Has.poison_swamp_access && Has.deku_mask) || Has.magic_bean; 
+		
+		Has.wft_access = Has.deku_mask && Has.sonata && Has.poison_swamp_access;
+		Has.woodfall_clear = Has.wft_access && Has.bow; 
+		
+		// Mountain area shortcuts
+		Has.north_access = Has.bow && (Has.explosive || Has.shoot_fire_arrow || Has.goron_mask);
+		Has.hot_spring_water = Has.north_access && Has.any_bottle && (Has.goron_mask || Has.shoot_fire_arrow || Has.snowhead_clear || (Has.ikana_canyon_access && Has.gibdo_mask && Has.any_blue_potion));
+		
+		Has.sht_access = Has.north_access && Has.goron_mask && Has.lullaby;
+		Has.snowhead_clear = Has.sht_access && Has.shoot_fire_arrow;
+		
+		// Great Bay area shortcuts
+		Has.west_access = Has.eponas_song;
+		Has.ocean_skulltulas = Has.explosive && Has.west_access && Has.hookshot;
+		Has.pirates_fortress_access = Has.west_access && Has.zora_mask;
+		Has.pinnacle_rock_access = Has.zora_mask;
+		Has.seahorse = Has.pictobox && Has.west_access && Has.pirates_fortress_access;
+		Has.gbt_access = Has.pirates_fortress_access && Has.nwbn && Has.hookshot;
+		Has.great_bay_clear = Has.gbt_access && Has.shoot_ice_arrow; 
 
-	// Ikana area shortcuts
-	Game.ikana_graveyard_access = Game.eponas_song;
-	Game.east_access = Game.hookshot && Game.ikana_graveyard_access && (Game.garo_mask || Game.gibdo_mask);
-	Game.ikana_canyon_access = Game.east_access;
-	Game.stt_access = Game.ikana_canyon_access && Game.hookshot && Game.elegy && (Game.goron_mask || Game.zora_mask);
-	Game.istt_access = Game.stt_access && Game.shoot_light_arrow;
-	Game.ikana_clear = Game.istt_access;
-	
-	// Bottle shortcuts
-	Game.any_blue_potion = Game.any_bottle && (Game.adults_wallet || Game.mask_of_scents);
-	Game.any_milk = Game.any_bottle; // gorman bros purchase requires nothing but bottle
-	Game.zora_egg = Game.any_bottle && Game.pirates_fortress_access && Game.hookshot && Game.pinnacle_rock_access && ((Game.deku_mask && Game.magic) || Game.bow);
-	Game.big_poe = Game.any_bottle && Game.ikana_canyon_access && Game.gibdo_mask && Game.bomb && (Game.shoot_light_arrow || (Game.limitless_magic_beans && (Game.bow || Game.zora_mask)));
-	
-	
-	// Misc Shortcuts
-	CouldHave.explosive = CouldHave.bomb || CouldHave.blast_mask;
-	CouldHave.night_inn_access = CouldHave.deku_mask || CouldHave.room_key || CouldHave.explosive || CouldHave.bow || CouldHave.hookshot || CouldHave.zora_mask;
-	CouldHave.ranch_day_1_access = CouldHave.goron_mask && CouldHave.powder_keg;
-	CouldHave.water_for_magic_bean = CouldHave.any_bottle || CouldHave.song_of_storms;
-	CouldHave.shoot_fire_arrow = CouldHave.bow && CouldHave.fire_arrow && CouldHave.magic;
-	CouldHave.shoot_ice_arrow = CouldHave.bow && CouldHave.ice_arrow && CouldHave.magic;
-	CouldHave.shoot_light_arrow = CouldHave.bow && CouldHave.light_arrow && CouldHave.magic;
-	
-	// Swamp area shortcuts
-	CouldHave.cross_poisoned_water = CouldHave.deku_mask || CouldHave.zora_mask || CouldHave.goron_mask;
-	CouldHave.poison_swamp_access = CouldHave.cross_poisoned_water && (CouldHave.hookshot || CouldHave.bow || CouldHave.pictobox || CouldHave.zora_mask || CouldHave.any_bottle);
-	CouldHave.limitless_magic_beans = CouldHave.poison_swamp_access && CouldHave.deku_mask;
-	CouldHave.any_magic_bean = (CouldHave.poison_swamp_access && CouldHave.deku_mask) || CouldHave.magic_bean; 
-	
-	CouldHave.wft_access = CouldHave.deku_mask && CouldHave.sonata && CouldHave.poison_swamp_access;
-	CouldHave.woodfall_clear = CouldHave.wft_access && CouldHave.bow; 
-	
-	// Mountain area shortcuts
-	CouldHave.north_access = CouldHave.bow && (CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.goron_mask);
-	CouldHave.hot_spring_water = CouldHave.north_access && CouldHave.any_bottle && (CouldHave.goron_mask || CouldHave.shoot_fire_arrow || CouldHave.snowhead_clear || (CouldHave.ikana_canyon_access && CouldHave.gibdo_mask && CouldHave.any_blue_potion));
-	
-	CouldHave.sht_access = CouldHave.north_access && CouldHave.goron_mask && CouldHave.lullaby;
-	CouldHave.snowhead_clear = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
-	
-	// Great Bay area shortcuts
-	CouldHave.west_access = CouldHave.eponas_song;
-	CouldHave.ocean_skulltulas = CouldHave.explosive && CouldHave.west_access && CouldHave.hookshot;
-	CouldHave.pirates_fortress_access = CouldHave.west_access && CouldHave.zora_mask;
-	CouldHave.pinnacle_rock_access = CouldHave.zora_mask;
-	CouldHave.seahorse = CouldHave.pictobox && CouldHave.west_access && CouldHave.pirates_fortress_access;
-	CouldHave.gbt_access = CouldHave.pirates_fortress_access && CouldHave.nwbn && CouldHave.hookshot;
-	CouldHave.great_bay_clear = CouldHave.gbt_access && CouldHave.shoot_ice_arrow; 
-
-	// Ikana area shortcuts
-	CouldHave.ikana_graveyard_access = CouldHave.eponas_song;
-	CouldHave.east_access = CouldHave.hookshot && CouldHave.ikana_graveyard_access && (CouldHave.garo_mask || CouldHave.gibdo_mask);
-	CouldHave.ikana_canyon_access = CouldHave.east_access;
-	CouldHave.stt_access = CouldHave.ikana_canyon_access && CouldHave.hookshot && CouldHave.elegy && (CouldHave.goron_mask || CouldHave.zora_mask);
-	CouldHave.istt_access = CouldHave.stt_access && CouldHave.shoot_light_arrow;
-	CouldHave.ikana_clear = CouldHave.istt_access;
-	
-	// Bottle shortcuts
-	CouldHave.any_blue_potion = CouldHave.any_bottle && (CouldHave.adults_wallet || CouldHave.mask_of_scents);
-	CouldHave.any_milk = CouldHave.any_bottle; // gorman bros purchase requires nothing but bottle
-	CouldHave.zora_egg = CouldHave.any_bottle && CouldHave.pirates_fortress_access && CouldHave.hookshot && CouldHave.pinnacle_rock_access && ((CouldHave.deku_mask && CouldHave.magic) || CouldHave.bow);
-	CouldHave.big_poe = CouldHave.any_bottle && CouldHave.ikana_canyon_access && CouldHave.gibdo_mask && CouldHave.bomb && (CouldHave.shoot_light_arrow || (CouldHave.limitless_magic_beans && (CouldHave.bow || CouldHave.zora_mask)));
+		// Ikana area shortcuts
+		Has.ikana_graveyard_access = Has.eponas_song;
+		Has.east_access = Has.hookshot && Has.ikana_graveyard_access && (Has.garo_mask || Has.gibdo_mask);
+		Has.ikana_canyon_access = Has.east_access;
+		Has.stt_access = Has.ikana_canyon_access && Has.hookshot && Has.elegy && (Has.goron_mask || Has.zora_mask);
+		Has.istt_access = Has.stt_access && Has.shoot_light_arrow;
+		Has.ikana_clear = Has.istt_access;
+		
+		// Bottle shortcuts
+		Has.any_blue_potion = Has.any_bottle && (Has.adults_wallet || Has.mask_of_scents);
+		Has.any_milk = Has.any_bottle; // gorman bros purchase requires nothing but bottle
+		Has.zora_egg = Has.any_bottle && Has.pirates_fortress_access && Has.hookshot && Has.pinnacle_rock_access && ((Has.deku_mask && Has.magic) || Has.bow);
+		Has.big_poe = Has.any_bottle && Has.ikana_canyon_access && Has.gibdo_mask && Has.bomb && (Has.shoot_light_arrow || (Has.limitless_magic_beans && (Has.bow || Has.zora_mask)));
+		
+		Has = CouldHave;
+	}
 }
 
 function update_location_logic() {
