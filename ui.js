@@ -268,7 +268,7 @@ function highlight(x) {
 }
 
 function click_remains(x) {
-	if(event.button == 2) {
+	if(event.button == 2 && document.getElementById("settings_option").value == "BLITZ") {
 	
 		let theRemains = x.id.slice(0, -4);
 		

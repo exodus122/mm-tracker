@@ -46,7 +46,7 @@ function update_item_logic() {
 	if(Known.bottle4 == true) {Logic.bottle4 = Location_Logic[ItemLocation.bottle4];} else{Logic.bottle4 = false; Known.bottle4 = false;} 
 	if(Known.bottle5 == true) {Logic.bottle5 = Location_Logic[ItemLocation.bottle5];} else{Logic.bottle5 = false; Known.bottle5 = false;} 
 	if(Known.bottle_gold_dust == true) {Logic.bottle_gold_dust = Location_Logic[ItemLocation.bottle_gold_dust];} else{Logic.bottle_gold_dust = false;}
-	if (document.getElementById("settings_option").value == "EASTER") {Logic.bottle1 = true; Logic.bottle2 = true;}
+	if (document.getElementById("settings_option").value == "EASTER") {Logic.bottle1 = true; Logic.bottle2 = true; Game.bottle1 = true; Game.bottle2 = true;}
 	Logic.any_bottle = Logic.bottle1 || Logic.bottle2 || Logic.bottle3 || Logic.bottle4 || Logic.bottle5 || Logic.bottle_gold_dust;
 	
 	// Magic beans
