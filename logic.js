@@ -628,8 +628,7 @@ function update_location_logic() {
 	let Access = Location_Access;
 	let Has = Game;
 	
-	let i = 0;
-	do {
+	for(let i = 0, Access = Location_Access, Has = Game; i < 2; i++) {
 		// South Clock Town
 		Access["Clock Tower Entrance"] = true;
 		Access["South Clock Town Straw Roof Chest"] = true;
@@ -962,101 +961,66 @@ function update_location_logic() {
 	
 		Access = Location_Could_Access;
 		Has = CouldHave;
-		
-		i += 1;
-	} while (i < 2);
+	}
 	
 	// Peek Logic
 	Object.assign(Location_Peek, Location_Access);
 	Object.assign(Location_Could_Peek, Location_Could_Access);
 	
 	// World Model/NPC Text Peeks
-	Location_Peek["All-Night Mask Purchase"] = true;
-	Location_Peek["Milk Bar Chateau"] = Game.romani_mask;
-	Location_Peek["Business Scrub Purchase"] = true;
-	Location_Peek["Bio Baba Grotto"] = (Game.zora_mask || Game.hookshot || Game.bow || (Game.deku_mask && Game.magic)) && (Game.explosive || Game.goron_mask);
-	Location_Peek["Swamp Tourist Center Roof"] = true;
-	Location_Peek["Hungry Goron"] = Game.north_access && Game.goron_mask && Game.magic;
-	Location_Peek["Biggest Bomb Bag Purchase"] = Game.north_access && (Game.goron_mask || Game.deku_mask);
-	Location_Peek["Goron Village Ledge"] = Game.north_access;
-	Location_Peek["Path to Snowhead Pillar"] = Game.north_access && Game.goron_mask;
-	Location_Peek["Great Bay Coast Ledge"] = Game.west_access;
-	Location_Peek["Zora Cape Like-Like"] = Game.west_access && (Game.zora_mask || Game.bow);
-	Location_Peek["Ikana Canyon Ledge"] = Game.east_access;
-	Location_Peek["Ikana Castle Pillar"] = Game.ikana_canyon_access && (Game.shoot_light_arrow || Game.mirror_shield || Game.zora_mask);
-	Location_Peek["Kafei"] = true;
-	Location_Peek["Curiosity Shop Man #1"] = true;
-	Location_Peek["Postman's Freedom Reward"] = true;
-	Location_Peek["Swamp Spider House Reward"] = Game.poison_swamp_access;
-	Location_Peek["Hungry Goron"] = Game.north_access;
-	
-	Location_Could_Peek["All-Night Mask Purchase"] = true;
-	Location_Could_Peek["Milk Bar Chateau"] = CouldHave.romani_mask;
-	Location_Could_Peek["Business Scrub Purchase"] = true;
-	Location_Could_Peek["Bio Baba Grotto"] = (CouldHave.zora_mask || CouldHave.hookshot || CouldHave.bow || (CouldHave.deku_mask && CouldHave.magic)) && (CouldHave.explosive || CouldHave.goron_mask);
-	Location_Could_Peek["Swamp Tourist Center Roof"] = true;
-	Location_Could_Peek["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic;
-	Location_Could_Peek["Biggest Bomb Bag Purchase"] = CouldHave.north_access && (CouldHave.goron_mask || CouldHave.deku_mask);
-	Location_Could_Peek["Goron Village Ledge"] = CouldHave.north_access;
-	Location_Could_Peek["Path to Snowhead Pillar"] = CouldHave.north_access && CouldHave.goron_mask;
-	Location_Could_Peek["Great Bay Coast Ledge"] = CouldHave.west_access;
+	for(let i = 0, Peek = Location_Peek, Has = Game; i < 2; i++) {
+		Peek["All-Night Mask Purchase"] = true;
+		Peek["Milk Bar Chateau"] = Has.romani_mask;
+		Peek["Business Scrub Purchase"] = true;
+		Peek["Bio Baba Grotto"] = (Has.zora_mask || Has.hookshot || Has.bow || (Has.deku_mask && Has.magic)) && (Has.explosive || Has.goron_mask);
+		Peek["Swamp Tourist Center Roof"] = true;
+		Peek["Hungry Goron"] = Has.north_access && Has.goron_mask && Has.magic;
+		Peek["Biggest Bomb Bag Purchase"] = Has.north_access && (Has.goron_mask || Has.deku_mask);
+		Peek["Goron Village Ledge"] = Has.north_access;
+		Peek["Path to Snowhead Pillar"] = Has.north_access && Has.goron_mask;
+		Peek["Great Bay Coast Ledge"] = Has.west_access;
+		Peek["Zora Cape Like-Like"] = Has.west_access && (Has.zora_mask || Has.bow);
+		Peek["Ikana Canyon Ledge"] = Has.east_access;
+		Peek["Ikana Castle Pillar"] = Has.ikana_canyon_access && (Has.shoot_light_arrow || Has.mirror_shield || Has.zora_mask);
+		Peek["Kafei"] = true;
+		Peek["Curiosity Shop Man #1"] = true;
+		Peek["Postman's Freedom Reward"] = true;
+		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access;
+		Peek["Hungry Goron"] = Has.north_access;
+		
+		Peek = Location_Could_Peek;
+		Has = CouldHave;
+	}
 	Location_Could_Peek["Zora Cape Like-Like"] = CouldHave.west_access && (CouldHave.zora_mask || CouldHave.bow || CouldHave.bomb);
-	Location_Could_Peek["Ikana Canyon Ledge"] = CouldHave.east_access;
-	Location_Could_Peek["Ikana Castle Pillar"] = CouldHave.ikana_canyon_access && (CouldHave.shoot_light_arrow || CouldHave.mirror_shield || CouldHave.zora_mask);
-	Location_Could_Peek["Kafei"] = true;
-	Location_Could_Peek["Curiosity Shop Man #1"] = true;
-	Location_Could_Peek["Postman's Freedom Reward"] = true;
-	Location_Could_Peek["Swamp Spider House Reward"] = CouldHave.poison_swamp_access;
-	Location_Could_Peek["Hungry Goron"] = CouldHave.north_access;
 	
 	// CSMC Peeks
-	Location_Peek["South Clock Town Final Day Chest"] = true;
-	Location_Peek["Bombers' Hideout Chest"] = true;
-	Location_Peek["Termina Field Underwater Chest"] = true;
-	Location_Peek["Termina Field Stump Chest"] = true; 
-	Location_Peek["Bean Grotto"] = Game.poison_swamp_access && Game.deku_mask; 
-	Location_Peek["Hot Spring Water Grotto"] = Game.north_access && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
-	Location_Peek["Twin Islands Underwater Ramp Chest"] = Game.north_access;
-	Location_Peek["Twin Islands Cave Chest"] = Game.snowhead_clear;
-	Location_Peek["Lens Cave Rock Chest"] = Game.north_access;
-	Location_Peek["Zora Cape Ledge Without Tree Chest"] = Game.west_access;
-	Location_Peek["Zora Cape Underwater Chest"] = Game.west_access;
-	Location_Peek["Pirates' Fortress Interior Upper Chest"] = Game.pirates_fortress_access && (Game.hookshot || Game.goron_mask);
-	Location_Peek["Path to Ikana Pillar Chest"] = true;
-	Location_Peek["Captain Keeta's Chest"] = Game.ikana_graveyard_access;
-	Location_Peek["Snowhead Main Room Wall"] = Game.sht_access && ((Game.hookshot && Game.magic) || Game.shoot_fire_arrow || Game.explosive);
-	Location_Peek["Snowhead Map Room Ledge"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
-	Location_Peek["Snowhead Twin Block"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.magic || Game.zora_mask);
-	Location_Peek["Snowhead Ice Puzzle"] = Game.sht_access;
-	Location_Peek["Stone Tower Compass Chest"] = Game.stt_access;
-	Location_Peek["Stone Tower Eyegore Room Chest"] = Game.stt_access && (Game.istt_access || (Game.shoot_light_arrow && Game.zora_mask) || (Game.explosive && Game.goron_mask));
-	Location_Peek["Stone Tower Bridge Crystal"] = Game.stt_access && ((Game.shoot_light_arrow && Game.zora_mask) || (Game.explosive && Game.goron_mask));
-	Location_Peek["Stone Tower Thin Bridge"] = (Game.stt_access && (Game.shoot_light_arrow || (Game.deku_mask && Game.mirror_shield && Game.goron_mask && Game.zora_mask && Game.explosive)) && (Game.explosive || Game.great_fairy_sword)) || (Game.istt_access && Game.deku_mask);
-	Location_Peek["Stone Tower Underwater"] = Game.istt_access;
-	Location_Peek["Stone Tower Death Armos Maze Chest"] = Game.stt_access || (Game.istt_access && (Game.deku_mask || Game.explosive));
+	for(let i = 0, Peek = Location_Peek, Has = Game; i < 2; i++) {
+		Peek["South Clock Town Final Day Chest"] = true;
+		Peek["Bombers' Hideout Chest"] = true;
+		Peek["Termina Field Underwater Chest"] = true;
+		Peek["Termina Field Stump Chest"] = true; 
+		Peek["Bean Grotto"] = Has.poison_swamp_access && Has.deku_mask; 
+		Peek["Hot Spring Water Grotto"] = Has.north_access && (Has.shoot_fire_arrow || Has.hot_spring_water || Has.snowhead_clear);
+		Peek["Twin Islands Underwater Ramp Chest"] = Has.north_access;
+		Peek["Twin Islands Cave Chest"] = Has.snowhead_clear;
+		Peek["Lens Cave Rock Chest"] = Has.north_access;
+		Peek["Zora Cape Ledge Without Tree Chest"] = Has.west_access;
+		Peek["Zora Cape Underwater Chest"] = Has.west_access;
+		Peek["Pirates' Fortress Interior Upper Chest"] = Has.pirates_fortress_access && (Has.hookshot || Has.goron_mask);
+		Peek["Path to Ikana Pillar Chest"] = true;
+		Peek["Captain Keeta's Chest"] = Has.ikana_graveyard_access;
+		Peek["Snowhead Main Room Wall"] = Has.sht_access && ((Has.hookshot && Has.magic) || Has.shoot_fire_arrow || Has.explosive);
+		Peek["Snowhead Map Room Ledge"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.zora_mask);
+		Peek["Snowhead Twin Block"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.magic || Has.zora_mask);
+		Peek["Snowhead Ice Puzzle"] = Has.sht_access;
+		Peek["Stone Tower Compass Chest"] = Has.stt_access;
+		Peek["Stone Tower Eyegore Room Chest"] = Has.stt_access && (Has.istt_access || (Has.shoot_light_arrow && Has.zora_mask) || (Has.explosive && Has.goron_mask));
+		Peek["Stone Tower Bridge Crystal"] = Has.stt_access && ((Has.shoot_light_arrow && Has.zora_mask) || (Has.explosive && Has.goron_mask));
+		Peek["Stone Tower Thin Bridge"] = (Has.stt_access && (Has.shoot_light_arrow || (Has.deku_mask && Has.mirror_shield && Has.goron_mask && Has.zora_mask && Has.explosive)) && (Has.explosive || Has.great_fairy_sword)) || (Has.istt_access && Has.deku_mask);
+		Peek["Stone Tower Underwater"] = Has.istt_access;
+		Peek["Stone Tower Death Armos Maze Chest"] = Has.stt_access || (Has.istt_access && (Has.deku_mask || Has.explosive));
 		
-	Location_Could_Peek["South Clock Town Final Day Chest"] = true;
-	Location_Could_Peek["Bombers' Hideout Chest"] = true;
-	Location_Could_Peek["Termina Field Underwater Chest"] = true;
-	Location_Could_Peek["Termina Field Stump Chest"] = true; 
-	Location_Could_Peek["Bean Grotto"] = CouldHave.poison_swamp_access && CouldHave.deku_mask; 
-	Location_Could_Peek["Hot Spring Water Grotto"] = CouldHave.north_access && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
-	Location_Could_Peek["Twin Islands Underwater Ramp Chest"] = CouldHave.north_access;
-	Location_Could_Peek["Twin Islands Cave Chest"] = CouldHave.snowhead_clear;
-	Location_Could_Peek["Lens Cave Rock Chest"] = CouldHave.north_access;
-	Location_Could_Peek["Zora Cape Ledge Without Tree Chest"] = CouldHave.west_access;
-	Location_Could_Peek["Zora Cape Underwater Chest"] = CouldHave.west_access;
-	Location_Could_Peek["Pirates' Fortress Interior Upper Chest"] = CouldHave.pirates_fortress_access && (CouldHave.hookshot || CouldHave.goron_mask);
-	Location_Could_Peek["Path to Ikana Pillar Chest"] = true;
-	Location_Could_Peek["Captain Keeta's Chest"] = CouldHave.ikana_graveyard_access;
-	Location_Could_Peek["Snowhead Main Room Wall"] = CouldHave.sht_access && ((CouldHave.hookshot && CouldHave.magic) || CouldHave.shoot_fire_arrow || CouldHave.explosive);
-	Location_Could_Peek["Snowhead Twin Block"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.magic || CouldHave.zora_mask);
-	Location_Could_Peek["Snowhead Map Room Ledge"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
-	Location_Could_Peek["Snowhead Ice Puzzle"] = CouldHave.sht_access;
-	Location_Could_Peek["Stone Tower Compass Chest"] = CouldHave.stt_access;
-	Location_Could_Peek["Stone Tower Eyegore Room Chest"] = CouldHave.stt_access && (CouldHave.istt_access || (CouldHave.shoot_light_arrow && CouldHave.zora_mask) || (CouldHave.explosive && CouldHave.goron_mask));
-	Location_Could_Peek["Stone Tower Bridge Crystal"] = CouldHave.stt_access && ((CouldHave.shoot_light_arrow && CouldHave.zora_mask) || (CouldHave.explosive && CouldHave.goron_mask));
-	Location_Could_Peek["Stone Tower Thin Bridge"] = (CouldHave.stt_access && (CouldHave.shoot_light_arrow || (CouldHave.deku_mask && CouldHave.mirror_shield && CouldHave.goron_mask && CouldHave.zora_mask && (CouldHave.explosive || Game.great_fairy_sword))) && CouldHave.explosive) || (CouldHave.istt_access && CouldHave.deku_mask);
-	Location_Could_Peek["Stone Tower Underwater"] = CouldHave.istt_access;
-	Location_Could_Peek["Stone Tower Death Armos Maze Chest"] = CouldHave.stt_access || (CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive));
+		Access = Location_Could_Peek;
+		Has = CouldHave;
+	}
 }
