@@ -235,7 +235,7 @@ var blitz_skip_checks = [
 	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
 	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song", 
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
-	"Swamp Archery #2"
+	"Swamp Archery #2", "Curiosity Shop Man #2"
 ];
 var blitz_skip_checks_wft = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", 
