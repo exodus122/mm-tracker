@@ -868,7 +868,7 @@ function update_location_logic() {
 		Peek["Kafei"] = true;
 		Peek["Curiosity Shop Man #1"] = true;
 		Peek["Postman's Freedom Reward"] = true;
-		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access;
+		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access && (Has.deku_mask || Has.zora_mask);
 		Peek["Hungry Goron"] = Has.north_access;
 		
 		Peek = Location_Could_Peek;
