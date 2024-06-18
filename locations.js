@@ -317,17 +317,8 @@ var PeekableItemLocations = [
 	"Romani Ranch Map Purchase", "Great Bay Map Purchase", "Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", 
 	"Goron Shop Red Potion", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Path to Snowhead Pillar", "Stone Tower Map Purchase", 
 	"Great Bay Coast Ledge", "Zora Cape Like-Like", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
-	"Lulu's Room Ledge", "Pirates' Fortress Cage", "Ikana Canyon Ledge", "Ikana Castle Pillar"
-];
-
-var PeekableItemLocationsEaster = [
-	"Clock Tower Entrance", "North Clock Town Tree", "Clock Town Map Purchase", "Bomb Bag Purchase", "Big Bomb Bag Purchase", 
-	"All-Night Mask Purchase", "Milk Bar Milk", "Milk Bar Chateau", "Astronomy Telescope", "Business Scrub Purchase", "Bio Baba Grotto", 
-	"Woodfall Map Purchase", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Tourist Center Roof", "Deku Palace West Garden", 
-	"Romani Ranch Map Purchase", "Great Bay Map Purchase", "Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", 
-	"Goron Shop Red Potion", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Path to Snowhead Pillar", "Stone Tower Map Purchase", 
-	"Great Bay Coast Ledge", "Zora Cape Like-Like", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
 	"Lulu's Room Ledge", "Pirates' Fortress Cage", "Ikana Canyon Ledge", "Ikana Castle Pillar",
 	
-	"Kafei", "Curiosity Shop Man #1", "Postman's Freedom Reward", "Swamp Spider House Reward", "Hungry Goron"
+	"Kafei", "Curiosity Shop Man #1", "Postman's Freedom Reward", "Swamp Spider House Reward", "Hungry Goron",
+	"Mountain Smithy Day 1", "Mountain Smithy Day 2"
 ];
