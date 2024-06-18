@@ -160,7 +160,7 @@ function update_item_logic() {
 		Has.great_bay_clear = Has.gbt_access && Has.shoot_ice_arrow; 
 
 		// Ikana area shortcuts
-		Has.east_access = Has.eponas_song || (Has.goron_mask && Has.bomb);
+		Has.east_access = Has.eponas_song || Has.goron_mask;
 		Has.lower_ikana_access = Has.east_access && (Has.garo_mask || Has.gibdo_mask) && Has.hookshot;
 		Has.upper_ikana_access = Has.lower_ikana_access;
 		Has.stt_access = Has.upper_ikana_access && Has.elegy && (Has.goron_mask || Has.zora_mask);
