@@ -68,6 +68,9 @@ var checkSummaryText = [
 var SingleItems = [
 	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "mirror_shield", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
+var NonprogressiveItems = [
+	"bow", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "mirror_shield", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
+];
 var SongItems = [
 	"Starting Song", "Skull Kid Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue"
 ];
@@ -213,7 +216,7 @@ for (var i = 0; i < Locations.length; i++) {
 	elem.id = "text_" + Locations[i]; 
 	elem.className = "check_text"; 
 	if(SongItems.indexOf(Locations[i]) < 0)
-		elem.onmousedown = junk; 
+		elem.onmousedown = click_check; 
 	else
 		elem.onmousedown = function() {clickSummary(this);};
 	elem.innerHTML = Names[i]; 
@@ -367,6 +370,13 @@ for (var i = 0; i < Items.length; i++) {
 	Known[Items[i]] = false;
 }
 
+for (var i = 0; i < Locations.length; i++) {
+	Location_Logic[Locations[i]] = false;
+	Location_Peek[Locations[i]] = false;
+	Check[Locations[i]] = "unknown";
+	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
+}
+
 var simActive = false;
 var SpoilerLines = [];
 var SpoilerLocToItem = {};
@@ -375,13 +385,6 @@ var simWothsEntered = {};
 var simWothCounter = 1;
 var simBarrensEntered = {};
 var simBarrenCounter = 1;
-
-for (var i = 0; i < Locations.length; i++) {
-	Location_Logic[Locations[i]] = false;
-	Location_Peek[Locations[i]] = false;
-	Check[Locations[i]] = "unknown";
-	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
-}
 
 Game.sword1_img = "./images/Kokiri Sword.png";
 Game.sword2_img = "./images/Razor Sword.png";
@@ -411,6 +414,7 @@ window.onclick = function(event) {
   }
 }
 
+// Confirm leaving the page
 window.onbeforeunload = popup;
 function popup() {
   return '';

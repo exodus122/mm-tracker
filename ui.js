@@ -128,14 +128,14 @@ function update_check_display() {
 		if (Locations[i] == "Fisherman Pictograph") {continue;}
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_skip_checks_wft.includes(Locations[i])) {Check["Woodfall Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_skip_checks_sht.includes(Locations[i])) {Check["Snowhead Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_skip_checks_gbt.includes(Locations[i])) {Check["Great Bay Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_skip_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "EASTER" && easter_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && blitz_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_disabled_checks_wft.includes(Locations[i])) {Check["Woodfall Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_disabled_checks_sht.includes(Locations[i])) {Check["Snowhead Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_disabled_checks_gbt.includes(Locations[i])) {Check["Great Bay Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_disabled_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "S3" && s3_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S4" && s4_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "EASTER" && easter_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
@@ -287,7 +287,7 @@ function click_remains(x) {
 	}
 }
 
-function junk() {
+function click_check() {
 	var type = event.button;
 	var str = event.target.id;
 	var str = str.substring('text_'.length);
@@ -420,17 +420,6 @@ function junk() {
 }	
 
 function handle_item_highlights() {
-var temp_img = document.getElementById("bomb1_img");
-	if(Game.bomb)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bow1_img");
-	if(Game.bow)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("sword1_img");
 	if(Game.gilded_sword) {
@@ -470,52 +459,14 @@ var temp_img = document.getElementById("bomb1_img");
 	else
 		temp_img.style.opacity =.2;
 	
-	var temp_img = document.getElementById("bottle1_img");
-	if (Game.bottle1)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
+	for(var i = 0; i < NonprogressiveItems.length; i++) {
+		var temp_img = document.getElementById(NonprogressiveItems[i]+"_img");
+		if(Game[NonprogressiveItems[i]])
+			temp_img.style.opacity =1;
+		else
+			temp_img.style.opacity =.2;
+	}
 	
-	var temp_img = document.getElementById("bottle2_img");
-	if (Game.bottle2)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle3_img");
-	if (Game.bottle3)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle4_img");
-	if (Game.bottle4)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle5_img");
-	if (Game.bottle5)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("magic_bean1_img");
-	if(Game.magic_bean)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("ocarina_img");
-	temp_img.style.opacity =1;
-	
-	var temp_img = document.getElementById("song_of_time_img");
-	temp_img.style.opacity =1;
-	
-	var temp_img = document.getElementById("song_of_soaring_img");
-	temp_img.style.opacity =1;
-	
-	// boss remains
 	var temp_img = document.getElementById("odolwasremains_img");
 	if(Check["Woodfall Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
@@ -539,14 +490,6 @@ var temp_img = document.getElementById("bomb1_img");
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
-	
-	for(var i = 0; i < SingleItems.length; i++) {
-		var temp_img = document.getElementById(SingleItems[i]+"_img");
-		if(Game[SingleItems[i]])
-			temp_img.style.opacity =1;
-		else
-			temp_img.style.opacity =.2;
-	}
 }
 
 function update_summary_text() {

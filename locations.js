@@ -226,7 +226,7 @@ var Names = [
 	"Start", "Skull Kid", "Palace", "Swamp", "Warp", "Ranch", "Goron", "Eggs", "Grave1", "Castle"
 ];
 
-var blitz_skip_checks = [
+var blitz_disabled_checks = [
 	"Powder Keg Challenge", "Goron Race", "Fisherman Game", "Boat Archery", "Aliens Defense", "Cremia", "Gossip Stones", "Seahorses", 
 	"Bank Reward #2", "Bank Reward #3", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
 	"Ocean Spider House Day 1 Reward", "Ocean Spider House Chest", "Kamaro", "Beaver Race #1", "Beaver Race #2", 
@@ -237,22 +237,22 @@ var blitz_skip_checks = [
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	"Swamp Archery #2", "Curiosity Shop Man #2"
 ];
-var blitz_skip_checks_wft = [
+var blitz_disabled_checks_wft = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", 
 	"Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Woodfall Heart Container", 
 ];
-var blitz_skip_checks_sht = [
+var blitz_disabled_checks_sht = [
 	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", 
 	"Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", 
 	"Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Snowhead Heart Container", 
 	"Mountain Waterfall Chest", "Mountain Spring Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race"
 ];
-var blitz_skip_checks_gbt = [
+var blitz_disabled_checks_gbt = [
 	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", 
 	"Great Bay Small Key Chest", "Great Bay Boss Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", 
 	"Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Great Bay Heart Container"
 ];
-var blitz_skip_checks_stt = [
+var blitz_disabled_checks_stt = [
 	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", 
 	"Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", 
 	"Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", 
@@ -261,12 +261,12 @@ var blitz_skip_checks_stt = [
 	"Stone Tower Boss Key Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Stone Tower Heart Container"
 ];
 
-var s3_skip_checks = [
+var s3_disabled_checks = [
 	"Swamp Music Statue", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", 
 	"Stone Tower Boss Key Chest", "Swamp Archery #2"
 ];
 
-var s4_skip_checks = [
+var s4_disabled_checks = [
 	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
 	
@@ -288,7 +288,7 @@ var s4_skip_checks = [
 ];
 
 
-var easter_skip_checks = [
+var easter_disabled_checks = [
 	"Swamp Music Statue", "Skull Kid Song", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Swamp Archery #2", 
 	"Curiosity Shop Man #2",

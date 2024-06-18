@@ -1,6 +1,13 @@
 /*
-Toggled tricks:
 
+Starting Items:
+-Kokiri Sword
+-Hero's Shield
+-Ocarina of Time
+-Song of Time
+-Song of Soaring
+
+Toggled tricks:
 -Exit Ocean Spider House without Goron
 -Lensless Chests
 -Lensless Walking
@@ -15,7 +22,6 @@ Toggled tricks:
 */
 
 function update_item_logic() {
-	// Assumes you start with Kokiri Sword, Hero's Shield, Ocarina of Time, Song of Time, Song of Soaring
 	
 	// Progressive Swords
 	if(Known.sword1 == true) {Logic.sword1 = Location_Logic[ItemLocation.sword1];} 
@@ -35,13 +41,13 @@ function update_item_logic() {
 	Logic.adults_wallet = Logic.wallet1 || Logic.wallet2;
 	Logic.giants_wallet = Logic.wallet1 && Logic.wallet2;
 	
-	// Progressive Bows
+	// Bows
 	if(Known.bow1 == true) {Logic.bow1 = Location_Logic[ItemLocation.bow1];} 
 	if(Known.bow2 == true) {Logic.bow2 = Location_Logic[ItemLocation.bow2];}
 	if(Known.bow3 == true) {Logic.bow3 = Location_Logic[ItemLocation.bow3];}
 	Logic.bow = Logic.bow1 || Logic.bow2 || Logic.bow3;
 	
-	// Progressive Bomb Bags
+	// Bomb Bags
 	if(Known.bomb1 == true) {Logic.bomb1 = Location_Logic[ItemLocation.bomb1];} 
 	if(Known.bomb2 == true) {Logic.bomb2 = Location_Logic[ItemLocation.bomb2];}
 	if(Known.bomb3 == true) {Logic.bomb3 = Location_Logic[ItemLocation.bomb3];}
