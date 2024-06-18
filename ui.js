@@ -265,6 +265,7 @@ function highlight(x) {
 		x.style.opacity =1;
 	}
 	
+	Update();
 }
 
 function click_remains(x) {
@@ -460,7 +461,7 @@ function handle_item_highlights() {
 		temp_img.style.opacity =.2;
 	
 	for(var i = 0; i < NonprogressiveItems.length; i++) {
-		var temp_img = document.getElementById(NonprogressiveItems[i]+"_img");
+		var temp_img = document.getElementById(NonprogressiveItems2[i]+"_img");
 		if(Game[NonprogressiveItems[i]])
 			temp_img.style.opacity =1;
 		else
