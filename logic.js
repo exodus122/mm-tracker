@@ -1,9 +1,17 @@
 /*
 Toggled tricks:
 
+-Exit Ocean Spider House without Goron
 -Lensless Chests
--Run Through Poisoned Water
+-Lensless Walking
+-Lensless Walls/Ceilings
 -Pinnacle Rock without Seahorse
+-Run Through Poisoned Water
+-Quest Item Extra Storage
+-Scarecrow's Song
+-Take Damage
+-WFT 2nd Floor Skip
+
 */
 
 function update_item_logic() {
@@ -65,6 +73,7 @@ function update_item_logic() {
 	Logic.shoot_fire_arrow = Logic.bow && Logic.fire_arrow && Logic.magic;
 	Logic.shoot_ice_arrow = Logic.bow && Logic.ice_arrow && Logic.magic;
 	Logic.shoot_light_arrow = Logic.bow && Logic.light_arrow && Logic.magic;
+	Logic.shoot_deku_bubble = Logic.deku_mask && Logic.magic;
 	Logic.water_for_magic_bean = Logic.any_bottle || Logic.song_of_storms;
 	Logic.night_inn_access = Logic.deku_mask || Logic.room_key;
 	
@@ -127,6 +136,7 @@ function update_item_logic() {
 		Has.shoot_fire_arrow = Has.bow && Has.fire_arrow && Has.magic;
 		Has.shoot_ice_arrow = Has.bow && Has.ice_arrow && Has.magic;
 		Has.shoot_light_arrow = Has.bow && Has.light_arrow && Has.magic;
+		Has.shoot_deku_bubble = Has.deku_mask && Has.magic;
 		Has.water_for_magic_bean = Has.any_bottle || Has.song_of_storms;
 		Has.night_inn_access = Has.deku_mask || Has.room_key || Has.explosive || Has.bow || Has.hookshot || Has.zora_mask;
 		
@@ -176,8 +186,8 @@ function update_location_logic() {
 	Location_Logic["Postbox"] = Logic.postmans_hat;
 		
 	// North Clock Town
-	Location_Logic["Bombers' Hide and Seek"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
-	Location_Logic["Clock Town Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
+	Location_Logic["Bombers' Hide and Seek"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
+	Location_Logic["Clock Town Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
 	Location_Logic["Deku Playground Any Day"] = Logic.deku_mask;
 	Location_Logic["Keaton Quiz"] = Logic.keaton_mask;
 	Location_Logic["North Clock Town Tree"] = true;
@@ -206,7 +216,7 @@ function update_location_logic() {
 	Location_Logic["Bombers' Hideout Chest"] = Logic.explosive && (Logic.deku_mask || Logic.zora_mask || Logic.bow || Logic.hookshot);
 	Location_Logic["East Clock Town Chest"] = true;
 	Location_Logic["Gorman"] = Logic.deku_mask && Logic.goron_mask && Logic.zora_mask && Logic.romani_mask;
-	Location_Logic["Honey and Darling Any Day"] = Logic.bow || Logic.bomb || (Logic.deku_mask && Logic.magic);
+	Location_Logic["Honey and Darling Any Day"] = Logic.bow || Logic.bomb || Logic.shoot_deku_bubble;
 	Location_Logic["Madame Aroma in Bar"] = Logic.special_delivery && Logic.kafei_mask;
 	Location_Logic["Madame Aroma in Office"] = true;
 	Location_Logic["Mayor"] = Logic.couples_mask;
@@ -243,9 +253,9 @@ function update_location_logic() {
 	Location_Logic["Swamp Archery #1"] = Logic.bow;
 	Location_Logic["Swamp Archery #2"] = Logic.bow;
 	Location_Logic["Path to Swamp Grotto"] = true;
-	Location_Logic["Path to Swamp Tree"] = (Logic.deku_mask && Logic.magic) || Logic.bow || Logic.hookshot || Logic.zora_mask;
-	Location_Logic["Woodfall Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
-	Location_Logic["Snowhead Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
+	Location_Logic["Path to Swamp Tree"] = Logic.shoot_deku_bubble || Logic.bow || Logic.hookshot || Logic.zora_mask;
+	Location_Logic["Woodfall Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
+	Location_Logic["Snowhead Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
 		
 	// Southern Swamp
 	Location_Logic["Koume"] = Logic.any_bottle;
@@ -254,7 +264,7 @@ function update_location_logic() {
 	Location_Logic["Pictograph Contest Winner"] = Logic.pictobox;
 	Location_Logic["Boat Archery"] = Logic.woodfall_clear && Logic.any_bottle; 
 	
-	Location_Logic["Swamp Spider House Reward"] = Logic.poison_swamp_access && (Logic.hookshot || Logic.zora_mask || (Logic.deku_mask && (Logic.bow || Logic.magic || Logic.bomb))) && (Logic.hookshot || Logic.zora_mask || (Logic.deku_mask && Logic.water_for_magic_bean)) && Logic.any_bottle && (Logic.hookshot || Logic.zora_mask || (Logic.water_for_magic_bean && Logic.any_magic_bean && (Logic.goron_mask || Logic.explosive))) && (Logic.hookshot || Logic.zora_mask || Logic.bow || (Logic.deku_mask && Logic.magic));
+	Location_Logic["Swamp Spider House Reward"] = Logic.poison_swamp_access && (Logic.hookshot || Logic.zora_mask || (Logic.deku_mask && (Logic.bow || Logic.magic || Logic.bomb))) && (Logic.hookshot || Logic.zora_mask || (Logic.deku_mask && Logic.water_for_magic_bean)) && Logic.any_bottle && (Logic.hookshot || Logic.zora_mask || (Logic.water_for_magic_bean && Logic.any_magic_bean && (Logic.goron_mask || Logic.explosive))) && (Logic.hookshot || Logic.zora_mask || Logic.bow || Logic.shoot_deku_bubble);
 	// can get without hookshot or zora mask with beans: https://www.twitch.tv/videos/1032053901
 	
 	Location_Logic["Near Swamp Spider House Grotto"] = Logic.poison_swamp_access && (Logic.deku_mask || Logic.zora_mask);
@@ -274,8 +284,8 @@ function update_location_logic() {
 		
 	// Milk Road
 	Location_Logic["Gorman Bros Race"] = Logic.eponas_song;
-	Location_Logic["Romani Ranch Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
-	Location_Logic["Great Bay Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
+	Location_Logic["Romani Ranch Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
+	Location_Logic["Great Bay Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
 	Location_Logic["Gorman Bros Milk Purchase"] = true;
 	
 	// Romani Ranch
@@ -361,7 +371,7 @@ function update_location_logic() {
 	Location_Logic["Pirates' Fortress Cage"] = Logic.west_access && Logic.zora_mask && Logic.goron_mask;
 		
 	// Pirates' Fortress Interior
-	Location_Logic["Hookshot Chest"] = Logic.west_access && Logic.zora_mask && ((Logic.bow || (Logic.deku_mask && Logic.magic)) && (Logic.goron_mask || Logic.hookshot));
+	Location_Logic["Hookshot Chest"] = Logic.west_access && Logic.zora_mask && ((Logic.bow || Logic.shoot_deku_bubble) && (Logic.goron_mask || Logic.hookshot));
 	Location_Logic["Pirates' Fortress Interior Lower Chest"] = Logic.west_access && Logic.zora_mask && (Logic.goron_mask || Logic.hookshot);
 	Location_Logic["Pirates' Fortress Interior Upper Chest"] = Logic.west_access && Logic.zora_mask && Logic.hookshot;
 	Location_Logic["Pirates' Fortress Interior Tank Chest"] = Logic.west_access && Logic.zora_mask && Logic.hookshot;
@@ -490,9 +500,9 @@ function update_location_logic() {
 	Location_Logic["Imprisoned Monkey"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Swamp Music Statue"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Baby Goron"] = Logic.north_access && Logic.goron_mask;
-	Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && Logic.hookshot && Logic.zora_mask && ((Logic.deku_mask && Logic.magic) || Logic.bow);
+	Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && Logic.hookshot && (Logic.shoot_deku_bubble || Logic.bow);
 	Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask && Logic.lens));
-	Location_Logic["Skull Kid Song"] = (Logic.deku_mask && Logic.magic) || Logic.bow || Logic.zora_mask || Logic.hookshot;
+	Location_Logic["Skull Kid Song"] = Logic.shoot_deku_bubble || Logic.bow || Logic.zora_mask || Logic.hookshot;
 	
 	
 	for(let i = 0, Access = Location_Access, Has = Game; i < 2; i++) {
@@ -504,7 +514,7 @@ function update_location_logic() {
 		Access["Postbox"] = Has.postmans_hat;
 			
 		// North Clock Town
-		Access["Bombers' Hide and Seek"] = (Has.deku_mask && Has.magic) || Has.zora_mask || Has.bow || Has.hookshot;
+		Access["Bombers' Hide and Seek"] = Has.shoot_deku_bubble || Has.zora_mask || Has.bow || Has.hookshot;
 		Access["Clock Town Map Purchase"] = true;
 		Access["Deku Playground Any Day"] = Has.deku_mask;
 		Access["Keaton Quiz"] = Has.keaton_mask;
@@ -534,7 +544,7 @@ function update_location_logic() {
 		Access["Bombers' Hideout Chest"] = Has.explosive;
 		Access["East Clock Town Chest"] = true;
 		Access["Gorman"] = Has.deku_mask && Has.goron_mask && Has.zora_mask && Has.romani_mask;
-		Access["Honey and Darling Any Day"] = Has.bow || Has.bomb || (Has.deku_mask && Has.magic);
+		Access["Honey and Darling Any Day"] = Has.bow || Has.bomb || Has.shoot_deku_bubble;
 		Access["Madame Aroma in Bar"] = Has.special_delivery && Has.kafei_mask;
 		Access["Madame Aroma in Office"] = true;
 		Access["Mayor"] = Has.couples_mask;
@@ -574,7 +584,7 @@ function update_location_logic() {
 		Access["Path to Swamp Grotto"] = true;
 		Access["Path to Swamp Tree"] = true;
 		Access["Woodfall Map Purchase"] = true;
-		Access["Snowhead Map Purchase"] = (Has.deku_mask && Has.magic) || Has.zora_mask || Has.bow || Has.hookshot;
+		Access["Snowhead Map Purchase"] = Has.shoot_deku_bubble || Has.zora_mask || Has.bow || Has.hookshot;
 			
 		// Southern Swamp
 		Access["Koume"] = Has.any_bottle;
@@ -583,7 +593,7 @@ function update_location_logic() {
 		Access["Pictograph Contest Winner"] = Has.pictobox;
 		Access["Boat Archery"] = Has.woodfall_clear && Has.any_bottle; 
 		
-		Access["Swamp Spider House Reward"] = Has.poison_swamp_access && (Has.hookshot || Has.zora_mask || (Has.deku_mask && (Has.bow || Has.magic || Has.bomb))) && (Has.hookshot || Has.zora_mask || (Has.deku_mask && Has.water_for_magic_bean)) && Has.any_bottle && (Has.hookshot || Has.zora_mask || (Has.water_for_magic_bean && Has.any_magic_bean && (Has.goron_mask || Has.explosive))) && (Has.hookshot || Has.zora_mask || Has.bow || (Has.deku_mask && Has.magic));
+		Access["Swamp Spider House Reward"] = Has.poison_swamp_access && (Has.hookshot || Has.zora_mask || (Has.deku_mask && (Has.bow || Has.magic || Has.bomb))) && (Has.hookshot || Has.zora_mask || (Has.deku_mask && Has.water_for_magic_bean)) && Has.any_bottle && (Has.hookshot || Has.zora_mask || (Has.water_for_magic_bean && Has.any_magic_bean && (Has.goron_mask || Has.explosive))) && (Has.hookshot || Has.zora_mask || Has.bow || Has.shoot_deku_bubble);
 		
 		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access && (Has.deku_mask || Has.zora_mask);
 		Access["Mystery Woods Grotto"] = true;
@@ -603,8 +613,8 @@ function update_location_logic() {
 		// Milk Road
 		Access["Gorman Bros Milk Purchase"] = true;
 		Access["Gorman Bros Race"] = Has.eponas_song;
-		Access["Romani Ranch Map Purchase"] = (Has.deku_mask && Has.magic) || Has.zora_mask || Has.bow || Has.hookshot;
-		Access["Great Bay Map Purchase"] = (Has.deku_mask && Has.magic) || Has.zora_mask || Has.bow || Has.hookshot;
+		Access["Romani Ranch Map Purchase"] = Has.shoot_deku_bubble || Has.zora_mask || Has.bow || Has.hookshot;
+		Access["Great Bay Map Purchase"] = Has.shoot_deku_bubble || Has.zora_mask || Has.bow || Has.hookshot;
 			
 		// Romani Ranch
 		Access["Aliens Defense"] = Has.goron_mask && Has.powder_keg && Has.bow;
@@ -686,7 +696,7 @@ function update_location_logic() {
 		Access["Pirates' Fortress Cage"] = Has.west_access && Has.zora_mask && Has.goron_mask;
 			
 		// Pirates' Fortress Interior
-		Access["Hookshot Chest"] = Has.west_access && Has.zora_mask && ((Has.bow || (Has.deku_mask && Has.magic)) && (Has.goron_mask || Has.hookshot));
+		Access["Hookshot Chest"] = Has.west_access && Has.zora_mask && ((Has.bow || Has.shoot_deku_bubble) && (Has.goron_mask || Has.hookshot));
 		Access["Pirates' Fortress Interior Lower Chest"] = Has.west_access && Has.zora_mask && (Has.goron_mask || Has.hookshot);
 		Access["Pirates' Fortress Interior Upper Chest"] = Has.west_access && Has.zora_mask && Has.hookshot;
 		Access["Pirates' Fortress Interior Tank Chest"] = Has.west_access && Has.zora_mask && Has.hookshot;
@@ -822,9 +832,9 @@ function update_location_logic() {
 		Access["Imprisoned Monkey"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Swamp Music Statue"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Baby Goron"] = Has.north_access && Has.goron_mask;
-		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && Has.hookshot && Has.zora_mask && ((Has.deku_mask && Has.magic) || Has.bow);
+		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && Has.hookshot && (Has.shoot_deku_bubble || Has.bow);
 		Access["Ikana King"] = Has.upper_ikana_access && Has.shoot_fire_arrow && Has.mirror_shield && (Has.shoot_light_arrow || ((Has.deku_mask || Has.zora_mask) && Has.powder_keg && Has.goron_mask));
-		Access["Skull Kid Song"] = (Has.deku_mask && Has.magic) || Has.bow || Has.zora_mask || Has.hookshot || Has.bomb || Has.blast_mask;
+		Access["Skull Kid Song"] = Has.shoot_deku_bubble || Has.bow || Has.zora_mask || Has.hookshot || Has.bomb || Has.blast_mask;
 	
 		Access = Location_Could_Access;
 		Has = CouldHave;
@@ -839,7 +849,7 @@ function update_location_logic() {
 		Peek["All-Night Mask Purchase"] = true;
 		Peek["Milk Bar Chateau"] = Has.romani_mask;
 		Peek["Business Scrub Purchase"] = true;
-		Peek["Bio Baba Grotto"] = (Has.zora_mask || Has.hookshot || Has.bow || (Has.deku_mask && Has.magic)) && (Has.explosive || Has.goron_mask);
+		Peek["Bio Baba Grotto"] = (Has.zora_mask || Has.hookshot || Has.bow || Has.shoot_deku_bubble) && (Has.explosive || Has.goron_mask);
 		Peek["Swamp Tourist Center Roof"] = true;
 		Peek["Hungry Goron"] = Has.north_access && Has.goron_mask && Has.magic;
 		Peek["Biggest Bomb Bag Purchase"] = Has.north_access && (Has.goron_mask || Has.deku_mask);
