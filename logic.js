@@ -702,11 +702,11 @@ function update_location_logic() {
 		Access["Pirates' Fortress Cage"] = Has.west_access && Has.zora_mask && Has.goron_mask;
 			
 		// Pirates' Fortress Interior
-		Access["Hookshot Chest"] = Has.west_access && Has.zora_mask && ((Has.bow || Has.shoot_deku_bubble) && (Has.goron_mask || Has.hookshot));
+		Access["Hookshot Chest"] = Has.west_access && Has.zora_mask && (Has.goron_mask || Has.hookshot) && (Has.bow || Has.shoot_deku_bubble);
 		Access["Pirates' Fortress Interior Lower Chest"] = Has.west_access && Has.zora_mask && (Has.goron_mask || Has.hookshot);
 		Access["Pirates' Fortress Interior Upper Chest"] = Has.west_access && Has.zora_mask && Has.hookshot;
 		Access["Pirates' Fortress Interior Tank Chest"] = Has.west_access && Has.zora_mask && Has.hookshot;
-		Access["Pirates' Fortress Interior Guard Room Chest"] = Has.west_access && Has.zora_mask;
+		Access["Pirates' Fortress Interior Guard Room Chest"] = Has.west_access && Has.zora_mask && (Has.goron_mask || Has.hookshot);
 			
 		// Pinnacle Rock
 		Access["Seahorses"] = Has.west_access && Has.zora_mask && Has.any_bottle && Has.pictobox;
