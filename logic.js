@@ -85,8 +85,8 @@ function update_item_logic() {
 	
 	// Swamp area shortcuts
 	Logic.poison_swamp_access = Logic.zora_mask || (Logic.deku_mask && (Logic.hookshot || Logic.bow || Logic.pictobox || Logic.any_bottle));
-	Logic.limitless_magic_beans = Logic.poison_swamp_access && Logic.deku_mask;
-	Logic.any_magic_bean = (Logic.poison_swamp_access && Logic.deku_mask) || Logic.magic_bean; 
+	Logic.can_buy_beans = Logic.poison_swamp_access && Logic.deku_mask;
+	Logic.any_magic_bean = Logic.can_buy_beans || Logic.magic_bean; 
 	Logic.wft_access = Logic.poison_swamp_access && Logic.deku_mask && Logic.sonata;
 	Logic.woodfall_clear = Logic.wft_access && Logic.bow; 
 	
@@ -146,8 +146,8 @@ function update_item_logic() {
 		
 		// Swamp area shortcuts
 		Has.poison_swamp_access = Has.zora_mask || (Has.deku_mask && (Has.hookshot || Has.bow || Has.pictobox || Has.any_bottle || Has.goron_mask));
-		Has.limitless_magic_beans = Has.poison_swamp_access && Has.deku_mask;
-		Has.any_magic_bean = (Has.poison_swamp_access && Has.deku_mask) || Has.magic_bean; 
+		Has.can_buy_beans = Has.poison_swamp_access && Has.deku_mask;
+		Has.any_magic_bean = Has.can_buy_beans || Has.magic_bean; 
 		Has.wft_access = Has.poison_swamp_access && Has.deku_mask && Has.sonata;
 		Has.woodfall_clear = Has.wft_access && Has.bow; 
 		
@@ -267,9 +267,9 @@ function update_location_logic() {
 	Location_Logic["Swamp Tourist Center Roof"] = Logic.deku_mask && Logic.land_title_deed;
 	Location_Logic["Pictograph Contest Winner"] = Logic.pictobox;
 	Location_Logic["Boat Archery"] = Logic.woodfall_clear && Logic.any_bottle; 
-	Location_Logic["Near Swamp Spider House Grotto"] = Logic.poison_swamp_access && (Logic.deku_mask || Logic.zora_mask);
-	Location_Logic["Swamp Spider House Reward"] = Logic.any_bottle && (Logic.zora_mask || (Logic.deku_mask && (Logic.hookshot || ((Logic.explosive || Logic.goron_mask) && (Logic.bow || Logic.magic))))); 
-	// can get without hookshot or zora mask with beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
+	Location_Logic["Near Swamp Spider House Grotto"] = Logic.poison_swamp_access;
+	Location_Logic["Swamp Spider House Reward"] = Logic.poison_swamp_access && Logic.any_bottle && (Logic.zora_mask || (Logic.deku_mask && (Logic.hookshot || ((Logic.explosive || Logic.goron_mask) && (Logic.bow || Logic.magic))))); 
+	// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
 		
 	// Deku Palace
 	Location_Logic["Bean Man"] = Logic.poison_swamp_access && Logic.deku_mask;
@@ -411,9 +411,9 @@ function update_location_logic() {
 	// Beneath the Well 
 	Location_Logic["Mirror Shield Chest"] = Logic.upper_ikana_access && (
 		(Logic.shoot_fire_arrow && Logic.shoot_light_arrow) // from castle, have fire arrows
-		|| (Logic.gibdo_mask && Logic.any_milk && Logic.bomb && (Logic.bow || Logic.zora_mask) && (Logic.limitless_magic_beans || Logic.shoot_light_arrow))
+		|| (Logic.gibdo_mask && Logic.any_milk && Logic.bomb && (Logic.bow || Logic.zora_mask) && (Logic.can_buy_beans || Logic.shoot_light_arrow))
 	);
-	Location_Logic["Well Right Path Chest"] = Logic.upper_ikana_access && Logic.gibdo_mask && Logic.any_bottle && (Logic.shoot_light_arrow || Logic.limitless_magic_beans);
+	Location_Logic["Well Right Path Chest"] = Logic.upper_ikana_access && Logic.gibdo_mask && Logic.any_bottle && (Logic.shoot_light_arrow || Logic.can_buy_beans);
 	Location_Logic["Well Left Path Chest"] = Logic.upper_ikana_access && Logic.gibdo_mask && Logic.any_blue_potion;
 		
 	// Ikana Castle
@@ -597,8 +597,9 @@ function update_location_logic() {
 		Access["Swamp Tourist Center Roof"] = Has.goron_mask || (Has.deku_mask && Has.land_title_deed);
 		Access["Pictograph Contest Winner"] = Has.pictobox;
 		Access["Boat Archery"] = Has.woodfall_clear && Has.any_bottle;
-		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access && (Has.deku_mask || Has.zora_mask);
-		Access["Swamp Spider House Reward"] = Has.any_bottle && (Has.zora_mask || (Has.deku_mask && (Has.hookshot || ((Has.explosive || Has.goron_mask) && (Has.bow || Has.magic))))); 
+		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access;
+		Access["Swamp Spider House Reward"] = Has.poison_swamp_access && Has.any_bottle && (Has.zora_mask || (Has.deku_mask && (Has.hookshot || ((Has.explosive || Has.goron_mask) && (Has.bow || Has.magic))))); 
+		// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
 			
 		// Deku Palace
 		Access["Bean Man"] = Has.poison_swamp_access && Has.deku_mask;
@@ -737,9 +738,9 @@ function update_location_logic() {
 		// Beneath the Well 
 		Access["Mirror Shield Chest"] = Has.upper_ikana_access && (
 			(Has.shoot_fire_arrow && Has.shoot_light_arrow) // from castle, have fire arrows
-			|| (Has.gibdo_mask && Has.bomb && Has.any_milk && (Has.limitless_magic_beans || Has.shoot_light_arrow))
+			|| (Has.gibdo_mask && Has.bomb && Has.any_milk && (Has.can_buy_beans || Has.shoot_light_arrow))
 		);
-		Access["Well Right Path Chest"] =  Has.upper_ikana_access && Has.gibdo_mask && Has.any_bottle && (Has.limitless_magic_beans || Has.shoot_light_arrow);
+		Access["Well Right Path Chest"] =  Has.upper_ikana_access && Has.gibdo_mask && Has.any_bottle && (Has.can_buy_beans || Has.shoot_light_arrow);
 		Access["Well Left Path Chest"] = Has.upper_ikana_access && Has.gibdo_mask && Has.any_blue_potion;
 			
 		// Ikana Castle
@@ -858,7 +859,7 @@ function update_location_logic() {
 		Peek["Kafei"] = true;
 		Peek["Curiosity Shop Man #1"] = true;
 		Peek["Postman's Freedom Reward"] = true;
-		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access && (Has.deku_mask || Has.zora_mask);
+		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access;
 		Peek["Hungry Goron"] = Has.north_access;
 		
 		Peek = Location_Could_Peek;
