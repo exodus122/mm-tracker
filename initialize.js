@@ -37,11 +37,11 @@ var areaInputs = [
 	"can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
 ];
 var AreaImages = [
-	"start.jpg", "", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
+	"sct.png", "", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
 	"milkroad2.png", "ranch.jpg", "mountainvillage.png", "twinislands.png", "goronvillage.png",
 	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", 
-	"pinnacle.png", "roadikana.jpg", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png", 
+	"pinnacle.png", "ikana.png", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png", 
 	"stonetower.png"
 ];
 
