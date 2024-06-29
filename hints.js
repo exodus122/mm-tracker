@@ -364,7 +364,7 @@ function woth_and_barren_processing() {
 	}
 	
 	// process barren hints
-	for (var i = 1; i <= AreaNames.length; i++) {
+	for (var i = 2; i <= AreaNames.length; i++) {
 		
 		if (Area[i] == "barren" || Area[i] == "barren_except_song") {
 			

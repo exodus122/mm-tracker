@@ -8,7 +8,7 @@ function readLog() {
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("gossips_option").value = "ON";
 	
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER")
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER")
 		document.getElementById("Starting Song").value = "epo";
 	
 	for(i = 0; i < SpoilerLines.length; i++) {
@@ -23,7 +23,7 @@ function readLog() {
 			}
 		}
 	}
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER")
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER")
 		SpoilerLocToItem["Starting Song"] = "Epona's Song";
 }
 function onChooseFile(event, onLoadFileHandler) {

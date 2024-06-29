@@ -1,4 +1,7 @@
 var Locations = [
+	// Starting Item
+	"Starting Item",
+	
 	// South Clock Town
 	"Clock Tower Entrance", "South Clock Town Straw Roof Chest", "Clock Town Scrub Trade", "Postbox", "South Clock Town Final Day Chest", 
 	
@@ -114,6 +117,9 @@ var Locations = [
 ];
 	
 var Names = [
+	// Starting Item
+	"Start",
+	
 	// South Clock Town
 	"Ledge", "Straw", "Deed", "Mailbox", "Tower", 
 	
@@ -235,7 +241,7 @@ var blitz_disabled_checks = [
 	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
 	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song", 
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
-	"Swamp Archery #2", "Curiosity Shop Man #2"
+	"Swamp Archery #2", "Curiosity Shop Man #2", "Starting Item"
 ];
 var blitz_disabled_checks_wft = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", 
@@ -263,12 +269,12 @@ var blitz_disabled_checks_stt = [
 
 var s3_disabled_checks = [
 	"Swamp Music Statue", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", 
-	"Stone Tower Boss Key Chest", "Swamp Archery #2"
+	"Stone Tower Boss Key Chest", "Swamp Archery #2", "Starting Item"
 ];
 
 var s4_disabled_checks = [
 	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
-	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
+	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Starting Item",
 	
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	
@@ -284,14 +290,36 @@ var s4_disabled_checks = [
 	"Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", 
 	"Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
 	
-	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe", 
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
+];
+
+var s5_disabled_checks = [
+	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
+	"Swamp Archery #2", "Curiosity Shop Man #2", 
+	
+	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
+	
+	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", 
+	
+	"Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", 
+	"Snowhead Main Room Wall", "Snowhead Basement", 
+	
+	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Bio Babas", "Great Bay Waterwheel Room Upper", 
+	"Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", 
+	
+	"Stone Tower Statue Eye",  "Stone Tower Underwater", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", 
+	"Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", 
+	"Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
+	
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
 ];
 
 
 var easter_disabled_checks = [
 	"Swamp Music Statue", "Skull Kid Song", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Swamp Archery #2", 
-	"Curiosity Shop Man #2",
+	"Curiosity Shop Man #2", "Starting Item",
 	
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	
@@ -307,7 +335,7 @@ var easter_disabled_checks = [
 	"Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", 
 	"Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
 	
-	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe", 
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
 ];
 
 var PeekableItemLocations = [

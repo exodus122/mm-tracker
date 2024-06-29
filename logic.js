@@ -180,6 +180,9 @@ function update_item_logic() {
 
 function update_location_logic() {
 	
+	// Starting Item
+	Location_Logic["Starting Item"] = true;
+	
 	// South Clock Town
 	Location_Logic["Clock Tower Entrance"] = true;
 	Location_Logic["South Clock Town Straw Roof Chest"] = Logic.hookshot || (Logic.deku_mask && Logic.moons_tear);
@@ -267,7 +270,7 @@ function update_location_logic() {
 	Location_Logic["Swamp Tourist Center Roof"] = Logic.deku_mask && Logic.land_title_deed;
 	Location_Logic["Pictograph Contest Winner"] = Logic.pictobox;
 	Location_Logic["Boat Archery"] = Logic.woodfall_clear && Logic.any_bottle; 
-	Location_Logic["Near Swamp Spider House Grotto"] = Logic.poison_swamp_access;
+	Location_Logic["Near Swamp Spider House Grotto"] = Logic.poison_swamp_access || (Logic.goron_mask && Logic.explosive);
 	Location_Logic["Swamp Spider House Reward"] = Logic.poison_swamp_access && Logic.any_bottle && (Logic.zora_mask || (Logic.deku_mask && (Logic.hookshot || ((Logic.explosive || Logic.goron_mask) && (Logic.bow || Logic.magic))))); 
 	// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
 		
@@ -509,6 +512,10 @@ function update_location_logic() {
 	
 	
 	for(let i = 0, Access = Location_Access, Has = Game; i < 2; i++) {
+		
+		// Starting Item
+		Access["Starting Item"] = true;
+	
 		// South Clock Town
 		Access["Clock Tower Entrance"] = true;
 		Access["South Clock Town Straw Roof Chest"] = true;
@@ -597,7 +604,7 @@ function update_location_logic() {
 		Access["Swamp Tourist Center Roof"] = Has.goron_mask || (Has.deku_mask && Has.land_title_deed);
 		Access["Pictograph Contest Winner"] = Has.pictobox;
 		Access["Boat Archery"] = Has.woodfall_clear && Has.any_bottle;
-		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access;
+		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access || (Has.goron_mask && Has.explosive);
 		Access["Swamp Spider House Reward"] = Has.poison_swamp_access && Has.any_bottle && (Has.zora_mask || (Has.deku_mask && (Has.hookshot || ((Has.explosive || Has.goron_mask) && (Has.bow || Has.magic))))); 
 		// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
 			
@@ -859,7 +866,7 @@ function update_location_logic() {
 		Peek["Kafei"] = true;
 		Peek["Curiosity Shop Man #1"] = true;
 		Peek["Postman's Freedom Reward"] = true;
-		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access;
+		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access || Has.goron_mask;
 		Peek["Hungry Goron"] = Has.north_access;
 		
 		Peek = Location_Could_Peek;

@@ -18,13 +18,14 @@
 			<div id="normalColumn8" class="column"></div>
 			<div id="songColumn" class="column">
 				<div id="songdiv"></div><br>
-				<textarea spellcheck="false" rows="16" cols="13" id="hintInput"></textarea><br><br>
+				<textarea spellcheck="false" rows="19" cols="13" id="hintInput"></textarea><br><br>
 				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
 				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
 				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
 				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br>
 				<label class="settingsLabels" for="settings_option">Mode</label>
 				<select class="settingsOptions" id="settings_option">
+					<option value="S5">S5</option>
 					<option value="EASTER">Easter</option>
 					<option value="BLITZ">Blitz</option>
 					<option value="S4">S4</option>
@@ -224,11 +225,12 @@
 				-Input the code for an item/song in the picture text box next to a check. You can also left click on the text to mark it as junk.<br> 
 				-Capitalize the third letter of the code to "peek" it, or capitalize the first letter of the code to "hint" it. Peeked or hinted checks will not be counted as obtained until you click the check text.<br>
 				-You can right-click the text for an item in the summary area at the top-right to toggle if you have that item or not. Alternatively, you can click the image for an item.<br>
-				-Input abbreviations for hint areas in the Foolish and WOTH boxes to track those.<br>
+				-Input abbreviations for hint areas in the Foolish and WOTH boxes to track those. Put a * before the abbreviation for a "foolish except song" area.<br>
 				-An alternate way of inputting always/sometimes hints is by putting a location code and the three letter item code (or x for nothing) into the text area on their own line. For example, to hint "Swamp Spider House Reward" as Bomb Bag, type "swa bom" on its own line in the text area above the "Reset Cycle" button.<br>
 				-Press Ctrl+Z to undo the last item input.<br>
 				-Click the "Reset Cycle" button to unmark items you lose when you play Song of Time.<br>
-				-To set a dungeon as junked (for Blitz settings), right click on the corresponding Remains image. This will also remove checks locked by beating that dungeon.<br><br>
+				-To set a dungeon as junked (for Blitz settings), right click on the corresponding Remains image. This will also remove checks locked by beating that dungeon.<br>
+				-You can also hold Ctrl and left click an item in the summary area to undo the check containing that item.<br><br>
 				Simulator:<br>
 				-To start the simulator click the "Play the Sim" button and select a spoiler log (only Blitz tested).<br>
 				-Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked check again to obtain it.<br>

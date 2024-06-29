@@ -135,6 +135,7 @@ function update_check_display() {
 		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_disabled_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S5" && s5_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "EASTER" && easter_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
@@ -576,16 +577,19 @@ function clickSummary(loc) {
 	var temp = "";
 	var clickedSong = false;
 	
+	theLocation = "";
 	if(loc.id.includes("text_")) {
 		clickedSong = true;
 		str = event.target.id.substring('text_'.length);
 		temp = Locations.indexOf(str);
+		theLocation = loc.id.slice(5); 
 		if(Check[str] != "unknown") {
 			item = Check[str];
 		}
 	}
 	else {
 		item = loc.id.slice(0, -9);
+		theLocation = ItemLocation[item];
 	}
 	
 	if(MarkedWotHItemArrow == null) {
@@ -643,6 +647,43 @@ function clickSummary(loc) {
 				forcedDisplay[temp] = false; 
 				Game[Check[str]] = true; 
 			}
+		}
+		else if(event.ctrlKey && event.which == 1) {
+
+			if (Check[theLocation] != "unknown")
+			{
+				if (Check[theLocation] == "song_of_healing" || Check[theLocation] == "eponas_song" || Check[theLocation] == "song_of_storms" || Check[theLocation] == "sonata" || Check[theLocation] == "lullaby" || Check[theLocation] == "nwbn" || Check[theLocation] == "elegy" || Check[theLocation] == "oath") {
+					document.getElementById("text_" + theLocation).innerHTML = document.getElementById("text_" + theLocation).innerHTML.split(': ')[0];
+					Game.checks_remaining -= 1;
+				}
+				else if (Check[theLocation] != "junk") {
+					document.getElementById(Check[theLocation] + "_location").className = "checkSummaryText";
+				}
+				document.getElementById(theLocation).value = "";
+			}
+			
+			forcedDisplay[Locations.indexOf(theLocation)] = false;
+			for (var i = 0; i < AreaIndexes.length - 5; i++) {
+				if (Locations.indexOf(theLocation) >= AreaIndexes[i] && Locations.indexOf(theLocation) < AreaIndexes[i+1]) {
+					document.getElementById(theLocation).style.backgroundImage = "url('./images/areas/"+AreaImages[i]+"')"; 
+					break;
+				}
+			}
+			
+			ItemLocation[Check[theLocation]] = "";
+			ItemLocations[Check[theLocation]] = undefined;
+			Game[Check[theLocation]] = false;
+			Known[Check[theLocation]] = false;
+			CouldHave[Check[theLocation]] = false;
+			Logic[Check[theLocation]] = false;
+			Hinted[theLocation] = false;
+			Check[theLocation] = "unknown";
+			
+			var t = lastCheck.indexOf(theLocation);
+			if (t > -1) {
+				lastCheck.splice(t, 1);
+			}
+			Update();
 		}
 	}
 	else {

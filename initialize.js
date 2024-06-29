@@ -1,18 +1,18 @@
 var AreaIndexes = [
-	0,0,5,14,23,27,39,46,68,75,85,89,92,97,107,117,122,
-	132,134,144,152,159,162,166,171,174,178,183,191,196,199,200,203,
-	212,227,239,264
+	0,1,1,6,15,24,28,40,47,69,76,86,90,93,98,108,118,123,
+	133,135,145,153,160,163,167,172,175,179,184,192,197,200,201,204,
+	213,228,240,265
 ];
 var SongIndexes = [
-	265/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,267/*swamp statue*/,266/*monkey song*/,
-	1000,1000,269/*eponas*/,1000,1000,270/*goron*/,1000,271/*eggs*/,
-	1000,1000,1000,1000,1000,1000,1000,272/*grave*/,1000,1000,1000,
-	273/*castle*/,1000,1000,1000,1000,1000
+	1000,266/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,268/*swamp statue*/,267/*monkey song*/,
+	1000,1000,270/*eponas*/,1000,1000,271/*goron*/,1000,272/*eggs*/,
+	1000,1000,1000,1000,1000,1000,1000,273/*grave*/,1000,1000,1000,
+	274/*castle*/,1000,1000,1000,1000,1000
 ];
-var lastItem = 264;
+var lastItem = 265;
 
 var AreaNames = [
-	"", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
+	"", "Starting", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
 	"Road Swamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"Mtn Village", "Twin Islands", "Gor Village", "Path Snow",
@@ -22,7 +22,7 @@ var AreaNames = [
 	"Songs"
 ];
 var AreaNamesShort = [
-	"", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
+	"", "Start", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
 	"RSwamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"MtnVil", "TwinIsle", "GorVil", "PSnow",
@@ -32,12 +32,12 @@ var AreaNamesShort = [
 	"Songs"
 ];
 var areaInputs = [
-	"", "clo", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", 
+	"", "", "clo", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", 
 	"ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", 
 	"can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
 ];
 var AreaImages = [
-	"", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
+	"sct.png", "", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
 	"milkroad2.png", "ranch.jpg", "mountainvillage.png", "twinislands.png", "goronvillage.png",
 	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", 
@@ -113,6 +113,9 @@ else if (document.getElementById("settings_option").value == "S3") {
 else if (document.getElementById("settings_option").value == "S4") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
 }
+else if (document.getElementById("settings_option").value == "S5") {
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Gossip Stones", "Seahorses"];
+}
 
 var Hinted = {};
 var hintedInput = "";
@@ -146,43 +149,48 @@ var gbt_junked = false;
 var stt_junked = false;
 
 var parent = document.getElementById("normalColumn1");
-for (var i = 0; i < Locations.length; i++) {
-	if (i == AreaIndexes[5]) { parent = document.getElementById("normalColumn2"); }
-	else if (i == AreaIndexes[8]) { parent = document.getElementById("normalColumn3"); }
-	else if (i == AreaIndexes[14]) { parent = document.getElementById("normalColumn4"); }
-	else if (i == AreaIndexes[19]) { parent = document.getElementById("normalColumn5"); }
-	else if (i == AreaIndexes[25]) { parent = document.getElementById("normalColumn6"); }
-	else if (i == AreaIndexes[32]) { parent = document.getElementById("normalColumn7"); }
-	else if (i == AreaIndexes[35]) { parent = document.getElementById("normalColumn8"); }
-	else if (i == AreaIndexes[36]) { parent = document.getElementById("songdiv"); }
+background = "";
+for (var i = 0; i < Locations.length; i++) 
+{if (i == AreaIndexes[6]) { parent = document.getElementById("normalColumn2"); }
+	else if (i == AreaIndexes[9]) { parent = document.getElementById("normalColumn3"); }
+	else if (i == AreaIndexes[15]) { parent = document.getElementById("normalColumn4"); }
+	else if (i == AreaIndexes[20]) { parent = document.getElementById("normalColumn5"); }
+	else if (i == AreaIndexes[26]) { parent = document.getElementById("normalColumn6"); }
+	else if (i == AreaIndexes[33]) { parent = document.getElementById("normalColumn7"); }
+	else if (i == AreaIndexes[36]) { parent = document.getElementById("normalColumn8"); }
+	else if (i == AreaIndexes[37]) { parent = document.getElementById("songdiv"); }
 	
-	for(var j = 1; j < AreaIndexes.length; j++) {
-		if(i == AreaIndexes[j]) {
+	for(var j = 0; j < AreaIndexes.length; j++) {
+		if(i == AreaIndexes[j] || i == 0) {
+			
+			if(j == 1)
+				continue;
+			
 			var elem = document.createElement("small"); 
 			elem.innerHTML = AreaNames[j+1]; 
 			elem.className = "area_name"; 
-			if(j == 32) {
+			if(j == 33) {
 				elem.id = "title_wft";
 				elem.className = "area_titles";
 			}
-			else if(j == 33) {
+			else if(j == 34) {
 				elem.id = "title_sht";
 				elem.className = "area_titles";
 			}
-			else if(j == 34) {
+			else if(j == 35) {
 				elem.id = "title_gbt";
 				elem.className = "area_titles";
 			}
-			else if(j == 35) {
+			else if(j == 36) {
 				elem.id = "title_stt";
 				elem.className = "area_titles";
 			}
-			else if(j == 36) {
+			else if(j == 37) {
 				elem.id = "song_title";
 				elem.className = "area_titles";
 			}
 			
-			if(j < 32)
+			if(j < 33)
 				background = "url('./images/areas/"+AreaImages[j]+"')";
 			else
 				background = "";
@@ -193,7 +201,7 @@ for (var i = 0; i < Locations.length; i++) {
 		}
 	}
 	
-	if(i == AreaIndexes[35]+16) {
+	if(i == AreaIndexes[36]+16) {
 		var elem = document.createElement("small"); 
 		elem.innerHTML = "ISTT"; 
 		elem.className = "area_name";
@@ -354,6 +362,8 @@ else if (document.getElementById("settings_option").value == "S4")
 	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
 else if (document.getElementById("settings_option").value == "EASTER")
 	hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
+else if (document.getElementById("settings_option").value == "S5")
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \ngos \n\nbea \ngro \nban \nspi \nice \nlig ";
 
 var Logic = {};
 var Game = {};
@@ -403,7 +413,7 @@ Game.checks_remaining = 0;
 Game.logically_accessible = 0;
 
 if (document.getElementById("settings_option").value == "EASTER") {Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;}
-if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "EASTER") { document.getElementById("Starting Song").value = "epo";}
+if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER") { document.getElementById("Starting Song").value = "epo";}
 
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
