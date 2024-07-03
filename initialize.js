@@ -282,7 +282,7 @@ for (var i = 0; i < Locations.length; i++)
 	if(elem.id == "text_Guru Guru")
 		elem.title = "Night 1-2: 6:00pm-5:59am";
 	if(elem.id == "text_Kafei")
-		elem.title = "Day 2: 4:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)\nMust not have saved old lady this cycle";
+		elem.title = "Day 2: 4:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)";
 	if(elem.id == "text_Curiosity Shop Man #1" || elem.id == "text_Curiosity Shop Man #2")
 		elem.title = "Day 3: 1:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)\nMust not have saved old lady this cycle\nMust have gotten item from Kafei this cycle";
 	

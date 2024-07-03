@@ -892,8 +892,9 @@ function update_location_logic() {
 		Peek["Hookshot Chest"] = Has.west_access && Has.zora_mask && (Has.hookshot || Has.goron_mask);
 		Peek["Path to Ikana Pillar Chest"] = true;
 		Peek["Captain Keeta's Chest"] = Has.east_access;
+		Peek["Snowhead Bridge Room Chest"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.shoot_light_arrow || Has.zora_mask);
 		Peek["Snowhead Main Room Wall"] = Has.sht_access && ((Has.hookshot && Has.magic) || Has.shoot_fire_arrow || Has.explosive);
-		Peek["Snowhead Map Room Ledge"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.zora_mask);
+		Peek["Snowhead Map Room Ledge"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.zora_mask || Has.magic);
 		Peek["Snowhead Twin Block"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.magic || Has.zora_mask);
 		Peek["Snowhead Ice Puzzle"] = Has.sht_access;
 		Peek["Stone Tower Compass Chest"] = Has.stt_access;
