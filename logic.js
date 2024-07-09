@@ -605,7 +605,7 @@ function update_location_logic() {
 		Access["Pictograph Contest Winner"] = Has.pictobox;
 		Access["Boat Archery"] = Has.woodfall_clear && Has.any_bottle;
 		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access || (Has.goron_mask && Has.explosive);
-		Access["Swamp Spider House Reward"] = Has.poison_swamp_access && Has.any_bottle && (Has.zora_mask || (Has.deku_mask && (Has.hookshot || ((Has.explosive || Has.goron_mask) && (Has.bow || Has.magic))))); 
+		Access["Swamp Spider House Reward"] = (Has.poison_swamp_access || Has.goron_mask) && Has.any_bottle && (Has.zora_mask || Has.hookshot || ((Has.explosive || Has.goron_mask) && (Has.bow || (Has.magic && Has.deku_mask))));
 		// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
 			
 		// Deku Palace
@@ -854,7 +854,7 @@ function update_location_logic() {
 		Peek["All-Night Mask Purchase"] = true;
 		Peek["Milk Bar Chateau"] = Has.romani_mask;
 		Peek["Business Scrub Purchase"] = true;
-		Peek["Bio Baba Grotto"] = (Has.zora_mask || Has.hookshot || Has.bow || Has.shoot_deku_bubble) && (Has.explosive || Has.goron_mask);
+		Peek["Bio Baba Grotto"] = (Has.zora_mask || Has.hookshot || Has.bow || Has.shoot_deku_bubble || Has.bomb) && (Has.explosive || Has.goron_mask);
 		Peek["Swamp Tourist Center Roof"] = true;
 		Peek["Biggest Bomb Bag Purchase"] = Has.north_access && (Has.goron_mask || Has.deku_mask);
 		Peek["Goron Village Ledge"] = Has.north_access;
