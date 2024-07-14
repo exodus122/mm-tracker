@@ -8,8 +8,7 @@ function readLog() {
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("gossips_option").value = "ON";
 	
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER")
-		document.getElementById("Starting Song").value = "epo";
+	var starting_mask = "";
 	
 	for(i = 0; i < SpoilerLines.length; i++) {
 		if(SpoilerLines[i].indexOf("->") >= 0) {
@@ -22,9 +21,26 @@ function readLog() {
 				SpoilerHintDict["h_"+loc] = item;
 			}
 		}
+		
+		if(SpoilerLines[i].includes("200000--dfbfc-d800000-1"))
+			starting_mask = "Deku Mask";
+		else if(SpoilerLines[i].includes("200000--dfbfc-da00000-"))
+			starting_mask = "Goron Mask";
+		else if(SpoilerLines[i].includes("200000--dfbfc-dc00000-"))
+			starting_mask = "Zora Mask";
+		else if(SpoilerLines[i].includes("200000--ffbfc-d800000-"))
+			starting_mask = "Fierce Deity's Mask";
 	}
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER")
+	
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER"){
 		SpoilerLocToItem["Starting Song"] = "Epona's Song";
+		document.getElementById("Starting Song").value = SpoilerItemToInput["Epona's Song"];
+	}
+	
+	if(starting_mask != "") {
+		SpoilerLocToItem["Starting Item"] = starting_mask;
+		document.getElementById("Starting Item").value = SpoilerItemToInput[starting_mask];
+	}
 }
 function onChooseFile(event, onLoadFileHandler) {
 	if (typeof window.FileReader !== 'function')

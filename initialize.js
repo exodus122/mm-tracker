@@ -325,9 +325,9 @@ for (var i = 0; i < Locations.length; i++)
 		elem.title = "Must give Gold Dust on Day 2, then receive Day 3";
 	
 	if(elem.id == "text_Pictograph Contest Winner" || elem.id == "text_Koume")
-		elem.title = "Cannot do after beating Woodfall";
+		elem.title = "Cannot do after beating WFT";
 	
-	if(elem.id == "text_Lens Cave Rock Chest" || elem.id == "text_Lens Cave Invisible Chest" || elem.id == "text_Lens of Truth Chest")
+	if(elem.id == "text_Lens Cave Rock Chest" || elem.id == "text_Lens Cave Invisible Chest" || elem.id == "text_Lens of Truth Chest" || elem.id == "text_Hungry Goron" || elem.id == "text_Baby Goron")
 		elem.title = "Cannot do after beating SHT";
 	
 	if(elem.id == "text_Zora Hall Stage Lights" || elem.id == "text_Mikau" || elem.id == "text_Evan")
