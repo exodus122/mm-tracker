@@ -110,11 +110,8 @@ else if (document.getElementById("settings_option").value == "BLITZ") {
 else if (document.getElementById("settings_option").value == "S3") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
 }
-else if (document.getElementById("settings_option").value == "S4") {
+else if (document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
-}
-else if (document.getElementById("settings_option").value == "S5") {
-	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Gossip Stones", "Seahorses"];
 }
 
 var Hinted = {};
@@ -363,7 +360,7 @@ else if (document.getElementById("settings_option").value == "S4")
 else if (document.getElementById("settings_option").value == "EASTER")
 	hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
 else if (document.getElementById("settings_option").value == "S5")
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \ngos \n\nbea \ngro \nban \nspi \nice \nlig ";
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig \n";
 
 var Logic = {};
 var Game = {};
