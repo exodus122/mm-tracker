@@ -293,11 +293,11 @@ for (var i = 0; i < Locations.length; i++)
 	if(elem.id == "text_Gorman Bros Milk Purchase")
 		elem.title = "Day 1-3: 6:00am-6:00pm";
 	if(elem.id == "text_Romani's Game")
-		elem.title = "Day 1: 6:00am-6:00pm\nAliens: Night 1: 2:30am-5:10pm (3:50am lose)\nCremia: Night 2: 6:00pm-7:00pm\n(sets tod to 7:45pm)";
+		elem.title = "Day 1: 6:00am-6:00pm";
 	if(elem.id == "text_Aliens Defense")
-		elem.title = "Night 1: 2:30am-5:10pm (3:50am lose)";
+		elem.title = "Night 1: 2:30am-5:15am (3:50am lose)";
 	if(elem.id == "text_Cremia")
-		elem.title = "Night 2: 6:00pm-7:00pm\n(sets time to 7:45pm)";
+		elem.title = "Aliens:\nNight 1: 2:30am-5:15am (3:50am lose)\n\nCremia:\nNight 2: 6:00pm-7:00pm (sets to 7:45pm)";
 	
 	if(elem.id == "text_Mystery Woods Grotto")
 		elem.title = "Day 2: 6:00am-5:59am";
