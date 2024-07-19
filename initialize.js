@@ -360,7 +360,7 @@ else if (document.getElementById("settings_option").value == "S4")
 else if (document.getElementById("settings_option").value == "EASTER")
 	hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
 else if (document.getElementById("settings_option").value == "S5")
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig \n";
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig ";
 
 var Logic = {};
 var Game = {};
