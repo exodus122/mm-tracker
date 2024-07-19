@@ -70,12 +70,16 @@ function update_item_logic() {
 	
 	// Single Items
 	for(let i = 0; i < SingleItems.length; i++) {
-		if(Known[SingleItems[i]] == true) {Logic[SingleItems[i]] = Location_Logic[ItemLocation[SingleItems[i]]];} else{Logic[SingleItems[i]] = false;}
+		if(Known[SingleItems[i]] == true)
+			Logic[SingleItems[i]] = Location_Logic[ItemLocation[SingleItems[i]]];
+		else
+			Logic[SingleItems[i]] = false;
 	}
-	
 	
 	// Misc Shortcuts
 	Logic.explosive = Logic.bomb || Logic.blast_mask;
+	Logic.any_blue_potion = Logic.any_bottle && (Logic.adults_wallet || Logic.mask_of_scents);
+	Logic.any_milk = Logic.any_bottle; // gorman bros purchase requires nothing but bottle
 	Logic.shoot_fire_arrow = Logic.bow && Logic.fire_arrow && Logic.magic;
 	Logic.shoot_ice_arrow = Logic.bow && Logic.ice_arrow && Logic.magic;
 	Logic.shoot_light_arrow = Logic.bow && Logic.light_arrow && Logic.magic;
@@ -109,10 +113,6 @@ function update_item_logic() {
 	Logic.istt_access = Logic.stt_access && Logic.shoot_light_arrow;
 	Logic.ikana_clear = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
 	
-	// Bottle shortcuts
-	Logic.any_blue_potion = Logic.any_bottle && (Logic.adults_wallet || Logic.mask_of_scents);
-	Logic.any_milk = Logic.any_bottle; // gorman bros purchase requires nothing but bottle
-	
 	for (var j = 0; j < Items.length; j++) {
 		if(Location_Could_Access[ItemLocation[Items[j]]] || Game[Items[j]])
 			CouldHave[Items[j]] = true;
@@ -137,6 +137,8 @@ function update_item_logic() {
 		
 		// Misc Shortcuts
 		Has.explosive = Has.bomb || Has.blast_mask;
+		Has.any_blue_potion = Has.any_bottle && (Has.adults_wallet || Has.mask_of_scents);
+		Has.any_milk = Has.any_bottle; // gorman bros purchase requires nothing but bottle
 		Has.shoot_fire_arrow = Has.bow && Has.fire_arrow && Has.magic;
 		Has.shoot_ice_arrow = Has.bow && Has.ice_arrow && Has.magic;
 		Has.shoot_light_arrow = Has.bow && Has.light_arrow && Has.magic;
@@ -169,10 +171,6 @@ function update_item_logic() {
 		Has.stt_access = Has.upper_ikana_access && Has.elegy && (Has.goron_mask || Has.zora_mask);
 		Has.istt_access = Has.stt_access && Has.shoot_light_arrow;
 		Has.ikana_clear = Has.istt_access;
-		
-		// Bottle shortcuts
-		Has.any_blue_potion = Has.any_bottle && (Has.adults_wallet || Has.mask_of_scents);
-		Has.any_milk = Has.any_bottle; // gorman bros purchase requires nothing but bottle
 		
 		Has = CouldHave;
 	}

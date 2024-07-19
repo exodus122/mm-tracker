@@ -119,11 +119,6 @@ var hintedInput = "";
 var thisIsHinted = false;
 
 var Area = []; // used for woth/barrens
-var woth1 = "unknown";
-var woth2 = "unknown";
-var woth3 = "unknown";
-var woth4 = "unknown";
-var woth5 = "unknown";
 var AreaWotHAge = new Array(35).fill(0);
 var WotHColors = ["", "9cc4d9", "white", "b19cd9", "d09cd9", "cyan"];
 

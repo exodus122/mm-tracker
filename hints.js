@@ -44,7 +44,7 @@ function woth_and_barren_processing() {
 		str = str.replace("2",""); // if there's a 2, ignore it
 		
 		for(var j = 1; j < AreaNames.length; j++) {
-			if (str == areaInputs[j]) {
+			if (str == areaInputs[j] && str != "") {
 				if (Area[j] == "4woth") {Area[j] = "5woth";} 
 				else if (Area[j] == "3woth") {Area[j] = "4woth";} 
 				else if (Area[j] == "2woth") {Area[j] = "3woth";} 
@@ -75,180 +75,13 @@ function woth_and_barren_processing() {
 	}
 	
 	// add the area woth title or change it
-	for (var i = 1; i <= AreaNames.length; i++) {
-		
-		var counterCopyList = []
-		if(woth1 == AreaNames[i]) {
-			counterCopyList.push(1);
+	for(var i = 1; i <= wothAreas.length-1; i++) {
+		if(wothAreas[i] != "" && Area[AreaNames.indexOf(wothAreas[i])].includes("woth")) {
+			document.getElementById("woth"+i+"_title").innerHTML = wothAreas[i]; 
+			document.getElementById("woth"+i+"_title").style.color= WotHColors[i];
 		}
-		if(woth2 == AreaNames[i]) {
-			counterCopyList.push(2);
-		}
-		if(woth3 == AreaNames[i]) {
-			counterCopyList.push(3);
-		}
-		if(woth4 == AreaNames[i]) {
-			counterCopyList.push(4);
-		}
-		if(woth5 == AreaNames[i]) {
-			counterCopyList.push(5);
-		}
-		
-		if (Area[i] == "woth" && AreaWotHAge[i] != 1) {
-			if (AreaWotHAge[i] < 1) {
-				if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {document.getElementById("woth1_title").innerHTML = AreaNames[i]; document.getElementById("woth1_title").style.color= WotHColors[1]; woth1 = AreaNames[i];}
-				else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {document.getElementById("woth2_title").innerHTML = AreaNames[i]; document.getElementById("woth2_title").style.color= WotHColors[2]; woth2 = AreaNames[i];}
-				else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {document.getElementById("woth3_title").innerHTML = AreaNames[i]; document.getElementById("woth3_title").style.color= WotHColors[3]; woth3 = AreaNames[i];}
-				else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {document.getElementById("woth4_title").innerHTML = AreaNames[i]; document.getElementById("woth4_title").style.color= WotHColors[4]; woth4 = AreaNames[i];}
-				else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {document.getElementById("woth5_title").innerHTML = AreaNames[i]; document.getElementById("woth5_title").style.color= WotHColors[5]; woth5 = AreaNames[i];}
-			}
-			
-			for(var j = 1; j < counterCopyList.length; j++) {
-				if(counterCopyList[j] == 1) {
-					woth1 = "unknown";
-					document.getElementById("woth1_title").innerHTML = "";
-				}
-				else if(counterCopyList[j] == 2) {
-					woth2 = "unknown";
-					document.getElementById("woth2_title").innerHTML = "";
-				}
-				else if(counterCopyList[j] == 3) {
-					woth3 = "unknown";
-					document.getElementById("woth3_title").innerHTML = "";
-				}
-				else if(counterCopyList[j] == 4) {
-					woth4 = "unknown";
-					document.getElementById("woth4_title").innerHTML = "";
-				}
-				else if(counterCopyList[j] == 5) {
-					woth5 = "unknown";
-					document.getElementById("woth5_title").innerHTML = "";
-				}
-			}
-			
-			AreaWotHAge[i] = 1;
-		}
-		else if (Area[i] == "2woth" && AreaWotHAge[i] != 2) {
-			if (AreaWotHAge[i] < 2)	{			
-				if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {woth1 = AreaNames[i];}
-				else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {woth2 = AreaNames[i];}
-				else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
-				else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
-				else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
-			}
-			
-			for(var j = 2; j < counterCopyList.length; j++) {
-				if(counterCopyList[j] == 1) {
-					woth1 = "unknown";
-				}
-				else if(counterCopyList[j] == 2) {
-					woth2 = "unknown";
-				}
-				else if(counterCopyList[j] == 3) {
-					woth3 = "unknown";
-				}
-				else if(counterCopyList[j] == 4) {
-					woth4 = "unknown";
-				}
-				else if(counterCopyList[j] == 5) {
-					woth5 = "unknown";
-				}
-			}
-			
-			AreaWotHAge[i] = 2;
-		}
-		else if (Area[i] == "3woth" && AreaWotHAge[i] != 3) {		
-			if (AreaWotHAge[i] < 3)	{
-				if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {woth1 = AreaNames[i];}
-				else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {woth2 = AreaNames[i];}
-				else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
-				else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
-				else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
-			}
-			
-			for(var j = 3; j < counterCopyList.length; j++) {
-				if(counterCopyList[j] == 1) {
-					woth1 = "unknown";
-				}
-				else if(counterCopyList[j] == 2) {
-					woth2 = "unknown";
-				}
-				else if(counterCopyList[j] == 3) {
-					woth3 = "unknown";
-				}
-				else if(counterCopyList[j] == 4) {
-					woth4 = "unknown";
-				}
-				else if(counterCopyList[j] == 5) {
-					woth5 = "unknown";
-				}
-			}
-			AreaWotHAge[i] = 3;
-		}
-		else if (Area[i] == "4woth" && AreaWotHAge[i] != 4) {
-			if (AreaWotHAge[i] < 4)	{			
-				if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {woth1 = AreaNames[i];}
-				else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {woth2 = AreaNames[i];}
-				else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
-				else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
-				else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
-			}
-			
-			for(var j = 4; j < counterCopyList.length; j++) {
-				if(counterCopyList[j] == 1) {
-					woth1 = "unknown";
-				}
-				else if(counterCopyList[j] == 2) {
-					woth2 = "unknown";
-				}
-				else if(counterCopyList[j] == 3) {
-					woth3 = "unknown";
-				}
-				else if(counterCopyList[j] == 4) {
-					woth4 = "unknown";
-				}
-				else if(counterCopyList[j] == 5) {
-					woth5 = "unknown";
-				}
-			}
-			AreaWotHAge[i] = 4;
-		}
-		else if (Area[i] == "5woth" && AreaWotHAge[i] != 5) {		
-			if (AreaWotHAge[i] < 5) {
-				if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {woth1 = AreaNames[i];}
-				else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {woth2 = AreaNames[i];}
-				else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
-				else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
-				else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
-			}
-			
-			for(var j = 5; j < counterCopyList.length; j++) {
-				if(counterCopyList[j] == 1) {
-					woth1 = "unknown";
-				}
-				else if(counterCopyList[j] == 2) {
-					woth2 = "unknown";
-				}
-				else if(counterCopyList[j] == 3) {
-					woth3 = "unknown";
-				}
-				else if(counterCopyList[j] == 4) {
-					woth4 = "unknown";
-				}
-				else if(counterCopyList[j] == 5) {
-					woth5 = "unknown";
-				}
-			}
-			AreaWotHAge[i] = 5;
-		}
-		else if (Area[i] == "normal" || Area[i] == "barren" || Area[i] == "barren_except_song") {
-			if (woth1 == AreaNames[i]) {woth1 = "unknown";document.getElementById("woth1_title").innerHTML = "";for (var k = 1; k < 7; k++){document.getElementById("woth1_text"+k).innerHTML = "";}}
-			if (woth2 == AreaNames[i]) {woth2 = "unknown";document.getElementById("woth2_title").innerHTML = "";for (var k = 1; k < 7; k++){document.getElementById("woth2_text"+k).innerHTML = "";}}
-			if (woth3 == AreaNames[i]) {woth3 = "unknown";document.getElementById("woth3_title").innerHTML = "";for (var k = 1; k < 7; k++){document.getElementById("woth3_text"+k).innerHTML = "";}}
-			if (woth4 == AreaNames[i]) {woth4 = "unknown";document.getElementById("woth4_title").innerHTML = "";for (var k = 1; k < 7; k++){document.getElementById("woth4_text"+k).innerHTML = "";}}
-			if (woth5 == AreaNames[i]) {woth5 = "unknown";document.getElementById("woth5_title").innerHTML = "";for (var k = 1; k < 7; k++){document.getElementById("woth5_text"+k).innerHTML = "";}}
-			AreaWotHAge[i] = 0;	
-		}
+		else
+			document.getElementById("woth"+i+"_title").innerHTML = "";
 	}
 	
 	// process woth hints
@@ -259,20 +92,16 @@ function woth_and_barren_processing() {
 		var tempbool = false;
 	
 		// if it's a woth area
-		if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i]) {
-			if (woth1 == AreaNames[i]) {wothNumber = 1;}
-			else if (woth2 == AreaNames[i]) {wothNumber = 2;}
-			else if (woth3 == AreaNames[i]) {wothNumber = 3;}
-			else if (woth4 == AreaNames[i]) {wothNumber = 4;}
-			else if (woth5 == AreaNames[i]) {wothNumber = 5;}
+		if (wothAreas[1] == AreaNames[i] || wothAreas[2] == AreaNames[i] || wothAreas[3] == AreaNames[i] || wothAreas[4] == AreaNames[i] || wothAreas[5] == AreaNames[i]) {
+			if (wothAreas[1] == AreaNames[i]) {wothNumber = 1;}
+			else if (wothAreas[2] == AreaNames[i]) {wothNumber = 2;}
+			else if (wothAreas[3] == AreaNames[i]) {wothNumber = 3;}
+			else if (wothAreas[4] == AreaNames[i]) {wothNumber = 4;}
+			else if (wothAreas[5] == AreaNames[i]) {wothNumber = 5;}
 			var tempArray = [];
-			document.getElementById("woth" + wothNumber + "_text" + 1).innerHTML="";
-			document.getElementById("woth" + wothNumber + "_text" + 2).innerHTML="";
-			document.getElementById("woth" + wothNumber + "_text" + 3).innerHTML="";
-			document.getElementById("woth" + wothNumber + "_text" + 4).innerHTML="";
-			document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML="";
-			document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
-			document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
+			for (var k = 1; k < 7; k++){
+				document.getElementById("woth" + wothNumber + "_text" + k).innerHTML="";
+			}
 			
 			for (var k = 1; k < Items.length; k++) {
 				
