@@ -99,7 +99,7 @@ function woth_and_barren_processing() {
 			else if (wothAreas[4] == AreaNames[i]) {wothNumber = 4;}
 			else if (wothAreas[5] == AreaNames[i]) {wothNumber = 5;}
 			var tempArray = [];
-			for (var k = 1; k < 7; k++){
+			for (var k = 1; k <= 7; k++){
 				document.getElementById("woth" + wothNumber + "_text" + k).innerHTML="";
 			}
 			
