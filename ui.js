@@ -38,6 +38,9 @@ function process_inputs() {
 		if(key.startsWith("h_")) { continue; }
 		
 		if(Check[key] != "unknown") {continue;}
+		if(!inputs.includes(document.getElementById(key).value.toLowerCase()))
+			continue;
+		
 		if (isUpperCase(document.getElementById(key).value.charAt(2)) && document.getElementById(key).value.length == 3) {
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
@@ -157,6 +160,11 @@ function update_check_display() {
 			}
 			continue;
 		}
+		
+		if(document.getElementById(key).value != "")
+			document.getElementById(key).style.backgroundBlendMode = "overlay"; 
+		else
+			document.getElementById(key).style.backgroundBlendMode = ""; 
 		
 		if(Check[key] == "unknown" || SongItems.indexOf(key) >= 0 || forcedDisplay[i]) {
 		

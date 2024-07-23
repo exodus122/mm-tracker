@@ -410,6 +410,8 @@ if(document.getElementById("settings_option").value == "BLITZ" || document.getEl
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
+document.documentElement.spellcheck = false;
+
 span.onclick = function() {
   modal.style.display = "none";
 }
