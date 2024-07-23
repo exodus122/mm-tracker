@@ -369,7 +369,7 @@ function click_check() {
 		
 			var input = SpoilerItemToInput[SpoilerLocToItem[str]];
 			
-			if(input == undefined) {
+			if(input == undefined && type != 2) {
 				Check[str]="junk";
 				
 				document.getElementById(str).style.display = "none";
@@ -377,6 +377,9 @@ function click_check() {
 				document.getElementById("br_" + str).style.display = "none";
 				
 				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+				
+				if(SpoilerLocToItem[str] == "Heart Container")
+					document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
 				
 				lastCheck.push(str);
 			}
@@ -389,13 +392,33 @@ function click_check() {
 				if(SongItems.indexOf(str) != -1)
 					return;
 				
-				if (PeekableItemLocations.indexOf(str) != -1) {
+				if (input != undefined && PeekableItemLocations.indexOf(str) != -1) {
 					item = SpoilerLocToItem[str]
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				}
-				else {
-					item = "unknown gilded chest";
+				else if (LargeGildedItems.includes(SpoilerLocToItem[str])){
+					item = "large gilded chest";
 					document.getElementById(str).value = "???";
+				}
+				else if (SmallGildedItems.includes(SpoilerLocToItem[str])){
+					item = "small gilded chest";
+					document.getElementById(str).value = "?  ";
+				}
+				else {
+					Check[str]="junk";
+				
+					document.getElementById(str).style.display = "none";
+					document.getElementById("text_" + str).style.display = "none";
+					document.getElementById("br_" + str).style.display = "none";
+					
+					if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+					
+					if(SpoilerLocToItem[str] == "Heart Container")
+						document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
+				
+					lastCheck.push(str);
+					
+					return;
 				}
 				document.getElementById("simLog").value = str + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
