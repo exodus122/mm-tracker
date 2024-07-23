@@ -131,7 +131,6 @@ var ManualWotHMinorItems = {};
 var ManualWotHItemLocked = {};
 var ManualWotHItemPutInLogic = {};
 
-var backUp = [];
 var toFocus = null;
 var overrideFocus = false;
 
@@ -379,7 +378,6 @@ for (var i = 0; i < Locations.length; i++) {
 	Location_Logic[Locations[i]] = false;
 	Location_Peek[Locations[i]] = false;
 	Check[Locations[i]] = "unknown";
-	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
 }
 
 var simActive = false;

@@ -22,7 +22,7 @@ var Locations = [
 	"Inn Reservation", "Midnight Meeting", "Toilet Hand", "Inn Staff Room Chest", "Inn Guest Room Chest", "Grandma Short Story", "Grandma Long Story", 
 	
 	// Termina Field
-	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", "h_TerminaObservatory", "h_TerminaWest", "h_TerminaNorth", "h_TerminaEast", "h_TerminaGossipLarge", "h_TerminaGossipPipes", "h_TerminaGossipDrums", "h_TerminaGossipGuitar", "h_TerminaSouth", "h_TerminaMilk", 
+	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Kamaro", "Gossip Stones", "h_TerminaObservatory", "h_TerminaWest", "h_TerminaNorth", "h_TerminaEast", "h_TerminaGossipLarge", "h_TerminaGossipPipes", "h_TerminaGossipDrums", "h_TerminaGossipGuitar", "h_TerminaSouth", "h_TerminaMilk", 
 	
 	// Road to Southern Swamp
 	"Path to Swamp Grotto", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Archery #1", "Swamp Archery #2", "h_SwampRoad", 
@@ -59,7 +59,7 @@ var Locations = [
 	"Great Bay Coast Grotto", "Stone Tower Map Purchase", "Lab Fish", "Great Bay Coast Ledge", "Mikau", "Fisherman Pictograph", "Ocean Spider House Chest", "Fisherman Game", "Ocean Spider House Day 1 Reward", "h_OceanFortress", 
 	
 	// Zora Cape
-	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Beaver Race #1", "Beaver Race #2", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "h_OceanZoraGame", 
+	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", "h_OceanZoraGame", 
 	
 	// Zora Hall
 	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Zora Hall Stage Lights", "Evan", "Lulu's Room Ledge", "Ocean Scrub Trade", 
@@ -139,7 +139,7 @@ var Names = [
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
 	
 	// Termina Field
-	"Telescope", "Dodongos", "Pillar", "Scrub 100r", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "Observ", "West", "North", "East", "Left", "Mid-left", "Mid-right", "Right", "South", "Milk", 
+	"Telescope", "Dodongos", "Pillar", "Scrub 100r", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Kamaro", "Gossips", "Observ", "West", "North", "East", "Left", "Mid-left", "Mid-right", "Right", "South", "Milk", 
 	
 	// Road to Southern Swamp
 	"Grotto", "Tree", "Map Snow", "Arch1 20r", "Arch2 20r", "Hint", 
@@ -172,10 +172,10 @@ var Names = [
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "OceSpid1", "Hint", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "Ocean Spid 1", "Hint", 
 	
 	// Zora Cape
-	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", "Hint", 
+	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver", "Beaver 2", "Hint", 
 	
 	// Zora Hall
 	"Shop 90r", "Shop 20r", "Shop 60r", "Torches", "Evan", "Ledge", "Deed", 

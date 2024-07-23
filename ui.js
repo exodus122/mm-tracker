@@ -192,7 +192,6 @@ function update_check_display() {
 				if(SongItems.indexOf(key) >= 0 && Check[key] != "unknown")
 					;
 				else {
-					document.getElementById(str).innerHTML = backUp[i];
 					if(Check[key] == "unknown") {
 						if(SongItems.indexOf(key) < 0)
 							Game.logically_accessible += 1;
@@ -230,6 +229,13 @@ function update_check_display() {
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "black";
 			}
+		}
+		
+		if(Check[key] == "unknown" && alwaysHints.includes(key)) {
+			document.getElementById(str).style.fontStyle = "italic";
+		}
+		else {
+			document.getElementById(str).style.fontStyle = "";
 		}
 		
 		if(Check[key] != "unknown" && !forcedDisplay[i] && document.getElementById(key) != null) {
