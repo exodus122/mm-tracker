@@ -398,7 +398,17 @@ var LargeGildedItems = [
 	"Mirror Shield",
 	"Magic Power Upgrade",
 	"Wallet Upgrade",
-	"Heart Container"
+	"Heart Container",
+	"Bombers' Notebook",
+	"Spin Attack Mastery",
+	"Double Defense"
+];
+
+var LargeGildedJunkItems = [
+	"Heart Container",
+	"Bombers' Notebook",
+	"Spin Attack Mastery",
+	"Double Defense"
 ];
 
 var SpoilerAreaToInput = {

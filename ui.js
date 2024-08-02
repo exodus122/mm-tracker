@@ -174,6 +174,14 @@ function update_check_display() {
 				document.getElementById(str2).style.display = "inline-block";
 			}
 			
+			if(i >= lastItem && Check[key] != "unknown" && !Game[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key])) {
+				document.getElementById(str).style.backgroundColor = "gray";
+			}
+			else {
+				document.getElementById(str).style.backgroundColor = "";
+			}
+			
+			
 			if(SongItems.indexOf(key) < 0 && Check[key] == "unknown")
 				Game.checks_remaining += 1;
 			
@@ -392,7 +400,7 @@ function click_check() {
 				
 				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
 				
-				if(SpoilerLocToItem[str] == "Heart Container")
+				if(LargeGildedJunkItems.includes(SpoilerLocToItem[str]))
 					document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
 				
 				lastCheck.push(str);
@@ -427,7 +435,7 @@ function click_check() {
 					
 					if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
 					
-					if(SpoilerLocToItem[str] == "Heart Container")
+					if(LargeGildedJunkItems.includes(SpoilerLocToItem[str]))
 						document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
 				
 					lastCheck.push(str);
