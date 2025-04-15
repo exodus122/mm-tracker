@@ -1,25 +1,25 @@
 function isLetter(s){
-	return s.match("^[a-zA-Z\(\)]+$");    
+	return s.match("^[a-zA-Z\(\)]+$");	
 }
 
 function isUpperCase(str) {
 	if(!isLetter(str))
 		return false;
-    return str === str.toUpperCase();
+	return str === str.toUpperCase();
 }
 
 function isLowerCase(str) {
 	if(!isLetter(str))
 		return false;
-    return str === str.toLowerCase();
+	return str === str.toLowerCase();
 }
 
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+	return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function capitalizeThirdLetter(string) {
-    return string.charAt(0) + string.charAt(1) + string.charAt(2).toUpperCase();
+	return string.charAt(0) + string.charAt(1) + string.charAt(2).toUpperCase();
 }
 
 function process_inputs() {
@@ -139,6 +139,7 @@ function update_check_display() {
 		if (document.getElementById("settings_option").value == "S3" && s3_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S5" && s5_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUBS" && scrubs_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "EASTER" && easter_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		

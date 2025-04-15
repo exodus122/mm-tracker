@@ -867,6 +867,19 @@ function update_location_logic() {
 		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access || Has.goron_mask;
 		Peek["Hungry Goron"] = Has.north_access;
 		
+		if (document.getElementById("settings_option").value == "SCRUBS") {
+			Peek["Ocean Spider House Day 1 Reward"] = true;
+			Peek["Beaver Race #1"] = true;
+			Peek["Day 1 Grave Tablet"] = true;
+			Peek["Iron Knuckle Chest"] = true;
+			Peek["Dampe Digging"] = true;
+			// Talking to Evan in Zora Hall hints an Empty Bottle location
+			// Talking to Ghost in Road to Ikana hints Garo Mask location
+			// Talking to Bomb Shop Goron as Goron Link tells you Powder Keg Location
+			// Talking to Smithy on Day 2 tells you Gold Dust Location
+			// Oath Area Hint on final Giant's Cutscene
+		}
+		
 		Peek = Location_Could_Peek;
 		Has = CouldHave;
 	}

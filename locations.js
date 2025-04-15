@@ -338,6 +338,30 @@ var easter_disabled_checks = [
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
 ];
 
+var scrubs_disabled_checks = [
+	"Skull Kid Song", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
+	"Swamp Archery #2",
+	
+	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Goron Race", 
+	
+	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
+	
+	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", 
+	
+	"Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", 
+	"Snowhead Main Room Wall", "Snowhead Basement", 
+	
+	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Bio Babas", "Great Bay Waterwheel Room Upper", 
+	"Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", 
+	
+	"Stone Tower Statue Eye",  "Stone Tower Underwater", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", 
+	"Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", 
+	"Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
+	
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
+];
+
 var PeekableItemLocations = [
 	"Clock Tower Entrance", "North Clock Town Tree", "Clock Town Map Purchase", "Bomb Bag Purchase", "Big Bomb Bag Purchase", 
 	"All-Night Mask Purchase", "Milk Bar Milk", "Milk Bar Chateau", "Astronomy Telescope", "Business Scrub Purchase", "Bio Baba Grotto", 
