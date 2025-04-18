@@ -341,7 +341,7 @@ var easter_disabled_checks = [
 var scrubs_disabled_checks = [
 	"Skull Kid Song", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
-	"Swamp Archery #2",
+	"Swamp Archery #2", "Curiosity Shop Man #2", 
 	
 	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Goron Race", 
 	

@@ -293,7 +293,7 @@ function highlight(x) {
 }
 
 function click_remains(x) {
-	if(event.button == 2 && document.getElementById("settings_option").value == "BLITZ") {
+	if(event.button == 2 && (document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "SCRUBS")) {
 	
 		let theRemains = x.id.slice(0, -4);
 		
