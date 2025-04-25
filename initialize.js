@@ -24,7 +24,7 @@ var AreaNames = [
 	"Songs"
 ];
 var AreaNamesShort = [
-	"", "Start", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
+	"", "Starting", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
 	"RSwamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"MtnVil", "TwinIsle", "GorVil", "PSnow",
@@ -407,8 +407,16 @@ Game.magic2_img = "./images/Magic2.png";
 Game.checks_remaining = 0;
 Game.logically_accessible = 0;
 
-if (document.getElementById("settings_option").value == "EASTER") {Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;}
-if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS") { document.getElementById("Starting Song").value = "epo";}
+if (document.getElementById("settings_option").value == "EASTER") {
+	Game.bottle1 = true;
+	Known.bottle1 = true;
+	Game.bottle2 = true;
+	Known.bottle2 = true;
+}
+
+if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS") {
+	document.getElementById("Starting Song").value = "epo";
+}
 
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];

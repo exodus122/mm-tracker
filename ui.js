@@ -132,10 +132,10 @@ function update_check_display() {
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_disabled_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_disabled_checks_wft.includes(Locations[i])) {Check["Woodfall Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_disabled_checks_sht.includes(Locations[i])) {Check["Snowhead Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_disabled_checks_gbt.includes(Locations[i])) {Check["Great Bay Heart Container"] = "junk"; continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_disabled_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
+		if ((document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "SCRUBS") && wft_junked && blitz_disabled_checks_wft.includes(Locations[i])) {Check["Woodfall Heart Container"] = "junk"; continue;}
+		if ((document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "SCRUBS") && sht_junked && blitz_disabled_checks_sht.includes(Locations[i])) {Check["Snowhead Heart Container"] = "junk"; continue;}
+		if ((document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "SCRUBS") && gbt_junked && blitz_disabled_checks_gbt.includes(Locations[i])) {Check["Great Bay Heart Container"] = "junk"; continue;}
+		if ((document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "SCRUBS") && stt_junked && blitz_disabled_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S5" && s5_disabled_checks.includes(Locations[i])) {continue;}
