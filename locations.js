@@ -345,8 +345,6 @@ var scrubs_disabled_checks = [
 	
 	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Goron Race", 
 	
-	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
-	
 	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", 
 	
 	"Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", 
