@@ -245,7 +245,7 @@ var blitz_disabled_checks = [
 ];
 var blitz_disabled_checks_wft = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", 
-	"Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Woodfall Heart Container", 
+	"Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Woodfall Heart Container", "Boat Archery", "Butler"
 ];
 var blitz_disabled_checks_sht = [
 	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", 
@@ -256,7 +256,7 @@ var blitz_disabled_checks_sht = [
 var blitz_disabled_checks_gbt = [
 	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", 
 	"Great Bay Small Key Chest", "Great Bay Boss Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", 
-	"Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Great Bay Heart Container"
+	"Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Great Bay Heart Container", "Fisherman Game"
 ];
 var blitz_disabled_checks_stt = [
 	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", 
