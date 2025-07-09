@@ -22,7 +22,7 @@ function readLog() {
 			}
 		}
 		
-		if(SpoilerLines[i].includes("200000--dfbfc-d800000-1"))
+		if(SpoilerLines[i].includes("200000--dfbfc-d800000-"))
 			starting_mask = "Deku Mask";
 		else if(SpoilerLines[i].includes("200000--dfbfc-da00000-"))
 			starting_mask = "Goron Mask";

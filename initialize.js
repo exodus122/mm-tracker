@@ -1,23 +1,28 @@
 if (localStorage.getItem("settings_option")) {document.getElementById("settings_option").value = localStorage.getItem("settings_option");}
 
 var AreaIndexes = [
-	0,1,1,6,15,24,28,40,47,69,75,86,90,93,98,108,118,123,
-	133,135,145,153,160,163,167,172,175,179,184,192,197,200,201,204,
-	213,228,240,265
+	0,1,1,6,15,24,
+	29,41,49,
+	71,77,89,93,97,102,
+	115,125,130,140,142,143,
+	153,162,170,173,177,182,
+	185,189,194,203,208,211,212,
+	215,228,244,259,
+	284
 ];
 var SongIndexes = [
-	1000,266/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,268/*swamp statue*/,267/*monkey song*/,
-	1000,1000,270/*eponas*/,1000,1000,271/*goron*/,1000,272/*eggs*/,
-	1000,1000,1000,1000,1000,1000,1000,273/*grave*/,1000,1000,1000,
-	274/*castle*/,1000,1000,1000,1000,1000
+	1000,285/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,287/*swamp statue*/,286/*monkey song*/,
+	1000,1000,289/*eponas*/,291/*elder*/,291/*elder*/,290/*goron*/,1000,1000,292/*eggs*/,
+	1000,1000,1000,1000,1000,1000,1000,293/*grave*/,1000,1000,1000,
+	294/*castle*/,1000,1000,1000,1000,1000
 ];
-var lastItem = 265;
+var lastItem = 284;
 
 var AreaNames = [
 	"", "Starting", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
 	"Road Swamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
-	"Mtn Village", "Twin Islands", "Gor Village", "Path Snow",
+	"Mtn Village", "Twin Islands", "Gor Village", "Path Snow", "Snowhead",
 	"Great Bay", "Zora Cape", "Zora Hall", "PF Exterior", "PF Sewers", "PF Interior", "Pinnacle",
 	"Road Ikana", "Graveyard", "Canyon", "Shrine", "Well", "Castle", "Stone Tower", 
 	"WFT", "SHT", "GBT", "STT",
@@ -27,7 +32,7 @@ var AreaNamesShort = [
 	"", "Starting", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
 	"RSwamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
-	"MtnVil", "TwinIsle", "GorVil", "PSnow",
+	"MtnVil", "TwinIsle", "GorVil", "PSnow", "Snowhead",
 	"GreBay", "ZorCape", "ZorHall", "PirExt", "PirSew", "PirInt", "Pin",
 	"RIkana", "Grave", "Canyon", "Shrine", "Well", "Castle", "StoTower", 
 	"WFT", "SHT", "GBT", "STT",
@@ -35,14 +40,14 @@ var AreaNamesShort = [
 ];
 var areaInputs = [
 	"", "", "clo", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", 
-	"ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", 
+	"ran", "mou", "twi", "gor", "psn", "sno", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", 
 	"can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
 ];
 var AreaImages = [
 	"start.png", "", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
 	"milkroad2.png", "ranch.jpg", "mountainvillage.png", "twinislands.png", "goronvillage.png",
-	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", 
+	"pathsnow.png", "pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", 
 	"pinnacle.png", "roadikana.png", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png", 
 	"stonetower.png"
 ];
@@ -94,29 +99,42 @@ var inputs = [
 	"x", "bow", "fir", "ice", "lig", "moo", "lan", "swa", "mou", "oce", "bom", "bea", "roo", "spe", "pow", "pic", "len", "hoo", "gfs", "let", "pen", "bot", "gol", "pos", "all", "bla", "sto", "gre", "dek", "kea", "bre", "bun", "don", "sce", "gor", "rom", "cir", "kaf", "cou", "tru", "zor", "kam", "gib", "gar", "cap", "gia", "fie", "swo", "mir", "mag", "wal", "soh", "epo", "sos", "son", "lul", "nov", "ele", "oat"
 ];
 
-var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ba2", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "sar2", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "inv", "spi", "bar", "mir"];
+var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ba2", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "sar2", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "inv", "spi", "bar", "mir", "anj", "wfa", "sfa", "gfa", "ifa"];
 
-var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #2", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Swamp Archery #2", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest", "Madame Aroma in Bar", "Mirror Shield Chest"];
+var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #2", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Swamp Archery #2", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest", "Madame Aroma in Bar", "Mirror Shield Chest", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy"];
 
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
 
 var alwaysHints = [];
+var hintbox = document.getElementById("hintInput");
 
 if (document.getElementById("settings_option").value == "EASTER") {
 	alwaysHints = ["Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Seahorses"];
+	hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
 }
 else if (document.getElementById("settings_option").value == "BLITZ") {
 	alwaysHints = [];
 }
 else if (document.getElementById("settings_option").value == "S3") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
 }
-else if (document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5") {
+else if (document.getElementById("settings_option").value == "S4") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
+}
+else if (document.getElementById("settings_option").value == "S5") {
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig ";
 }
 else if (document.getElementById("settings_option").value == "SCRUBS") {
 	alwaysHints = ["Aliens Defense", "Cremia", "Butler", "Boat Archery", "Gossip Stones", "Ocean Spider House Chest"];
+	hintbox.innerHTML = "ali \ncre \nbut \nboa \ngos \nspi \n\nbar \nsar \ninv \ngro \nmid \ndog \npam \nba2 \ngor \nmir \nfis \n";
+}
+else if (document.getElementById("settings_option").value == "S6") {
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy"];
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \nanj \nwfa \nsfa \ngfa \nifa \n";
 }
 
 var Hinted = {};
@@ -150,11 +168,11 @@ for (var i = 0; i < Locations.length; i++)
 {if (i == AreaIndexes[6]) { parent = document.getElementById("normalColumn2"); }
 	else if (i == AreaIndexes[9]) { parent = document.getElementById("normalColumn3"); }
 	else if (i == AreaIndexes[15]) { parent = document.getElementById("normalColumn4"); }
-	else if (i == AreaIndexes[20]) { parent = document.getElementById("normalColumn5"); }
-	else if (i == AreaIndexes[26]) { parent = document.getElementById("normalColumn6"); }
-	else if (i == AreaIndexes[33]) { parent = document.getElementById("normalColumn7"); }
-	else if (i == AreaIndexes[36]) { parent = document.getElementById("normalColumn8"); }
-	else if (i == AreaIndexes[37]) { parent = document.getElementById("songdiv"); }
+	else if (i == AreaIndexes[21]) { parent = document.getElementById("normalColumn5"); }
+	else if (i == AreaIndexes[27]) { parent = document.getElementById("normalColumn6"); }
+	else if (i == AreaIndexes[34]) { parent = document.getElementById("normalColumn7"); }
+	else if (i == AreaIndexes[37]) { parent = document.getElementById("normalColumn8"); }
+	else if (i == AreaIndexes[38]) { parent = document.getElementById("songdiv"); }
 	
 	for(var j = 0; j < AreaIndexes.length; j++) {
 		if(i == AreaIndexes[j] || i == 0) {
@@ -165,28 +183,28 @@ for (var i = 0; i < Locations.length; i++)
 			var elem = document.createElement("small"); 
 			elem.innerHTML = AreaNames[j+1]; 
 			elem.className = "area_name"; 
-			if(j == 33) {
+			if(j == 34) {
 				elem.id = "title_wft";
 				elem.className = "area_titles";
 			}
-			else if(j == 34) {
+			else if(j == 35) {
 				elem.id = "title_sht";
 				elem.className = "area_titles";
 			}
-			else if(j == 35) {
+			else if(j == 36) {
 				elem.id = "title_gbt";
 				elem.className = "area_titles";
 			}
-			else if(j == 36) {
+			else if(j == 37) {
 				elem.id = "title_stt";
 				elem.className = "area_titles";
 			}
-			else if(j == 37) {
+			else if(j == 38) {
 				elem.id = "song_title";
 				elem.className = "area_titles";
 			}
 			
-			if(j < 33)
+			if(j < 34)
 				background = "url('./images/areas/"+AreaImages[j]+"')";
 			else
 				background = "";
@@ -197,7 +215,7 @@ for (var i = 0; i < Locations.length; i++)
 		}
 	}
 	
-	if(i == AreaIndexes[36]+16) {
+	if(i == AreaIndexes[37]+16) {
 		var elem = document.createElement("small"); 
 		elem.innerHTML = "ISTT"; 
 		elem.className = "area_name";
@@ -340,26 +358,8 @@ for (var i = 0; i < Locations.length; i++)
 }
 
 // hide logically useless items from check summary list
-document.getElementById("pendant_of_memories_location").style.display = "none";
-document.getElementById("pendant_of_memories_location_br").style.display = "none";
 document.getElementById("circusleaders_mask_location").style.display = "none";
 document.getElementById("circusleaders_mask_location_br").style.display = "none";
-document.getElementById("dongero_mask_location").style.display = "none";
-document.getElementById("dongero_mask_location_br").style.display = "none";
-document.getElementById("greatfairy_mask_location").style.display = "none";
-document.getElementById("greatfairy_mask_location_br").style.display = "none";
-
-var hintbox = document.getElementById("hintInput");
-if (document.getElementById("settings_option").value == "S3")
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
-else if (document.getElementById("settings_option").value == "S4")
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
-else if (document.getElementById("settings_option").value == "EASTER")
-	hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
-else if (document.getElementById("settings_option").value == "S5")
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig ";
-else if (document.getElementById("settings_option").value == "SCRUBS")
-	hintbox.innerHTML = "ali \ncre \nbut \nboa \ngos \nspi \n\nbar \nsar \ninv \ngro \nmid \ndog \npam \nba2 \ngor \nmir \nfis \n";
 
 var Logic = {};
 var Game = {};
@@ -414,8 +414,10 @@ if (document.getElementById("settings_option").value == "EASTER") {
 	Known.bottle2 = true;
 }
 
-if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS") {
+if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS" || document.getElementById("settings_option").value == "S6") {
 	document.getElementById("Starting Song").value = "epo";
+	if(document.getElementById("settings_option").value == "S6")
+		document.getElementById("Starting Item").value = "gia";
 }
 
 var modal = document.getElementById("myModal");

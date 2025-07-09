@@ -144,7 +144,7 @@ function update_item_logic() {
 		Has.shoot_light_arrow = Has.bow && Has.light_arrow && Has.magic;
 		Has.shoot_deku_bubble = Has.deku_mask && Has.magic;
 		Has.water_for_magic_bean = Has.any_bottle || Has.song_of_storms;
-		Has.night_inn_access = Has.deku_mask || Has.room_key || Has.explosive || Has.bow || Has.hookshot || Has.zora_mask;
+		Has.night_inn_access = Has.deku_mask || Has.room_key || Has.explosive || Has.bow || Has.hookshot || Has.zora_mask || (Has.goron_mask && Has.magic);
 		
 		// Swamp area shortcuts
 		Has.poison_swamp_access = Has.zora_mask || (Has.deku_mask && (Has.hookshot || Has.bow || Has.pictobox || Has.any_bottle || Has.goron_mask));
@@ -187,7 +187,7 @@ function update_location_logic() {
 	Location_Logic["South Clock Town Final Day Chest"] = Logic.hookshot || (Logic.deku_mask && Logic.moons_tear);
 	Location_Logic["Clock Town Scrub Trade"] = Logic.moons_tear;
 	Location_Logic["Postbox"] = Logic.postmans_hat;
-		
+	
 	// North Clock Town
 	Location_Logic["Bombers' Hide and Seek"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
 	Location_Logic["Clock Town Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
@@ -197,7 +197,7 @@ function update_location_logic() {
 	Location_Logic["Old Lady"] = true;
 	Location_Logic["Town Great Fairy"] = true;
 	Location_Logic["Town Great Fairy Non-Human"] = Logic.deku_mask || Logic.goron_mask || Logic.zora_mask;
-		
+	
 	// West Clock Town
 	Location_Logic["Bomb Bag Purchase"] = true;
 	Location_Logic["Big Bomb Bag Purchase"] = true;
@@ -208,13 +208,14 @@ function update_location_logic() {
 	Location_Logic["All-Night Mask Purchase"] = Logic.giants_wallet;
 	Location_Logic["Bank Reward #3"] = Logic.giants_wallet;
 	Location_Logic["Bank Reward #2"] = Logic.adults_wallet;
-		
+	
 	// Laundry Pool
 	Location_Logic["Guru Guru"] = true;
 	Location_Logic["Kafei"] = Logic.letter_to_kafei;
 	Location_Logic["Curiosity Shop Man #1"] = Logic.letter_to_kafei;
 	Location_Logic["Curiosity Shop Man #2"] = Logic.letter_to_kafei;
-		
+	Location_Logic["Frog in the Laundry Pool"] = Logic.dongero_mask;
+	
 	// East Clock Town
 	Location_Logic["Bombers' Hideout Chest"] = Logic.explosive && (Logic.deku_mask || Logic.zora_mask || Logic.bow || Logic.hookshot);
 	Location_Logic["East Clock Town Chest"] = true;
@@ -228,7 +229,7 @@ function update_location_logic() {
 	Location_Logic["Treasure Chest Game Goron"] = Logic.goron_mask;
 	Location_Logic["Milk Bar Milk"] = Logic.romani_mask;
 	Location_Logic["Milk Bar Chateau"] = Logic.romani_mask && Logic.adults_wallet;
-		
+	
 	// Stock Pot Inn
 	Location_Logic["Inn Reservation"] = true;
 	Location_Logic["Midnight Meeting"] = Logic.kafei_mask && Logic.night_inn_access;
@@ -237,7 +238,8 @@ function update_location_logic() {
 	Location_Logic["Grandma Long Story"] = Logic.allnight_mask;
 	Location_Logic["Inn Staff Room Chest"] = true;
 	Location_Logic["Inn Guest Room Chest"] = Logic.room_key;
-		
+	Location_Logic["Anju and Kafei"] = Logic.east_access && Logic.night_inn_access && Logic.kafei_mask && Logic.letter_to_kafei && Logic.pendant_of_memories;
+	
 	// Termina Field
 	Location_Logic["Astronomy Telescope"] = Logic.deku_mask || Logic.hookshot || Logic.zora_mask || Logic.bow;
 	Location_Logic["Gossip Stones"] = (Logic.goron_mask && Logic.lullaby) || (Logic.deku_mask && Logic.sonata && (Logic.explosive || Logic.goron_mask)) || (Logic.zora_mask && Logic.nwbn && (Logic.explosive || Logic.goron_mask));
@@ -251,7 +253,7 @@ function update_location_logic() {
 	Location_Logic["Termina Field Grass Chest"] = true;
 	Location_Logic["Termina Field Stump Chest"] = Logic.hookshot || (Logic.any_magic_bean && Logic.water_for_magic_bean); 
 	Location_Logic["Bio Baba Grotto"] = Logic.zora_mask && (Logic.explosive || Logic.goron_mask);
-		
+	
 	// Road to Southern Swamp
 	Location_Logic["Swamp Archery #1"] = Logic.bow;
 	Location_Logic["Swamp Archery #2"] = Logic.bow;
@@ -259,7 +261,7 @@ function update_location_logic() {
 	Location_Logic["Path to Swamp Tree"] = Logic.shoot_deku_bubble || Logic.bow || Logic.hookshot || Logic.zora_mask;
 	Location_Logic["Woodfall Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
 	Location_Logic["Snowhead Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
-		
+	
 	// Southern Swamp
 	Location_Logic["Mystery Woods Grotto"] = true;
 	Location_Logic["Koume"] = Logic.any_bottle;
@@ -271,18 +273,20 @@ function update_location_logic() {
 	Location_Logic["Near Swamp Spider House Grotto"] = Logic.poison_swamp_access || (Logic.goron_mask && Logic.explosive);
 	Location_Logic["Swamp Spider House Reward"] = Logic.poison_swamp_access && Logic.any_bottle && (Logic.zora_mask || (Logic.deku_mask && (Logic.hookshot || ((Logic.explosive || Logic.goron_mask) && (Logic.bow || Logic.magic))))); 
 	// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
-		
+	Location_Logic["Frog in the Swamp"] = Logic.dongero_mask;
+	
 	// Deku Palace
 	Location_Logic["Bean Man"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Butler"] = Logic.woodfall_clear && Logic.poison_swamp_access && Logic.deku_mask && Logic.any_bottle; 
 	Location_Logic["Bean Grotto"] = Logic.poison_swamp_access && (((Logic.hookshot || Logic.water_for_magic_bean) && Logic.deku_mask)); 
 	Location_Logic["Deku Palace West Garden"] = Logic.poison_swamp_access && Logic.deku_mask;
-		
+	
 	// Woodfall
 	Location_Logic["Woodfall Bridge Chest"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Behind Woodfall Owl Chest"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Entrance to Woodfall Chest"] = Logic.poison_swamp_access && Logic.deku_mask;
-		
+	Location_Logic["Woodfall Great Fairy"] = false;
+	
 	// Milk Road
 	Location_Logic["Gorman Bros Race"] = Logic.eponas_song;
 	Location_Logic["Romani Ranch Map Purchase"] = Logic.shoot_deku_bubble || Logic.zora_mask || Logic.bow || Logic.hookshot;
@@ -293,9 +297,12 @@ function update_location_logic() {
 	Location_Logic["Aliens Defense"] = Logic.goron_mask && Logic.powder_keg && Logic.bow;
 	Location_Logic["Dog Race"] = Logic.mask_of_truth;
 	Location_Logic["Grog"] = Logic.bremen_mask;
+	Location_Logic["Ranch Cow #1"] = Logic.goron_mask && Logic.powder_keg && Logic.eponas_song;
+	Location_Logic["Ranch Cow #2"] = Logic.goron_mask && Logic.powder_keg && Logic.eponas_song;
+	Location_Logic["Ranch Cow #3"] = Logic.goron_mask && Logic.powder_keg && Logic.eponas_song;
 	Location_Logic["Cremia"] = Logic.goron_mask && Logic.powder_keg && Logic.bow;
-	Location_Logic["Doggy Racetrack Roof Chest"] = Logic.zora_mask || Logic.hookshot || (Logic.any_magic_bean && Logic.water_for_magic_bean);
-		
+	Location_Logic["Doggy Racetrack Roof Chest"] = Logic.zora_mask || Logic.hookshot || (Logic.any_magic_bean && Logic.water_for_magic_bean) || document.getElementById("settings_option").value == "SCRUBS";
+	
 	// Mountain Village
 	Location_Logic["Mountain Smithy Day 1"] = Logic.north_access && Logic.adults_wallet && (Logic.shoot_fire_arrow || Logic.hot_spring_water || Logic.snowhead_clear);
 	Location_Logic["Mountain Smithy Day 2"] = Logic.north_access && Logic.bottle_gold_dust && (Logic.shoot_fire_arrow || Logic.hot_spring_water || Logic.snowhead_clear);
@@ -304,13 +311,14 @@ function update_location_logic() {
 	Location_Logic["Darmani"] = Logic.song_of_healing && Logic.north_access && Logic.lens && Logic.magic;
 	Location_Logic["Mountain Waterfall Chest"] = Logic.snowhead_clear;
 	Location_Logic["Mountain Spring Grotto"] = Logic.snowhead_clear;
-		
+	
 	// Twin Islands
 	Location_Logic["Goron Race"] = Logic.snowhead_clear && Logic.goron_mask && Logic.magic;
 	Location_Logic["Twin Islands Underwater Ramp Chest"] = Logic.snowhead_clear && Logic.zora_mask;
 	Location_Logic["Hot Spring Water Grotto"] = Logic.north_access && Logic.explosive && (Logic.shoot_fire_arrow || Logic.hot_spring_water || Logic.snowhead_clear);
 	Location_Logic["Twin Islands Cave Chest"] = Logic.snowhead_clear && Logic.zora_mask;
 	Location_Logic["Goron Racetrack Grotto"] = Logic.north_access && Logic.explosive && (Logic.goron_mask || Logic.hookshot); // hookshot also needs scarecrow song
+	Location_Logic["Goron Elder"] = Logic.north_access && Logic.goron_mask && (Logic.hot_spring_water || Logic.shoot_fire_arrow);
 	
 	// Goron Village
 	Location_Logic["Goron Shop 10 Arrows"] = Logic.north_access;
@@ -326,11 +334,17 @@ function update_location_logic() {
 	Location_Logic["Lens Cave Invisible Chest"] = Logic.north_access;
 	Location_Logic["Lens Cave Rock Chest"] = Logic.north_access && Logic.explosive;
 	Location_Logic["Goron Village Ledge"] = Logic.north_access && Logic.deku_mask && Logic.swamp_title_deed;
-		
+	
 	// Path to Snowhead
 	Location_Logic["Path to Snowhead Grotto"] = Logic.north_access && Logic.explosive && Logic.goron_mask && Logic.magic;
-	Location_Logic["Path to Snowhead Pillar"] = Logic.north_access && Logic.hookshot && Logic.goron_mask && Logic.magic && Logic.lens;
-		
+	if (document.getElementById("settings_option").value == "S6")
+		Location_Logic["Path to Snowhead Pillar"] = Logic.north_access && Logic.hookshot && Logic.goron_mask && Logic.magic;
+	else
+		Location_Logic["Path to Snowhead Pillar"] = Logic.north_access && Logic.hookshot && Logic.goron_mask && Logic.magic && Logic.lens;
+	
+	// Snowhead
+	Location_Logic["Snowhead Great Fairy"] = false;
+	
 	// Great Bay Coast
 	Location_Logic["Ocean Spider House Day 1 Reward"] = Logic.west_access && Logic.explosive && Logic.hookshot && Logic.shoot_fire_arrow;
 	Location_Logic["Fisherman Game"] = Logic.great_bay_clear && Logic.hookshot;
@@ -341,7 +355,7 @@ function update_location_logic() {
 	Location_Logic["Great Bay Coast Ledge"] = Logic.west_access && Logic.hookshot && Logic.any_magic_bean && Logic.water_for_magic_bean;
 	Location_Logic["Stone Tower Map Purchase"] = Logic.west_access && (Logic.hookshot || Logic.bow);
 	Location_Logic["Fisherman Pictograph"] = Logic.west_access && Logic.zora_mask && Logic.pictobox;
-		
+	
 	// Zora Cape
 	Location_Logic["Beaver Race #1"] = Logic.west_access && Logic.hookshot && Logic.zora_mask;
 	Location_Logic["Beaver Race #2"] = Logic.west_access && Logic.hookshot && Logic.zora_mask;
@@ -350,7 +364,8 @@ function update_location_logic() {
 	Location_Logic["Zora Cape Grotto"] = Logic.west_access && (Logic.goron_mask || Logic.explosive);
 	Location_Logic["Zora Cape Underwater Chest"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Zora Cape Like-Like"] = Logic.west_access && Logic.zora_mask;
-		
+	Location_Logic["Great Bay Great Fairy"] = false;
+	
 	// Zora Hall
 	Location_Logic["Zora Shop 10 Arrows"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Zora Shop Hero's Shield"] = Logic.west_access && Logic.zora_mask;
@@ -359,56 +374,58 @@ function update_location_logic() {
 	Location_Logic["Evan"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Lulu's Room Ledge"] = Logic.west_access && Logic.zora_mask && Logic.goron_mask && Logic.deku_mask && Logic.mountain_title_deed;
 	Location_Logic["Zora Hall Stage Lights"] = Logic.west_access && Logic.zora_mask && Logic.shoot_fire_arrow;
-		
+	Location_Logic["Good Pictograph of Lulu"] = Logic.west_access && Logic.zora_mask && Logic.pictobox;
+	
 	// Pirates' Fortress Exterior
 	Location_Logic["Pirates' Fortress Exterior Log Chest"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Pirates' Fortress Exterior Sand Chest"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Pirates' Fortress Exterior Corner Chest"] = Logic.west_access && Logic.zora_mask;
-		
+	
 	// Pirates' Fortress Sewer
 	Location_Logic["Pirates' Fortress Cage Room Shallow Chest"] = Logic.west_access && Logic.zora_mask && Logic.goron_mask;
 	Location_Logic["Pirates' Fortress Cage Room Deep Chest"] = Logic.west_access && Logic.zora_mask && Logic.goron_mask;
 	Location_Logic["Pirates' Fortress Maze Chest"] = Logic.west_access && Logic.zora_mask && Logic.goron_mask;
 	Location_Logic["Pirates' Fortress Cage"] = Logic.west_access && Logic.zora_mask && Logic.goron_mask;
-		
+	
 	// Pirates' Fortress Interior
 	Location_Logic["Hookshot Chest"] = Logic.west_access && Logic.zora_mask && ((Logic.bow || Logic.shoot_deku_bubble) && (Logic.goron_mask || Logic.hookshot));
 	Location_Logic["Pirates' Fortress Interior Lower Chest"] = Logic.west_access && Logic.zora_mask && (Logic.goron_mask || Logic.hookshot);
 	Location_Logic["Pirates' Fortress Interior Upper Chest"] = Logic.west_access && Logic.zora_mask && Logic.hookshot;
 	Location_Logic["Pirates' Fortress Interior Tank Chest"] = Logic.west_access && Logic.zora_mask && Logic.hookshot;
 	Location_Logic["Pirates' Fortress Interior Guard Room Chest"] = Logic.west_access && Logic.zora_mask && Logic.hookshot;
-		
+	
 	// Pinnacle Rock
 	Location_Logic["Seahorses"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && Logic.pictobox;
 	Location_Logic["Pinnacle Rock Lower Chest"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Pinnacle Rock Upper Chest"] = Logic.west_access && Logic.zora_mask;
-		
+	
 	// Path to Ikana Canyon
 	Location_Logic["Invisible Soldier"] = Logic.east_access && Logic.lens && Logic.magic && Logic.any_bottle;
 	Location_Logic["Path to Ikana Pillar Chest"] = Logic.hookshot;
 	Location_Logic["Path to Ikana Grotto"] = Logic.goron_mask;
-		
+	
 	// Ikana Graveyard
 	Location_Logic["Dampe Digging"] = Logic.east_access && Logic.captains_hat && (Logic.zora_mask || Logic.bow);
 	Location_Logic["Iron Knuckle Chest"] = Logic.east_access && Logic.captains_hat && Logic.explosive;
 	Location_Logic["Captain Keeta's Chest"] = Logic.east_access && Logic.sonata && Logic.bow;
 	Location_Logic["Day 1 Grave Bats"] = Logic.east_access && Logic.captains_hat;
 	Location_Logic["Ikana Graveyard Grotto"] = Logic.east_access && Logic.explosive;
-		
+	
 	// Ikana Canyon
 	Location_Logic["Poe Hut"] = Logic.upper_ikana_access && Logic.bow;
 	Location_Logic["Pamela's Father"] = Logic.upper_ikana_access && Logic.song_of_storms && Logic.song_of_healing;
 	Location_Logic["Secret Shrine Grotto"] = Logic.lower_ikana_access;
 	Location_Logic["Ikana Canyon Ledge"] = Logic.lower_ikana_access && Logic.zora_mask && Logic.ocean_title_deed && Logic.deku_mask;
 	Location_Logic["Canyon Scrub Trade"] = Logic.lower_ikana_access && Logic.zora_mask && Logic.ocean_title_deed;
-		
+	Location_Logic["Ikana Great Fairy"] = false;
+	
 	// Secret Shrine
 	Location_Logic["Secret Shrine Final Chest"] = Logic.lower_ikana_access && Logic.shoot_light_arrow;
 	Location_Logic["Secret Shrine Dinolfos Chest"] = Logic.lower_ikana_access && Logic.shoot_light_arrow;
 	Location_Logic["Secret Shrine Wizzrobe Chest"] = Logic.lower_ikana_access && Logic.shoot_light_arrow;
 	Location_Logic["Secret Shrine Wart Chest"] = Logic.lower_ikana_access && Logic.shoot_light_arrow;
 	Location_Logic["Secret Shrine Garo Master Chest"] = Logic.lower_ikana_access && Logic.shoot_light_arrow;
-		
+	
 	// Beneath the Well 
 	Location_Logic["Mirror Shield Chest"] = Logic.upper_ikana_access && (
 		(Logic.shoot_fire_arrow && Logic.shoot_light_arrow) // from castle, have fire arrows
@@ -416,10 +433,13 @@ function update_location_logic() {
 	);
 	Location_Logic["Well Right Path Chest"] = Logic.upper_ikana_access && Logic.gibdo_mask && Logic.any_bottle && (Logic.shoot_light_arrow || Logic.can_buy_beans);
 	Location_Logic["Well Left Path Chest"] = Logic.upper_ikana_access && Logic.gibdo_mask && Logic.any_blue_potion;
-		
+	
 	// Ikana Castle
-	Location_Logic["Ikana Castle Pillar"] = Logic.upper_ikana_access && Logic.deku_mask && Logic.shoot_fire_arrow && Logic.lens && (Logic.shoot_light_arrow || Logic.mirror_shield);
-		
+	if (document.getElementById("settings_option").value == "S6")
+		Location_Logic["Ikana Castle Pillar"] = Logic.upper_ikana_access && Logic.deku_mask && Logic.shoot_fire_arrow && (Logic.shoot_light_arrow || Logic.mirror_shield);
+	else
+		Location_Logic["Ikana Castle Pillar"] = Logic.upper_ikana_access && Logic.deku_mask && Logic.shoot_fire_arrow && Logic.lens && (Logic.shoot_light_arrow || Logic.mirror_shield);
+	
 	// Stone Tower
 	Location_Logic["Inverted Stone Tower Left Chest"] = Logic.istt_access && Logic.any_magic_bean && Logic.water_for_magic_bean;
 	Location_Logic["Inverted Stone Tower Middle Chest"] = Logic.istt_access && Logic.any_magic_bean && Logic.water_for_magic_bean;
@@ -432,8 +452,12 @@ function update_location_logic() {
 	Location_Logic["Hero's Bow Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Map Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Small Key Chest"] = Logic.wft_access;
+	Location_Logic["Woodfall Poison Water Bubble"] = Logic.wft_access && (Logic.bow || (Logic.greatfairy_mask && Logic.hookshot));
+	Location_Logic["Woodfall Jar Fairy"] = Logic.wft_access;
+	Location_Logic["Woodfall Platform Room Hive"] = Logic.wft_access && (Logic.bow || Logic.shoot_deku_bubble || (Logic.greatfairy_mask && (Logic.zora_mask || Logic.hookshot)));
 	Location_Logic["Woodfall Compass Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Boss Key Chest"] = Logic.wft_access && Logic.bow;
+	Location_Logic["Frog in Woodfall Temple"] = Logic.wft_access && Logic.bow && Logic.dongero_mask;
 	Location_Logic["Woodfall Heart Container"] = Logic.wft_access && Logic.bow;
 	
 	// Snowhead Temple
@@ -452,6 +476,7 @@ function update_location_logic() {
 	Location_Logic["Snowhead Map Room Ledge"] = Logic.sht_access && (Logic.hookshot || (Logic.lens && (Logic.explosive || Logic.shoot_fire_arrow)));
 	Location_Logic["Snowhead Pillar Freezards"] = Logic.sht_access && Logic.shoot_fire_arrow;
 	Location_Logic["Snowhead Twin Block"] = Logic.sht_access && (Logic.hookshot || Logic.shoot_fire_arrow || Logic.zora_mask);
+	Location_Logic["Snowhead Snow Room Bubble"] = Logic.sht_access && Logic.greatfairy_mask && (Logic.hookshot || Logic.shoot_fire_arrow);
 	
 	// Great Bay Temple
 	Location_Logic["Great Bay Entrance Torches"] = Logic.gbt_access;
@@ -462,10 +487,13 @@ function update_location_logic() {
 	Location_Logic["Great Bay Waterwheel Room Upper"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	Location_Logic["Ice Arrow Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Boss Key Chest"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
+	Location_Logic["Frog in Great Bay Temple"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow && Logic.dongero_mask;
 	Location_Logic["Great Bay Map Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Compass Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Small Key Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Heart Container"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
+	Location_Logic["Great Bay Dexihands Jar"] = Logic.gbt_access;
+	Location_Logic["Great Bay Underwater Barrel"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	
 	// Stone Tower Temple
 	Location_Logic["Stone Tower Statue Eye"] = Logic.stt_access && Logic.bow;
@@ -495,17 +523,20 @@ function update_location_logic() {
 	Location_Logic["Stone Tower Wizzrobe"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Boss Key Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Heart Container"] = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
-		
+	
 	// Songs
 	Location_Logic["Starting Song"] = true;
-	Location_Logic["Boss Blue Warp"] = Logic.woodfall_clear || Logic.snowhead_clear || Logic.great_bay_clear || Logic.ikana_clear;
+	Location_Logic["Boss Blue Warp"] = (Logic.woodfall_clear && ItemLocation.sonata != "Boss Blue Warp") || (Logic.snowhead_clear && ItemLocation.lullaby != "Boss Blue Warp") || (Logic.great_bay_clear && ItemLocation.nwbn != "Boss Blue Warp") || (Logic.ikana_clear && ItemLocation.elegy != "Boss Blue Warp");
 	Location_Logic["Romani's Game"] = Logic.goron_mask && Logic.powder_keg;
 	Location_Logic["Day 1 Grave Tablet"] = Logic.east_access && Logic.captains_hat;
 	Location_Logic["Imprisoned Monkey"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Swamp Music Statue"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Baby Goron"] = Logic.north_access && Logic.goron_mask;
-	Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && Logic.hookshot && (Logic.shoot_deku_bubble || Logic.bow);
-	Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask && Logic.lens));
+	Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && ((Logic.hookshot && (Logic.shoot_deku_bubble || Logic.bow)) || (document.getElementById("settings_option").value == "S6" && document.getElementById("fairy_eggs_option").value == "ON"));
+	if (document.getElementById("settings_option").value == "S6")
+		Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask));
+	else
+		Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask && Logic.lens));
 	Location_Logic["Skull Kid Song"] = Logic.shoot_deku_bubble || Logic.bow || Logic.zora_mask || Logic.hookshot;
 	
 	
@@ -547,6 +578,7 @@ function update_location_logic() {
 		Access["Kafei"] = Has.letter_to_kafei;
 		Access["Curiosity Shop Man #1"] = Has.letter_to_kafei;
 		Access["Curiosity Shop Man #2"] = Has.letter_to_kafei;
+		Access["Frog in the Laundry Pool"] = Has.dongero_mask;
 			
 		// East Clock Town
 		Access["Bombers' Hideout Chest"] = Has.explosive;
@@ -562,7 +594,6 @@ function update_location_logic() {
 		Access["Milk Bar Milk"] = Has.romani_mask;
 		Access["Milk Bar Chateau"] = Has.romani_mask && Has.adults_wallet;
 		
-			
 		// Stock Pot Inn
 		Access["Inn Reservation"] = true;
 		Access["Midnight Meeting"] = Has.kafei_mask/* && Has.night_inn_access*/; // does require night inn access, but removed that to remind to set up meeting...
@@ -571,6 +602,7 @@ function update_location_logic() {
 		Access["Grandma Long Story"] = Has.allnight_mask;
 		Access["Inn Staff Room Chest"] = true;
 		Access["Inn Guest Room Chest"] = Has.room_key;
+		Access["Anju and Kafei"] = Has.east_access && Has.night_inn_access && Has.kafei_mask && Has.letter_to_kafei && Has.pendant_of_memories;
 			
 		// Termina Field
 		Access["Astronomy Telescope"] = true;
@@ -605,6 +637,7 @@ function update_location_logic() {
 		Access["Near Swamp Spider House Grotto"] = Has.poison_swamp_access || (Has.goron_mask && Has.explosive);
 		Access["Swamp Spider House Reward"] = (Has.poison_swamp_access || Has.goron_mask) && Has.any_bottle && (Has.zora_mask || Has.hookshot || ((Has.explosive || Has.goron_mask) && Has.deku_mask && (Has.bow || Has.magic)));
 		// can get without hookshot or zora mask using beans: https://www.twitch.tv/videos/1032053901, https://www.twitch.tv/videos/1032043528
+		Access["Frog in the Swamp"] = Has.dongero_mask;
 			
 		// Deku Palace
 		Access["Bean Man"] = Has.poison_swamp_access && Has.deku_mask;
@@ -616,6 +649,7 @@ function update_location_logic() {
 		Access["Woodfall Bridge Chest"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Behind Woodfall Owl Chest"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Entrance to Woodfall Chest"] = Has.poison_swamp_access && Has.deku_mask;
+		Access["Woodfall Great Fairy"] = false;
 			
 		// Milk Road
 		Access["Gorman Bros Milk Purchase"] = true;
@@ -627,6 +661,9 @@ function update_location_logic() {
 		Access["Aliens Defense"] = Has.goron_mask && Has.powder_keg && Has.bow;
 		Access["Dog Race"] = true;
 		Access["Grog"] = Has.bremen_mask;
+		Access["Ranch Cow #1"] = Has.goron_mask && Has.powder_keg && Has.eponas_song;
+		Access["Ranch Cow #2"] = Has.goron_mask && Has.powder_keg && Has.eponas_song;
+		Access["Ranch Cow #3"] = Has.goron_mask && Has.powder_keg && Has.eponas_song;
 		Access["Cremia"] = Has.goron_mask && Has.powder_keg && Has.bow;
 		Access["Doggy Racetrack Roof Chest"] = true;
 			
@@ -645,6 +682,7 @@ function update_location_logic() {
 		Access["Hot Spring Water Grotto"] = Has.north_access && Has.explosive && (Has.shoot_fire_arrow || Has.hot_spring_water || Has.snowhead_clear);
 		Access["Twin Islands Cave Chest"] = Has.snowhead_clear && Has.zora_mask;
 		Access["Goron Racetrack Grotto"] = Has.north_access && Has.explosive; // hookshot also needs scarecrow song
+		Access["Goron Elder"] = Has.north_access && Has.goron_mask && (Has.hot_spring_water || Has.shoot_fire_arrow);
 			
 		// Goron Village
 		Access["Goron Shop 10 Arrows"] = Has.north_access;
@@ -661,6 +699,9 @@ function update_location_logic() {
 		// Path to Snowhead
 		Access["Path to Snowhead Grotto"] = Has.north_access && Has.explosive && Has.goron_mask;
 		Access["Path to Snowhead Pillar"] = Has.north_access && Has.goron_mask && Has.hookshot;
+
+		// Snowhead
+		Access["Snowhead Great Fairy"] = false;
 			
 		// Great Bay Coast
 		Access["Ocean Spider House Day 1 Reward"] = Has.west_access && Has.explosive && Has.hookshot;
@@ -681,6 +722,7 @@ function update_location_logic() {
 		Access["Zora Cape Grotto"] = Has.west_access && (Has.goron_mask || Has.explosive);
 		Access["Zora Cape Underwater Chest"] = Has.west_access && Has.zora_mask;
 		Access["Zora Cape Like-Like"] = Has.west_access && Has.zora_mask;
+		Access["Great Bay Great Fairy"] = false;
 			
 		// Zora Hall
 		Access["Zora Shop 10 Arrows"] = Has.west_access && Has.zora_mask;
@@ -690,6 +732,7 @@ function update_location_logic() {
 		Access["Evan"] = Has.west_access && Has.zora_mask;
 		Access["Lulu's Room Ledge"] = Has.west_access && Has.zora_mask;
 		Access["Zora Hall Stage Lights"] = Has.west_access && Has.shoot_fire_arrow;
+		Access["Good Pictograph of Lulu"] = Has.west_access && Has.zora_mask && Has.pictobox;
 			
 		// Pirates' Fortress Exterior
 		Access["Pirates' Fortress Exterior Log Chest"] = Has.west_access && Has.zora_mask;
@@ -732,6 +775,7 @@ function update_location_logic() {
 		Access["Secret Shrine Grotto"] = Has.lower_ikana_access;
 		Access["Ikana Canyon Ledge"] = Has.lower_ikana_access && Has.zora_mask && Has.ocean_title_deed && Has.deku_mask;
 		Access["Canyon Scrub Trade"] = Has.lower_ikana_access && Has.zora_mask && Has.ocean_title_deed;
+		Access["Ikana Great Fairy"] = false;
 			
 		// Secret Shrine
 		Access["Secret Shrine Final Chest"] = Has.lower_ikana_access && Has.shoot_light_arrow;
@@ -763,8 +807,12 @@ function update_location_logic() {
 		Access["Hero's Bow Chest"] = Has.wft_access;
 		Access["Woodfall Map Chest"] = Has.wft_access;
 		Access["Woodfall Small Key Chest"] = Has.wft_access;
+		Access["Woodfall Poison Water Bubble"] = Has.wft_access;
+		Access["Woodfall Jar Fairy"] = Has.wft_access;
+		Access["Woodfall Platform Room Hive"] = Has.wft_access && (Has.bow || Has.shoot_deku_bubble || Has.zora_mask || Has.hookshot);
 		Access["Woodfall Compass Chest"] = Has.wft_access;
 		Access["Woodfall Boss Key Chest"] = Has.wft_access && Has.bow;
+		Access["Frog in Woodfall Temple"] = Has.wft_access && Has.bow && Has.dongero_mask;
 		Access["Woodfall Heart Container"] = Has.wft_access && Has.bow;
 			
 		// Snowhead Temple
@@ -783,6 +831,7 @@ function update_location_logic() {
 		Access["Snowhead Map Room Ledge"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow);
 		Access["Snowhead Pillar Freezards"] = Has.sht_access && Has.shoot_fire_arrow;
 		Access["Snowhead Twin Block"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.zora_mask);
+		Access["Snowhead Snow Room Bubble"] = Has.sht_access && Has.greatfairy_mask && (Has.hookshot || Has.shoot_fire_arrow);
 			
 		// Great Bay Temple
 		Access["Great Bay Entrance Torches"] = Has.gbt_access;
@@ -793,10 +842,13 @@ function update_location_logic() {
 		Access["Great Bay Waterwheel Room Upper"] = Has.gbt_access && Has.shoot_ice_arrow;
 		Access["Ice Arrow Chest"] = Has.gbt_access;
 		Access["Great Bay Boss Key Chest"] = Has.gbt_access;
+		Access["Frog in Great Bay Temple"] = Has.gbt_access && Has.shoot_ice_arrow && Has.shoot_fire_arrow && Has.dongero_mask;
 		Access["Great Bay Map Chest"] = Has.gbt_access;
 		Access["Great Bay Compass Chest"] = Has.gbt_access;
 		Access["Great Bay Small Key Chest"] = Has.gbt_access;
 		Access["Great Bay Heart Container"] = Has.gbt_access && Has.shoot_ice_arrow;
+		Access["Great Bay Dexihands Jar"] = Has.gbt_access;
+		Access["Great Bay Underwater Barrel"] = Has.gbt_access && Has.shoot_ice_arrow;
 		
 		// Stone Tower Temple
 		Access["Stone Tower Statue Eye"] = Has.stt_access && Has.bow;
@@ -835,7 +887,7 @@ function update_location_logic() {
 		Access["Imprisoned Monkey"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Swamp Music Statue"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Baby Goron"] = Has.north_access && Has.goron_mask;
-		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && Has.hookshot && (Has.shoot_deku_bubble || Has.bow);
+		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && ((Has.hookshot && (Has.shoot_deku_bubble || Has.bow)) || (document.getElementById("settings_option").value == "S6" && document.getElementById("fairy_eggs_option").value == "ON"));
 		Access["Ikana King"] = Has.upper_ikana_access && Has.shoot_fire_arrow && Has.mirror_shield && (Has.shoot_light_arrow || ((Has.deku_mask || Has.zora_mask) && Has.powder_keg && Has.goron_mask));
 		Access["Skull Kid Song"] = Has.shoot_deku_bubble || Has.bow || Has.zora_mask || Has.hookshot || Has.bomb || Has.blast_mask;
 	

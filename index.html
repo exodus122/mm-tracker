@@ -25,6 +25,7 @@
 				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br class="half_break">
 				<label class="settingsLabels" for="settings_option">Mode</label>
 				<select class="settingsOptions" id="settings_option">
+					<option value="S6">S6</option>
 					<option value="S5">S5</option>
 					<option value="SCRUBS">Scrubs</option>
 					<option value="EASTER">Easter</option>
@@ -36,7 +37,14 @@
 				<select class="settingsOptions" id="gossips_option">
 					<option value="OFF">Off</option>
 					<option value="ON">On</option>
+				</select><br><br class="half_break">
+				<div id="fairy_eggs_div">
+				<label class="settingsLabels" for="fairy_eggs_option">Fairy Eggs</label>
+				<select class="settingsOptions" id="fairy_eggs_option">
+					<option value="OFF">Off</option>
+					<option value="ON">On</option>
 				</select><br>
+				</div>
 			</div>
 			<div id="itemColumn" class="itemColumn">
 				<small id="checks_remaining" class="check_text" style="color:lightblue">Remaining:</small>
@@ -79,7 +87,8 @@
 				<img src="./images/Room Key.png" id="room_key_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Letter to Kafei.png" id="letter_to_kafei_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Special Delivery to Mama.png" id="special_delivery_img" class="requirements" onmousedown="highlight(this)"></img>
-				<img src="./images/Great Fairy's Sword.png" id="great_fairy_sword_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Pendant of Memories.png" id="pendant_of_memories_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Great Fairy's Sword.png" id="great_fairy_sword_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src="./images/songs/healing2.png" id="song_of_healing_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/songs/storms.png" id="song_of_storms_img" class="requirements" onmousedown="highlight(this)"></img>
 				<br>
@@ -101,18 +110,20 @@
 				<img src="./images/Postman's Hat.png" id="postmans_hat_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/All-Night Mask.png" id="allnight_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Blast Mask.png" id="blast_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Stone Mask.png" id="stone_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Great Fairy's Mask.png" id="greatfairy_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<br>
 				<img src="./images/Keaton Mask.png" id="keaton_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Bremen Mask.png" id="bremen_mask_img" class="requirements" onmousedown="highlight(this)"></img>
-				<br>
 				<img src="./images/Bunny Hood.png" id="bunny_hood_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Don Gero's Mask.png" id="dongero_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Mask of Scents.png" id="mask_of_scents_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Romani's Mask.png" id="romani_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<br>
 				<img src="./images/Kafei's Mask.png" id="kafei_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Couple's Mask.png" id="couples_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Mask of Truth.png" id="mask_of_truth_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Kamaro's Mask.png" id="kamaro_mask_img" class="requirements" onmousedown="highlight(this)"></img>
-				<br>
-				<img src="./images/Mask of Scents.png" id="mask_of_scents_img" class="requirements" onmousedown="highlight(this)"></img>
-				<img src="./images/Stone Mask.png" id="stone_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Giant's Mask.png" id="giants_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Fierce Deity's Mask.png" id="fiercedeity_mask_img" class="requirements" onmousedown="highlight(this)"></img>
 				
@@ -121,10 +132,6 @@
 				<img src="./images/Bombchu.png" id="bombchu_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src="./images/Deku Stick.png" id="stick_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src="./images/Deku Nut.png" id="nut_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
-				<img src="./images/Pendant of Memories.png" id="pendant_of_memories_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
-				<img src="./images/Great Fairy's Mask.png" id="greatfairy_mask_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
-				<img src="./images/Don Gero's Mask.png" id="dongero_mask_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
-				<img src="./images/Mask of Scents.png" id="mask_of_scents_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src="./images/Circus Leader's Mask.png" id="circusleaders_mask_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src="./images/songs/time.png" id="song_of_time_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src="./images/songs/soaring.png" id="song_of_soaring_img" class="requirements_hidden" onmousedown="highlight(this)"></img><br><br>
@@ -157,6 +164,7 @@
 			<small id="room_key_location" class="checkSummaryText" onmousedown="clickSummary(this)">Room Key &#8594; </small><br>
 			<small id="letter_to_kafei_location" class="checkSummaryText" onmousedown="clickSummary(this)">Letter Kafei &#8594; </small><br>
 			<small id="special_delivery_location" class="checkSummaryText" onmousedown="clickSummary(this)">Special Delivery &#8594; </small><br>
+			<small id="pendant_of_memories_location" class="checkSummaryText" onmousedown="clickSummary(this)">Pendant &#8594; </small><br id="pendant_of_memories_location_br"/>
 			<small id="magic_bean1_location" class="checkSummaryText" onmousedown="clickSummary(this)">Magic Bean &#8594; </small><br>
 			<small id="magic_bean2_location" class="checkSummaryText" onmousedown="clickSummary(this)">Magic Bean &#8594; </small><br>
 			<small id="bottle_gold_dust_location" class="checkSummaryText" onmousedown="clickSummary(this)">Bottle Gold Dust &#8594; </small><br>
@@ -183,7 +191,6 @@
 			<small id="magic1_location" class="checkSummaryText" onmousedown="clickSummary(this)">Magic &#8594; </small><br>
 			<small id="magic2_location" class="checkSummaryText" onmousedown="clickSummary(this)">Magic -></small><br>
 			<small id="mirror_shield_location" class="checkSummaryText" onmousedown="clickSummary(this)">Mirror Shield &#8594; </small><br>
-			<small id="pendant_of_memories_location" class="checkSummaryText" onmousedown="clickSummary(this)">Pendant &#8594; </small><br id="pendant_of_memories_location_br"/>
 			<small id="pictobox_location" class="checkSummaryText" onmousedown="clickSummary(this)">Pictobox &#8594; </small><br>
 			<small id="powder_keg_location" class="checkSummaryText" onmousedown="clickSummary(this)">Powder Keg &#8594; </small><br>
 			<small id="sword1_location" class="checkSummaryText" onmousedown="clickSummary(this)">Sword &#8594; </small><br id="sword1_location_br"/>
@@ -191,9 +198,9 @@
 			<small id="wallet1_location" class="checkSummaryText" onmousedown="clickSummary(this)">Wallet &#8594; </small><br>
 			<small id="wallet2_location" class="checkSummaryText" onmousedown="clickSummary(this)">Wallet &#8594; </small><br>
 			<small id="allnight_mask_location" class="checkSummaryText" onmousedown="clickSummary(this)">All-Night Mask &#8594; </small><br>
+			<small id="blast_mask_location" class="checkSummaryText" onmousedown="clickSummary(this)">Blast Mask &#8594; </small><br>
 		</div>
 		<div id="checkSummaryColumn3" class="checkSummaryColumn">
-			<small id="blast_mask_location" class="checkSummaryText" onmousedown="clickSummary(this)">Blast Mask &#8594; </small><br>
 			<small id="bremen_mask_location" class="checkSummaryText" onmousedown="clickSummary(this)">Bremen Mask &#8594; </small><br>
 			<small id="bunny_hood_location" class="checkSummaryText" onmousedown="clickSummary(this)">Bunny Hood &#8594; </small><br>
 			<small id="captains_hat_location" class="checkSummaryText" onmousedown="clickSummary(this)">Captain's Hat &#8594; </small><br>
@@ -257,7 +264,7 @@
 				roo - Room Key<br>
 				spe - Special Delivery to Mama<br>
 				let - Letter to Kafei<br>
-				<!--pen - Pendant of Memories<br>-->
+				pen - Pendant of Memories<br>
 				bot - Bottle<br>
 				gol - Gold Dust<br>
 				moo - Moon's Tear<br>
@@ -269,12 +276,12 @@
 				all - All-Night Mask<br>
 				bla - Blast Mask<br>
 				sto - Stone Mask<br>
-				<!--gre - Great Fairy Mask<br>-->
+				gre - Great Fairy Mask<br>
 				dek - Deku Mask<br>
 				kea - Keaton Mask<br>
 				bre - Bremen Mask<br>
 				bun - Bunny Hood<br>
-				<!--don - Don Gero's Mask<br>-->
+				don - Don Gero's Mask<br>
 				sce - Mask of Scents<br>
 				gor - Goron Mask<br>
 				rom - Romani Mask<br>
@@ -332,12 +339,17 @@
 				bom - Bombers' Hide and Seek<br>
 				hon - Honey and Darling Any Day<br>
 				bar - Madame Aroma in Bar<br>
+				anj - Anju and Kafei<br>
 				pla - Deku Playground Any Day<br>
 				bro - Gorman Bros Race<br>
 				hoo - Hookshot Chest<br>
 				kam - Kamaro<br>
 				inv - Invisible Soldier<br>
 				spi - Ocean Spider House Chest<br>
+				wfa - Woodfall Great Fairy<br>
+				sfa - Snowhead Great Fairy<br>
+				gfa - Great Bay Great Fairy<br>
+				ifa - Ikana Great Fairy<br>
 				dar - Woodfall Dark Room<br>
 				fir - Fire Arrow Chest<br>
 				ice - Ice Arrow Chest<br>
@@ -361,6 +373,7 @@
 				twi - Twin Islands<br>
 				gor - Goron Village<br>
 				psn - Path to Snowhead<br>
+				sno - Snowhead<br>
 				gre - Great Bay Coast<br>
 				cap - Zora Cape<br>
 				hal - Zora Hall<br>
