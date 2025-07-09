@@ -41,7 +41,15 @@ function woth_and_barren_processing() {
 	// loops the 5 woth entries
 	for (var i = 1; i <= 5; i++) {
 		var str = document.getElementById("woth_input" + i).value;
+		str = str.replace("1",""); // if there's a 2, ignore it
 		str = str.replace("2",""); // if there's a 2, ignore it
+		str = str.replace("3",""); // if there's a 2, ignore it
+		str = str.replace("4",""); // if there's a 2, ignore it
+		str = str.replace("5",""); // if there's a 2, ignore it
+		str = str.replace("6",""); // if there's a 2, ignore it
+		str = str.replace("7",""); // if there's a 2, ignore it
+		str = str.replace("8",""); // if there's a 2, ignore it
+		str = str.replace("9",""); // if there's a 2, ignore it
 		
 		for(var j = 1; j < AreaNames.length; j++) {
 			if (str == areaInputs[j] && str != "") {
