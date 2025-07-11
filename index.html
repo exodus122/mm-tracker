@@ -15,36 +15,39 @@
 			<div id="normalColumn5" class="column"></div>
 			<div id="normalColumn6" class="column"></div>
 			<div id="normalColumn7" class="column"></div>
-			<div id="normalColumn8" class="column"></div>
-			<div id="songColumn" class="column">
-				<div id="songdiv"></div><br class="half_break">
-				<textarea spellcheck="false" rows="21" cols="13" id="hintInput"></textarea><br><br class="half_break">
-				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
-				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
-				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
-				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br class="half_break">
-				<label class="settingsLabels" for="settings_option">Mode</label>
-				<select class="settingsOptions" id="settings_option">
-					<option value="S6">S6</option>
-					<option value="S5">S5</option>
-					<option value="SCRUBS">Scrubs</option>
-					<option value="EASTER">Easter</option>
-					<option value="BLITZ">Blitz</option>
-					<option value="S4">S4</option>
-					<option value="S3">S3</option>
-				</select><br><br class="half_break">
-				<label class="settingsLabels" for="gossips_option">Gossips</label>
-				<select class="settingsOptions" id="gossips_option">
-					<option value="OFF">Off</option>
-					<option value="ON">On</option>
-				</select><br><br class="half_break">
-				<div id="fairy_eggs_div">
-				<label class="settingsLabels" for="fairy_eggs_option">Fairy Eggs</label>
-				<select class="settingsOptions" id="fairy_eggs_option">
-					<option value="OFF">Off</option>
-					<option value="ON">On</option>
-				</select><br>
+			<div class="evancolumn">
+				<div id="normalColumn8" class="column"></div>
+				<div id="songColumn" class="column">
+					<div id="songdiv"></div><br class="half_break">
+					<textarea spellcheck="false" rows="21" cols="13" id="hintInput"></textarea><br><br class="half_break">
+					<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
+					<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
+					<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
+					<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br class="half_break">
+					<label class="settingsLabels" for="settings_option">Mode</label>
+					<select class="settingsOptions" id="settings_option">
+						<option value="S6">S6</option>
+						<option value="S5">S5</option>
+						<option value="SCRUBS">Scrubs</option>
+						<option value="EASTER">Easter</option>
+						<option value="BLITZ">Blitz</option>
+						<option value="S4">S4</option>
+						<option value="S3">S3</option>
+					</select><br><br class="half_break">
+					<label class="settingsLabels" for="gossips_option">Gossips</label>
+					<select class="settingsOptions" id="gossips_option">
+						<option value="OFF">Off</option>
+						<option value="ON">On</option>
+					</select><br><br class="half_break">
+					<div id="fairy_eggs_div">
+					<label class="settingsLabels" for="fairy_eggs_option">Fairy Eggs</label>
+					<select class="settingsOptions" id="fairy_eggs_option">
+						<option value="OFF">Off</option>
+						<option value="ON">On</option>
+					</select><br>
+					</div>
 				</div>
+				<img src="./images/evansong.png" class="evansong"></img>
 			</div>
 			<div id="itemColumn" class="itemColumn">
 				<small id="checks_remaining" class="check_text" style="color:lightblue">Remaining:</small>
@@ -224,7 +227,6 @@
 			<small id="mask_of_truth_location" class="checkSummaryText" onmousedown="clickSummary(this)"> Truth Mask &#8594; </small><br>
 			<small id="zora_mask_location" class="checkSummaryText" onmousedown="clickSummary(this)">Zora Mask &#8594; </small><br>
 		</div>
-		<img src="./images/evansong.png" class="evansong"></img><br><br>
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>

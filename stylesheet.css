@@ -69,17 +69,24 @@ overflow: hidden;
 		1px 1px 0 #000;
 }
 .column {
-  margin-top:0px;
-  float: left;
-  width: 115px;
-  
+	margin-top:0px;
+	float: left;
+	width: 115px;
 }
 .itemColumn {
 	margin-top:0px;
 	margin-left:10px;
-  float: left;
-  width: 230px;
-  
+	float: left;
+	width: 230px;
+}
+.evancolumn {
+	margin-top:0px;
+	float: left;
+	width: 250px;
+}
+.evansong {
+	margin-top:10px;
+	float: left;
 }
 .checkSummaryColumn {
 	left:20px;
@@ -411,10 +418,4 @@ color:rgb(155,161,0);
 	display: inline-block;
 	margin-right: 100px;
 	vertical-align: top;
-}
-.evansong {
-	position: absolute;
-	left: 815px;
-	top: 710px;
-	width: 250px;
 }

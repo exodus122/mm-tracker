@@ -160,7 +160,7 @@ var Names = [
 	"Map Ranch", "Map Bay", "Milk 50r", "Race 10r", "Hint", 
 	
 	// Romani Ranch
-	"Dog Chest", "Dog 50r", "Chicks", "Cow 1", "Cow 2", "Cow 3", "Aliens", "Cremia", "Entrance", "Barn", "Tree", "Race", "Cucco", 
+	"Dog Chest", "Dog 50r", "Grog", "Cow 1", "Cow 2", "Cow 3", "Aliens", "Cremia", "Entrance", "Barn", "Tree", "Race", "Cucco", 
 	
 	// Mountain 
 	"Smithy 100r", "Smithy Gold", "Sirloin", "Spr Water", "Spr Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 
