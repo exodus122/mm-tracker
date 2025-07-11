@@ -640,7 +640,7 @@ function clickSummary(loc) {
 	}
 	
 	if(MarkedWotHItemArrow == null) {
-		if(event.which == 3) { // right click, toggle if you have it or not
+		if(!simActive && (event.which == 3 || event.which == 1) && !event.ctrlKey) { // toggle if you have it or not
 			if(!clickedSong)
 				Game[item] = !Game[item];
 			else if(Check[str] != "unknown")
