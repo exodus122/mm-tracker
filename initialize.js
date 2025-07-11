@@ -350,6 +350,18 @@ for (var i = 0; i < Locations.length; i++)
 	if(elem.id == "text_Poe Hut" || elem.id == "text_Pamela's Father")
 		elem.title = "Cannot do after beating STT";
 	
+	if(elem.id == "text_Woodfall Great Fairy")
+		elem.title = "ent room chest\nent room bubble\nmain room baba\nmain room bubble\npushblock skulltula\npushblock beehive\ndark room\nfinal room right upper\nfinal room right lower\nfinal room left\nfinal room bubble";
+	
+	if(elem.id == "text_Snowhead Great Fairy")
+		elem.title = "bridge pillar\nbridge under ledge\nnear map\nmap ledge\ntwinblock switch\ncracked wall crate\nice puzzle\nfalling icicle chest\nceiling bubble\nbasement switch\ndefeat freezards\ndinolfos 1\ndinolfos 2"
+	
+	if(elem.id == "text_Great Bay Great Fairy")
+		elem.title = "ent torches\nent bubble\nent skulltula\ngreen valve room\nmain room left barrel\nmain room pot\nmap pot\nbio babas\nseesaw chest\nfinal room under switch\nfinal room near exit";
+	
+	if(elem.id == "text_Ikana Great Fairy")
+		elem.title = "stt:\nunderwater\nbridge crystal\nbasement ledge\nmirror sun switch\nlava room fire ring\nthin bridge\neyegore\ndeath armos (return stt)\n\nistt:\nfire ring";
+	
 	parent.appendChild(elem);
 	
 	var elem = document.createElement("br"); 

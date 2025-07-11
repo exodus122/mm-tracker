@@ -404,8 +404,8 @@ var s6_disabled_checks = [
 	
 	"Woodfall Entrance Platform", "Woodfall Dark Room", 
 	
-	"Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", 
-	"Snowhead Main Room Wall", "Snowhead Basement", 
+	"Snowhead Pillar Freezards", "Snowhead Map Room Ledge", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", 
+	"Snowhead Basement", 
 	
 	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Bio Babas", "Great Bay Seesaw Room", 
 	

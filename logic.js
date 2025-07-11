@@ -285,7 +285,7 @@ function update_location_logic() {
 	Location_Logic["Woodfall Bridge Chest"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Behind Woodfall Owl Chest"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Entrance to Woodfall Chest"] = Logic.poison_swamp_access && Logic.deku_mask;
-	Location_Logic["Woodfall Great Fairy"] = false;
+	Location_Logic["Woodfall Great Fairy"] = Logic.wft_access && Logic.bow;
 	
 	// Milk Road
 	Location_Logic["Gorman Bros Race"] = Logic.eponas_song;
@@ -343,7 +343,7 @@ function update_location_logic() {
 		Location_Logic["Path to Snowhead Pillar"] = Logic.north_access && Logic.hookshot && Logic.goron_mask && Logic.magic && Logic.lens;
 	
 	// Snowhead
-	Location_Logic["Snowhead Great Fairy"] = false;
+	Location_Logic["Snowhead Great Fairy"] = Logic.sht_access && Logic.greatfairy_mask && Logic.shoot_fire_arrow && (Logic.lens || Logic.hookshot);
 	
 	// Great Bay Coast
 	Location_Logic["Ocean Spider House Day 1 Reward"] = Logic.west_access && Logic.explosive && Logic.hookshot && Logic.shoot_fire_arrow;
@@ -364,7 +364,7 @@ function update_location_logic() {
 	Location_Logic["Zora Cape Grotto"] = Logic.west_access && (Logic.goron_mask || Logic.explosive);
 	Location_Logic["Zora Cape Underwater Chest"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Zora Cape Like-Like"] = Logic.west_access && Logic.zora_mask;
-	Location_Logic["Great Bay Great Fairy"] = false;
+	Location_Logic["Great Bay Great Fairy"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	
 	// Zora Hall
 	Location_Logic["Zora Shop 10 Arrows"] = Logic.west_access && Logic.zora_mask;
@@ -417,7 +417,7 @@ function update_location_logic() {
 	Location_Logic["Secret Shrine Grotto"] = Logic.lower_ikana_access;
 	Location_Logic["Ikana Canyon Ledge"] = Logic.lower_ikana_access && Logic.zora_mask && Logic.ocean_title_deed && Logic.deku_mask;
 	Location_Logic["Canyon Scrub Trade"] = Logic.lower_ikana_access && Logic.zora_mask && Logic.ocean_title_deed;
-	Location_Logic["Ikana Great Fairy"] = false;
+	Location_Logic["Ikana Great Fairy"] = Logic.istt_access && Logic.deku_mask && Logic.goron_mask && Logic.zora_mask;
 	
 	// Secret Shrine
 	Location_Logic["Secret Shrine Final Chest"] = Logic.lower_ikana_access && Logic.shoot_light_arrow;
@@ -649,7 +649,7 @@ function update_location_logic() {
 		Access["Woodfall Bridge Chest"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Behind Woodfall Owl Chest"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Entrance to Woodfall Chest"] = Has.poison_swamp_access && Has.deku_mask;
-		Access["Woodfall Great Fairy"] = false;
+		Access["Woodfall Great Fairy"] = Has.wft_access && Has.bow;
 			
 		// Milk Road
 		Access["Gorman Bros Milk Purchase"] = true;
@@ -701,7 +701,7 @@ function update_location_logic() {
 		Access["Path to Snowhead Pillar"] = Has.north_access && Has.goron_mask && Has.hookshot;
 
 		// Snowhead
-		Access["Snowhead Great Fairy"] = false;
+		Access["Snowhead Great Fairy"] = Has.sht_access && Has.greatfairy_mask && Has.shoot_fire_arrow;
 			
 		// Great Bay Coast
 		Access["Ocean Spider House Day 1 Reward"] = Has.west_access && Has.explosive && Has.hookshot;
@@ -722,7 +722,7 @@ function update_location_logic() {
 		Access["Zora Cape Grotto"] = Has.west_access && (Has.goron_mask || Has.explosive);
 		Access["Zora Cape Underwater Chest"] = Has.west_access && Has.zora_mask;
 		Access["Zora Cape Like-Like"] = Has.west_access && Has.zora_mask;
-		Access["Great Bay Great Fairy"] = false;
+		Access["Great Bay Great Fairy"] = Has.gbt_access && Has.shoot_ice_arrow;
 			
 		// Zora Hall
 		Access["Zora Shop 10 Arrows"] = Has.west_access && Has.zora_mask;
@@ -775,7 +775,7 @@ function update_location_logic() {
 		Access["Secret Shrine Grotto"] = Has.lower_ikana_access;
 		Access["Ikana Canyon Ledge"] = Has.lower_ikana_access && Has.zora_mask && Has.ocean_title_deed && Has.deku_mask;
 		Access["Canyon Scrub Trade"] = Has.lower_ikana_access && Has.zora_mask && Has.ocean_title_deed;
-		Access["Ikana Great Fairy"] = false;
+		Access["Ikana Great Fairy"] = Has.istt_access && Has.deku_mask && Has.goron_mask && Has.zora_mask;
 			
 		// Secret Shrine
 		Access["Secret Shrine Final Chest"] = Has.lower_ikana_access && Has.shoot_light_arrow;
@@ -831,7 +831,7 @@ function update_location_logic() {
 		Access["Snowhead Map Room Ledge"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow);
 		Access["Snowhead Pillar Freezards"] = Has.sht_access && Has.shoot_fire_arrow;
 		Access["Snowhead Twin Block"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.zora_mask);
-		Access["Snowhead Snow Room Bubble"] = Has.sht_access && Has.greatfairy_mask && (Has.hookshot || Has.shoot_fire_arrow);
+		Access["Snowhead Snow Room Bubble"] = Has.sht_access && (Has.hookshot || Has.shoot_fire_arrow);
 			
 		// Great Bay Temple
 		Access["Great Bay Entrance Torches"] = Has.gbt_access;
@@ -878,7 +878,7 @@ function update_location_logic() {
 		Access["Stone Tower Wizzrobe"] = Has.istt_access && Has.deku_mask;
 		Access["Stone Tower Boss Key Chest"] = Has.istt_access;
 		Access["Stone Tower Heart Container"] = Has.istt_access;
-			
+		
 		// Songs
 		Access["Starting Song"] = true;
 		Access["Boss Blue Warp"] = Has.woodfall_clear || Has.snowhead_clear || Has.great_bay_clear || Has.ikana_clear;
@@ -890,7 +890,7 @@ function update_location_logic() {
 		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && ((Has.hookshot && (Has.shoot_deku_bubble || Has.bow)) || (document.getElementById("settings_option").value == "S6" && document.getElementById("fairy_eggs_option").value == "ON"));
 		Access["Ikana King"] = Has.upper_ikana_access && Has.shoot_fire_arrow && Has.mirror_shield && (Has.shoot_light_arrow || ((Has.deku_mask || Has.zora_mask) && Has.powder_keg && Has.goron_mask));
 		Access["Skull Kid Song"] = Has.shoot_deku_bubble || Has.bow || Has.zora_mask || Has.hookshot || Has.bomb || Has.blast_mask;
-	
+		
 		Access = Location_Could_Access;
 		Has = CouldHave;
 	}
