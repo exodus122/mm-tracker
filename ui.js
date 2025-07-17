@@ -804,7 +804,7 @@ function resetCycle() {
 }
 
 function update_settings() {
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S6") {
+	if(document.getElementById("settings_option").value == "BLITZ") {
 		document.getElementById("woth_input4").style.display = "inline";
 		document.getElementById("woth_input5").style.display = "inline";
 		document.getElementById("barren_input4").style.display = "none";
