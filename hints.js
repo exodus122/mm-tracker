@@ -115,12 +115,12 @@ function woth_and_barren_processing() {
 				
 				// Cannot be hinted WotH
 				if (Items[k] == "giants_mask") {continue;}
-				if (Items[k] == "fiercedeity_mask") {continue;}
+				if (Items[k] == "fiercedeity_mask" && document.getElementById("settings_option").value != "S6") {continue;}
 				if (Items[k] == Check["Starting Song"]) {continue;} // it doesn't have an area
-				if (Items[k] == Check["Keaton Quiz"]) {continue;} // multi-region check. none of them can be woth
-				if (Items[k] == Check["Postbox"]) {continue;} // multi-region check. none of them can be woth
-				if (Items[k] == Check["Woodfall Map Purchase"]) {continue;} // multi-region check. none of them can be woth
-				if (Items[k] == "oath") {continue;} // it can't lock an item, so cannot be woth
+				if (Items[k] == Check["Keaton Quiz"] && document.getElementById("settings_option").value != "S6") {continue;} // multi-region check. none of them can be woth
+				if (Items[k] == Check["Postbox"] && document.getElementById("settings_option").value != "S6") {continue;} // multi-region check. none of them can be woth
+				if (Items[k] == Check["Woodfall Map Purchase"] && document.getElementById("settings_option").value != "S6") {continue;} // multi-region check. none of them can be woth
+				if (Items[k] == "oath" && document.getElementById("settings_option").value != "S6") {continue;} // it can't lock an item, so cannot be woth
 				
 				// Logically useless
 				if (Items[k] == "sword1") {continue;}
@@ -128,9 +128,9 @@ function woth_and_barren_processing() {
 				if (Items[k] == "great_fairy_sword") {continue;}
 				if (Items[k] == "circusleaders_mask") {continue;}
 				if (Items[k] == "stone_mask") {continue;}
-				if (Items[k] == "greatfairy_mask") {continue;}
-				if (Items[k] == "pendant_of_memories") {continue;}
-				if (Items[k] == "dongero_mask") {continue;}
+				if (Items[k] == "greatfairy_mask" && document.getElementById("settings_option").value != "S6") {continue;}
+				if (Items[k] == "pendant_of_memories" && document.getElementById("settings_option").value != "S6") {continue;}
+				if (Items[k] == "dongero_mask" && document.getElementById("settings_option").value != "S6") {continue;}
 
 				if (alwaysHints.indexOf(ItemLocation[Items[k]]) == -1 && ItemLocation[Items[k]] != null && (Hinted[ItemLocation[Items[k]]] == false || typeof Hinted[ItemLocation[Items[k]]] == "undefined")) 
 				{
@@ -141,8 +141,29 @@ function woth_and_barren_processing() {
 					if(ItemLocation[Items[k]] == "Biggest Bomb Bag Purchase" && ((AreaNames[i] == "Swamp" && ((Items[k] == "deku_mask") || (Items[k] == "moons_tear") || (Items[k] == "land_title_deed") || (Items[k] == "swamp_title_deed"))) || (AreaNames[i] == "Gor Village" && Items[k] == "goron_mask")))
 						continue;
 					
+					multiLocationOverride = false;
+					
+					if(document.getElementById("settings_option").value == "S6") {
+						if(ItemLocation[Items[k]] == "Postbox" && (AreaNames[i] == "SCT" || AreaNames[i] == "NCT" || AreaNames[i] == "ECT"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Clock Town Map Purchase" && (AreaNames[i] == "NCT" || AreaNames[i] == "Canyon"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Woodfall Map Purchase" && (AreaNames[i] == "NCT" || AreaNames[i] == "Road Swamp"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Snowhead Map Purchase" && (AreaNames[i] == "Road Swamp" || AreaNames[i] == "Twin Islands"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Romani Ranch Map Purchase" && (AreaNames[i] == "Twin Islands" || AreaNames[i] == "Milk Road"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Great Bay Map Purchase" && (AreaNames[i] == "Milk Road" || AreaNames[i] == "Great Bay"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Stone Tower Map Purchase" && (AreaNames[i] == "Great Bay" || AreaNames[i] == "Canyon"))
+							multiLocationOverride = true;
+						if(ItemLocation[Items[k]] == "Keaton Quiz" && (AreaNames[i] == "NCT" || AreaNames[i] == "Milk Road" || AreaNames[i] == "Mtn Village"))
+							multiLocationOverride = true;
+					}
+					
 					if ((Locations.indexOf(ItemLocation[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(ItemLocation[Items[k]]) < AreaIndexes[i]) 
-					|| Locations.indexOf(ItemLocation[Items[k]]) == SongIndexes[i-1] || blue_warp_song) 
+					|| Locations.indexOf(ItemLocation[Items[k]]) == SongIndexes[i-1] || blue_warp_song || multiLocationOverride) 
 					{
 						document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + wothNumber + "_" + k + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
 						
