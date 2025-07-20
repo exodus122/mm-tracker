@@ -62,7 +62,7 @@ var Locations = [
 	"Great Bay Coast Grotto", "Stone Tower Map Purchase", "Lab Fish", "Great Bay Coast Ledge", "Mikau", "Fisherman Pictograph", "Ocean Spider House Chest", "Fisherman Game", "Ocean Spider House Day 1 Reward", "h_OceanFortress", 
 	
 	// Zora Cape
-	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", "Great Bay Great Fairy", "h_OceanZoraGame", 
+	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", "Ocean Great Fairy", "h_OceanZoraGame", 
 	
 	// Zora Hall
 	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Zora Hall Stage Lights", "Evan", "Lulu's Room Ledge", "Ocean Scrub Trade", "Good Pictograph of Lulu",
@@ -248,7 +248,7 @@ var blitz_disabled_checks = [
 	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song", 
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	"Swamp Archery #2", "Curiosity Shop Man #2", "Starting Item", 
-	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy",
+	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
@@ -281,7 +281,7 @@ var blitz_disabled_checks_stt = [
 var s3_disabled_checks = [
 	"Swamp Music Statue", "Goron Elder", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", 
 	"Stone Tower Boss Key Chest", "Swamp Archery #2", "Starting Item",
-	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy",
+	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
@@ -291,7 +291,7 @@ var s3_disabled_checks = [
 var s4_disabled_checks = [
 	"Swamp Music Statue", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Starting Item",
-	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy",
+	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	
@@ -318,7 +318,7 @@ var s5_disabled_checks = [
 	"Swamp Music Statue", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
 	"Swamp Archery #2", "Curiosity Shop Man #2", 
-	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy",
+	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	
@@ -346,7 +346,7 @@ var easter_disabled_checks = [
 	"Swamp Music Statue", "Goron Elder", "Skull Kid Song", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Swamp Archery #2", 
 	"Curiosity Shop Man #2", "Starting Item",
-	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy",
+	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	
@@ -373,7 +373,7 @@ var scrubs_disabled_checks = [
 	"Skull Kid Song", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
 	"Swamp Archery #2", "Curiosity Shop Man #2", 
-	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy",
+	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	

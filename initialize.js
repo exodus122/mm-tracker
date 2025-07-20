@@ -99,9 +99,9 @@ var inputs = [
 	"x", "bow", "fir", "ice", "lig", "moo", "lan", "swa", "mou", "oce", "bom", "bea", "roo", "spe", "pow", "pic", "len", "hoo", "gfs", "let", "pen", "bot", "gol", "pos", "all", "bla", "sto", "gre", "dek", "kea", "bre", "bun", "don", "sce", "gor", "rom", "cir", "kaf", "cou", "tru", "zor", "kam", "gib", "gar", "cap", "gia", "fie", "swo", "mir", "mag", "wal", "soh", "epo", "sos", "son", "lul", "nov", "ele", "oat"
 ];
 
-var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ba2", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "sar2", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "inv", "spi", "bar", "mir", "anj", "wfa", "sfa", "gfa", "ifa"];
+var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ba2", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "sar2", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "inv", "spi", "bar", "mir", "anj", "wfa", "sfa", "ofa", "ifa"];
 
-var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #2", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Swamp Archery #2", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest", "Madame Aroma in Bar", "Mirror Shield Chest", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy"];
+var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #2", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Swamp Archery #2", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest", "Madame Aroma in Bar", "Mirror Shield Chest", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy"];
 
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
@@ -133,8 +133,8 @@ else if (document.getElementById("settings_option").value == "SCRUBS") {
 	hintbox.innerHTML = "ali \ncre \nbut \nboa \ngos \nspi \n\nbar \nsar \ninv \ngro \nmid \ndog \npam \nba2 \ngor \nmir \nfis \n";
 }
 else if (document.getElementById("settings_option").value == "S6") {
-	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Great Bay Great Fairy", "Ikana Great Fairy"];
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \nanj \nwfa \nsfa \ngfa \nifa \n";
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy"];
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \nanj \nwfa \nsfa \nofa \nifa \n";
 }
 
 var Hinted = {};
@@ -356,7 +356,7 @@ for (var i = 0; i < Locations.length; i++)
 	if(elem.id == "text_Snowhead Great Fairy")
 		elem.title = "bridge pillar\nbridge under ledge\nnear map\nmap ledge\ntwinblock switch\ncracked wall crate\nice puzzle\nfalling icicle chest\nceiling bubble\nbasement switch\ndefeat freezards\ndinolfos 1\ndinolfos 2"
 	
-	if(elem.id == "text_Great Bay Great Fairy")
+	if(elem.id == "text_Ocean Great Fairy")
 		elem.title = "ent torches\nent bubble\nent skulltula\ngreen valve room\nmain room left barrel\nmain room pot\nmap pot\nbio babas\nseesaw chest\nfinal room under switch\nfinal room near exit";
 	
 	if(elem.id == "text_Ikana Great Fairy")
