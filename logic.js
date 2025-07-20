@@ -918,6 +918,7 @@ function update_location_logic() {
 		Peek["Postman's Freedom Reward"] = true;
 		Peek["Swamp Spider House Reward"] = Has.poison_swamp_access || Has.goron_mask;
 		Peek["Hungry Goron"] = Has.north_access;
+		Peek["Snowhead Snow Room Bubble"] = Has.sht_access && (Has.hookshot || Has.shoot_fire_arrow);
 		
 		if (document.getElementById("settings_option").value == "SCRUBS") {
 			Peek["Ocean Spider House Day 1 Reward"] = true;
