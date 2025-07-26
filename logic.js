@@ -364,7 +364,7 @@ function update_location_logic() {
 	Location_Logic["Zora Cape Grotto"] = Logic.west_access && (Logic.goron_mask || Logic.explosive);
 	Location_Logic["Zora Cape Underwater Chest"] = Logic.west_access && Logic.zora_mask;
 	Location_Logic["Zora Cape Like-Like"] = Logic.west_access && Logic.zora_mask;
-	Location_Logic["Ocean Great Fairy"] = Logic.gbt_access && Logic.shoot_ice_arrow;
+	Location_Logic["Ocean Great Fairy"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
 	
 	// Zora Hall
 	Location_Logic["Zora Shop 10 Arrows"] = Logic.west_access && Logic.zora_mask;
