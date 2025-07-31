@@ -132,7 +132,7 @@ function woth_and_barren_processing() {
 				if (Items[k] == "pendant_of_memories" && document.getElementById("settings_option").value != "S6") {continue;}
 				if (Items[k] == "dongero_mask" && document.getElementById("settings_option").value != "S6") {continue;}
 
-				if (alwaysHints.indexOf(ItemLocation[Items[k]]) == -1 && ItemLocation[Items[k]] != null && (Hinted[ItemLocation[Items[k]]] == false || typeof Hinted[ItemLocation[Items[k]]] == "undefined")) 
+				if ((alwaysHints.indexOf(ItemLocation[Items[k]]) == -1 && ItemLocation[Items[k]] != null && (Hinted[ItemLocation[Items[k]]] == false || typeof Hinted[ItemLocation[Items[k]]] == "undefined")) || document.getElementById("settings_option").value == "S6") 
 				{
 					var blue_warp_song = false;
 					if(ItemLocation[Items[k]] == "Boss Blue Warp" && ((AreaNames[i] == "WFT" && Items[k] != "sonata") || (AreaNames[i] == "SHT" && Items[k] != "lullaby") || (AreaNames[i] == "GBT" && Items[k] != "nwbn") || (AreaNames[i] == "STT" && Items[k] != "elegy")))
