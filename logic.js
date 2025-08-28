@@ -970,7 +970,7 @@ function update_location_logic() {
 		Peek["Stone Tower Underwater"] = Has.istt_access;
 		Peek["Stone Tower Death Armos Maze Chest"] = Has.stt_access || (Has.istt_access && (Has.deku_mask || Has.explosive));
 		
-		Access = Location_Could_Peek;
+		Peek = Location_Could_Peek;
 		Has = CouldHave;
 	}
 }
