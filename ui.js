@@ -142,6 +142,7 @@ function update_check_display() {
 		if (document.getElementById("settings_option").value == "S6" && s6_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "SCRUBS" && scrubs_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "EASTER" && easter_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SGL_2026" && sgl_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
@@ -809,6 +810,11 @@ function update_settings() {
 		document.getElementById("woth_input5").style.display = "inline";
 		document.getElementById("barren_input4").style.display = "none";
 	}
+	if(document.getElementById("settings_option").value == "SGL_2026") {
+		document.getElementById("woth_input4").style.display = "inline";
+		document.getElementById("woth_input5").style.display = "none";
+		document.getElementById("barren_input4").style.display = "none";
+	}
 	else {
 		document.getElementById("woth_input4").style.display = "none";
 		document.getElementById("woth_input5").style.display = "none";
@@ -823,6 +829,14 @@ function update_settings() {
 		document.getElementById("greatfairy_mask_location").style.display = "inline-block";
 		document.getElementById("greatfairy_mask_location_br").style.display = "inline-block";
 		document.getElementById("fairy_eggs_div").style.display = "inline-block";
+	}
+	else if (document.getElementById("settings_option").value == "SGL_2026"){
+		document.getElementById("pendant_of_memories_location").style.display = "none";
+		document.getElementById("pendant_of_memories_location_br").style.display = "none";
+		document.getElementById("dongero_mask_location").style.display = "inline-block";
+		document.getElementById("dongero_mask_location_br").style.display = "inline-block";
+		document.getElementById("greatfairy_mask_location").style.display = "none";
+		document.getElementById("greatfairy_mask_location_br").style.display = "none";
 	}
 	else {
 		document.getElementById("pendant_of_memories_location").style.display = "none";

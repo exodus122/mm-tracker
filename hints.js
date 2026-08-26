@@ -130,7 +130,7 @@ function woth_and_barren_processing() {
 				if (Items[k] == "stone_mask") {continue;}
 				if (Items[k] == "greatfairy_mask" && document.getElementById("settings_option").value != "S6") {continue;}
 				if (Items[k] == "pendant_of_memories" && document.getElementById("settings_option").value != "S6") {continue;}
-				if (Items[k] == "dongero_mask" && document.getElementById("settings_option").value != "S6") {continue;}
+				if (Items[k] == "dongero_mask" && document.getElementById("settings_option").value != "S6" && document.getElementById("settings_option").value != "SGL_2026") {continue;}
 
 				if ((alwaysHints.indexOf(ItemLocation[Items[k]]) == -1 && ItemLocation[Items[k]] != null && (Hinted[ItemLocation[Items[k]]] == false || typeof Hinted[ItemLocation[Items[k]]] == "undefined")) || document.getElementById("settings_option").value == "S6") 
 				{

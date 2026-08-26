@@ -136,6 +136,10 @@ else if (document.getElementById("settings_option").value == "S6") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy"];
 	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \nanj \nwfa \nsfa \nofa \nifa \n";
 }
+else if (document.getElementById("settings_option").value == "SGL_2026") {
+	alwaysHints = ["Bank Reward #3", "Seahorses", "Goron Race", "Boat Archery", "Butler", "Fisherman Game", "Gossip Stones"];
+	hintbox.innerHTML = "ban \nrac \nsea \nbut \nboa \nfis \ngos \n\nBANK: \n1 BOTTLE EGGS\nOATH HINT\n\nQUEST THRU TIME\n\n";
+}
 
 var Hinted = {};
 var hintedInput = "";
@@ -426,9 +430,9 @@ if (document.getElementById("settings_option").value == "EASTER") {
 	Known.bottle2 = true;
 }
 
-if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS" || document.getElementById("settings_option").value == "S6") {
+if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS" || document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "SGL_2026") {
 	document.getElementById("Starting Song").value = "epo";
-	if(document.getElementById("settings_option").value == "S6")
+	if(document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "SGL_2026")
 		document.getElementById("Starting Item").value = "gia";
 }
 
