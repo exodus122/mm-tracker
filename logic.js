@@ -82,7 +82,6 @@ function update_item_logic() {
         Game.garo_mask = true;
         CouldHave.garo_mask = true;
     }
-		
 	
 	// Misc Shortcuts
 	Logic.explosive = Logic.bomb || Logic.blast_mask;
@@ -94,6 +93,7 @@ function update_item_logic() {
 	Logic.shoot_deku_bubble = Logic.deku_mask && Logic.magic;
 	Logic.water_for_magic_bean = Logic.any_bottle || Logic.song_of_storms;
 	Logic.night_inn_access = Logic.deku_mask || Logic.room_key;
+	Logic.goron_damage_boost = GORON_DAMAGE_BOOSTING && Logic.goron_mask && Logic.bomb;
 	
 	// Swamp area shortcuts
 	Logic.poison_swamp_access = Logic.zora_mask || (Logic.deku_mask && (Logic.hookshot || Logic.bow || Logic.pictobox || Logic.any_bottle));
@@ -109,12 +109,12 @@ function update_item_logic() {
 	Logic.snowhead_clear = Logic.sht_access && Logic.shoot_fire_arrow;
 	
 	// Great Bay area shortcuts
-	Logic.west_access = Logic.eponas_song;
+	Logic.west_access = Logic.eponas_song || Logic.goron_damage_boost;
 	Logic.gbt_access = Logic.west_access && Logic.zora_mask && Logic.nwbn && Logic.hookshot;
 	Logic.great_bay_clear = Logic.gbt_access && Logic.shoot_fire_arrow && Logic.shoot_ice_arrow; 
 
 	// Ikana area shortcuts
-	Logic.east_access = Logic.eponas_song;
+	Logic.east_access = Logic.eponas_song || Logic.goron_damage_boost;
 	Logic.lower_ikana_access = Logic.east_access && (Logic.garo_mask || Logic.gibdo_mask) && Logic.hookshot;
 	Logic.upper_ikana_access = Logic.lower_ikana_access && Logic.shoot_ice_arrow;
 	Logic.stt_access = Logic.upper_ikana_access && Logic.elegy && (Logic.goron_mask || Logic.zora_mask);
@@ -188,6 +188,7 @@ function update_location_logic() {
 	
 	// Starting Item
 	Location_Logic["Starting Item"] = true;
+	Location_Logic["Starting Item 2"] = true;
 	
 	// South Clock Town
 	Location_Logic["Clock Tower Entrance"] = true;
@@ -345,7 +346,7 @@ function update_location_logic() {
 	
 	// Path to Snowhead
 	Location_Logic["Path to Snowhead Grotto"] = Logic.north_access && Logic.explosive && Logic.goron_mask && Logic.magic;
-	if (document.getElementById("settings_option").value == "S6")
+	if (document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "S7")
 		Location_Logic["Path to Snowhead Pillar"] = Logic.north_access && Logic.hookshot && Logic.goron_mask && Logic.magic;
 	else
 		Location_Logic["Path to Snowhead Pillar"] = Logic.north_access && Logic.hookshot && Logic.goron_mask && Logic.magic && Logic.lens;
@@ -443,7 +444,7 @@ function update_location_logic() {
 	Location_Logic["Well Left Path Chest"] = Logic.upper_ikana_access && Logic.gibdo_mask && Logic.any_blue_potion;
 	
 	// Ikana Castle
-	if (document.getElementById("settings_option").value == "S6")
+	if (document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "S7")
 		Location_Logic["Ikana Castle Pillar"] = Logic.upper_ikana_access && Logic.deku_mask && Logic.shoot_fire_arrow && (Logic.shoot_light_arrow || Logic.mirror_shield);
 	else
 		Location_Logic["Ikana Castle Pillar"] = Logic.upper_ikana_access && Logic.deku_mask && Logic.shoot_fire_arrow && Logic.lens && (Logic.shoot_light_arrow || Logic.mirror_shield);
@@ -466,6 +467,8 @@ function update_location_logic() {
 	Location_Logic["Woodfall Compass Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Boss Key Chest"] = Logic.wft_access && Logic.bow;
 	Location_Logic["Frog in Woodfall Temple"] = Logic.wft_access && Logic.bow && Logic.dongero_mask;
+	Location_Logic["Woodfall Temple Pre-Boss Left Pillar Item"] = Logic.wft_access && Logic.bow && Logic.zora_mask;
+	Location_Logic["Woodfall Temple Pre-Boss Right Pillar Item"] = Logic.wft_access && Logic.bow;
 	Location_Logic["Woodfall Heart Container"] = Logic.wft_access && Logic.bow;
 	
 	// Snowhead Temple
@@ -485,6 +488,9 @@ function update_location_logic() {
 	Location_Logic["Snowhead Pillar Freezards"] = Logic.sht_access && Logic.shoot_fire_arrow;
 	Location_Logic["Snowhead Twin Block"] = Logic.sht_access && (Logic.hookshot || Logic.shoot_fire_arrow || Logic.zora_mask);
 	Location_Logic["Snowhead Snow Room Bubble"] = Logic.sht_access && Logic.greatfairy_mask && (Logic.hookshot || Logic.shoot_fire_arrow);
+	Location_Logic["Snowhead Temple Icicle Room Frozen Item"] = Logic.sht_access && (Logic.hookshot || Logic.explosive || Logic.shoot_fire_arrow);
+	Location_Logic["Snowhead Temple Icicle Room Frozen Item 2"] = Logic.sht_access && (Logic.hookshot || Logic.explosive || Logic.shoot_fire_arrow);
+	Location_Logic["Snowhead Temple Icicle Room Frozen Item 3"] = Logic.sht_access && (Logic.hookshot || Logic.explosive || Logic.shoot_fire_arrow);
 	
 	// Great Bay Temple
 	Location_Logic["Great Bay Entrance Torches"] = Logic.gbt_access;
@@ -502,6 +508,11 @@ function update_location_logic() {
 	Location_Logic["Great Bay Heart Container"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
 	Location_Logic["Great Bay Dexihands Jar"] = Logic.gbt_access;
 	Location_Logic["Great Bay Underwater Barrel"] = Logic.gbt_access && Logic.shoot_ice_arrow;
+	Location_Logic["Great Bay Temple Water Control Room Item 5"] = Logic.gbt_access;
+	Location_Logic["Great Bay Temple Green Pump Item"] = Logic.gbt_access && Logic.shoot_ice_arrow;
+	Location_Logic["Great Bay Temple Green Pump Item 2"] = Logic.gbt_access && Logic.shoot_ice_arrow;
+	Location_Logic["Great Bay Temple Dexihand Item"] = Logic.gbt_access;
+	Location_Logic["Great Bay Temple Dexihand Item 2"] = Logic.gbt_access;
 	
 	// Stone Tower Temple
 	Location_Logic["Stone Tower Statue Eye"] = Logic.stt_access && Logic.bow;
@@ -520,12 +531,18 @@ function update_location_logic() {
 	Location_Logic["Stone Tower Thin Bridge"] = (Logic.stt_access && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask && Logic.explosive)) && Logic.explosive) || (Logic.istt_access && Logic.deku_mask);
 	Location_Logic["Stone Tower Eyegore"] = Logic.stt_access && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask && Logic.explosive));
 	Location_Logic["Stone Tower Death Armos"] = Logic.istt_access && Logic.deku_mask;
+	Location_Logic["Stone Tower Temple Eyegore Room Item"] = Logic.stt_access && ((Logic.explosive && Logic.goron_mask) || (Logic.shoot_light_arrow && Logic.zora_mask)) && (Logic.shoot_light_arrow || (FD_ANYWHERE && Logic.fiercedeity_mask));
+	Location_Logic["Stone Tower Temple Eyegore Room Item 2"] = Logic.stt_access && ((Logic.explosive && Logic.goron_mask) || Logic.shoot_light_arrow) && Logic.zora_mask && Logic.shoot_light_arrow && (Logic.deku_mask || Logic.zora_mask);
+	Location_Logic["Stone Tower Temple Lava Room Item 6"] = Logic.stt_access && (Logic.shoot_light_arrow || (Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask && Logic.explosive)) && Logic.deku_mask;
 	
 	// Inverted Stone Tower Temple
 	Location_Logic["Stone Tower Entrance Sun Switch"] = Logic.istt_access;
 	Location_Logic["Stone Tower Updraft Frozen Eye"] = Logic.istt_access && Logic.deku_mask && Logic.shoot_fire_arrow;
 	Location_Logic["Stone Tower Updraft Fire Ring"] = Logic.istt_access && Logic.zora_mask && Logic.deku_mask;
 	Location_Logic["Stone Tower Updraft Room Chest"] = Logic.istt_access && Logic.deku_mask;
+	Location_Logic["Inverted Stone Tower Temple Updraft Room Item"] = Logic.istt_access;
+	Location_Logic["Inverted Stone Tower Temple Updraft Room Item 2"] = Logic.istt_access;
+	Location_Logic["Inverted Stone Tower Temple Dexihand Item 3"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Giant's Mask Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Death Armos Maze Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Wizzrobe"] = Logic.istt_access && Logic.deku_mask;
@@ -534,6 +551,7 @@ function update_location_logic() {
 	
 	// Songs
 	Location_Logic["Starting Song"] = true;
+	Location_Logic["Starting Song 2"] = true;
 	Location_Logic["Boss Blue Warp"] = (Logic.woodfall_clear && ItemLocation.sonata != "Boss Blue Warp") || (Logic.snowhead_clear && ItemLocation.lullaby != "Boss Blue Warp") || (Logic.great_bay_clear && ItemLocation.nwbn != "Boss Blue Warp") || (Logic.ikana_clear && ItemLocation.elegy != "Boss Blue Warp");
 	Location_Logic["Romani's Game"] = Logic.goron_mask && Logic.powder_keg;
 	Location_Logic["Day 1 Grave Tablet"] = Logic.east_access && Logic.captains_hat;
@@ -541,7 +559,7 @@ function update_location_logic() {
 	Location_Logic["Swamp Music Statue"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Baby Goron"] = Logic.north_access && Logic.goron_mask;
 	Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && ((Logic.hookshot && (Logic.shoot_deku_bubble || Logic.bow)) || (document.getElementById("settings_option").value == "S6" && document.getElementById("fairy_eggs_option").value == "ON") || (document.getElementById("settings_option").value == "SGL_2026"));
-	if (document.getElementById("settings_option").value == "S6")
+	if (document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "S7")
 		Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask));
 	else
 		Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask && Logic.lens));
@@ -552,6 +570,7 @@ function update_location_logic() {
 		
 		// Starting Item
 		Access["Starting Item"] = true;
+		Access["Starting Item 2"] = true;
 	
 		// South Clock Town
 		Access["Clock Tower Entrance"] = true;
@@ -821,6 +840,8 @@ function update_location_logic() {
 		Access["Woodfall Compass Chest"] = Has.wft_access;
 		Access["Woodfall Boss Key Chest"] = Has.wft_access && Has.bow;
 		Access["Frog in Woodfall Temple"] = Has.wft_access && Has.bow && Has.dongero_mask;
+		Access["Woodfall Temple Pre-Boss Left Pillar Item"] = Has.wft_access && Has.bow && (Has.zora_mask || Has.explosive || (FD_ANYWHERE && Has.fiercedeity_mask) || Has.goron_mask);
+		Access["Woodfall Temple Pre-Boss Right Pillar Item"] = Has.wft_access && Has.bow;
 		Access["Woodfall Heart Container"] = Has.wft_access && Has.bow;
 			
 		// Snowhead Temple
@@ -840,7 +861,11 @@ function update_location_logic() {
 		Access["Snowhead Pillar Freezards"] = Has.sht_access && Has.shoot_fire_arrow;
 		Access["Snowhead Twin Block"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow || Has.zora_mask);
 		Access["Snowhead Snow Room Bubble"] = Has.sht_access && Has.greatfairy_mask && (Has.hookshot || Has.shoot_fire_arrow);
-			
+		Access["Snowhead Temple Icicle Room Frozen Item"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow);
+		Access["Snowhead Temple Icicle Room Frozen Item 2"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow);
+		Access["Snowhead Temple Icicle Room Frozen Item 3"] = Has.sht_access && (Has.hookshot || Has.explosive || Has.shoot_fire_arrow);
+		
+		
 		// Great Bay Temple
 		Access["Great Bay Entrance Torches"] = Has.gbt_access;
 		Access["Great Bay Bio Babas"] = Has.gbt_access;
@@ -850,13 +875,18 @@ function update_location_logic() {
 		Access["Great Bay Waterwheel Room Upper"] = Has.gbt_access && Has.shoot_ice_arrow;
 		Access["Ice Arrow Chest"] = Has.gbt_access;
 		Access["Great Bay Boss Key Chest"] = Has.gbt_access;
-		Access["Frog in Great Bay Temple"] = Has.gbt_access && Has.shoot_ice_arrow && Has.shoot_fire_arrow && Has.dongero_mask;
+		Access["Frog in Great Bay Temple"] = Has.gbt_access && Has.shoot_ice_arrow && Has.dongero_mask;
 		Access["Great Bay Map Chest"] = Has.gbt_access;
 		Access["Great Bay Compass Chest"] = Has.gbt_access;
 		Access["Great Bay Small Key Chest"] = Has.gbt_access;
 		Access["Great Bay Heart Container"] = Has.gbt_access && Has.shoot_ice_arrow;
 		Access["Great Bay Dexihands Jar"] = Has.gbt_access;
 		Access["Great Bay Underwater Barrel"] = Has.gbt_access && Has.shoot_ice_arrow;
+		Access["Great Bay Temple Water Control Room Item 5"] = Has.gbt_access;
+		Access["Great Bay Temple Green Pump Item"] = Has.gbt_access && (Has.shoot_ice_arrow || (FD_ANYWHERE && Has.fiercedeity_mask));
+		Access["Great Bay Temple Green Pump Item 2"] = Has.gbt_access && (Has.shoot_ice_arrow || (FD_ANYWHERE && Has.fiercedeity_mask));
+		Access["Great Bay Temple Dexihand Item"] = Has.gbt_access;
+		Access["Great Bay Temple Dexihand Item 2"] = Has.gbt_access;
 		
 		// Stone Tower Temple
 		Access["Stone Tower Statue Eye"] = Has.stt_access && Has.bow;
@@ -875,12 +905,18 @@ function update_location_logic() {
 		Access["Stone Tower Thin Bridge"] = (Has.stt_access && (Has.shoot_light_arrow || (Has.deku_mask && Has.mirror_shield && Has.goron_mask && Has.zora_mask && (Has.explosive || Has.great_fairy_sword))) && Has.explosive) || (Has.istt_access && Has.deku_mask);
 		Access["Stone Tower Eyegore"] = Has.stt_access && (Has.shoot_light_arrow || (Has.deku_mask && Has.mirror_shield && Has.goron_mask && Has.zora_mask && Has.explosive));
 		Access["Stone Tower Death Armos"] = Has.istt_access && Has.deku_mask;
+		Access["Stone Tower Temple Eyegore Room Item"] = Has.stt_access && ((Has.explosive && Has.goron_mask) || (Has.shoot_light_arrow && Has.zora_mask)) && (Has.shoot_light_arrow || Has.zora_mask || (FD_ANYWHERE && Has.fiercedeity_mask));
+		Access["Stone Tower Temple Eyegore Room Item 2"] = Has.stt_access && ((Has.explosive && Has.goron_mask) || (Has.shoot_light_arrow && Has.zora_mask)) && (Has.shoot_light_arrow && (Has.deku_mask || Has.zora_mask));
+		Access["Stone Tower Temple Lava Room Item 6"] = Has.stt_access && (Has.shoot_light_arrow || (Has.mirror_shield && Has.goron_mask && Has.zora_mask && Has.explosive)) && Has.deku_mask;
 		
 		// Inverted Stone Tower Temple
 		Access["Stone Tower Entrance Sun Switch"] = Has.istt_access;
 		Access["Stone Tower Updraft Frozen Eye"] = Has.istt_access && Has.shoot_fire_arrow;
 		Access["Stone Tower Updraft Fire Ring"] = Has.istt_access && Has.zora_mask && Has.deku_mask;
 		Access["Stone Tower Updraft Room Chest"] = Has.istt_access;
+		Access["Inverted Stone Tower Temple Updraft Room Item"] = Has.istt_access;
+		Access["Inverted Stone Tower Temple Updraft Room Item 2"] = Has.istt_access;
+		Access["Inverted Stone Tower Temple Dexihand Item 3"] = Has.istt_access;
 		Access["Giant's Mask Chest"] = Has.istt_access;
 		Access["Stone Tower Death Armos Maze Chest"] = Has.istt_access && (Has.deku_mask || Has.explosive);
 		Access["Stone Tower Wizzrobe"] = Has.istt_access && Has.deku_mask;
@@ -889,6 +925,7 @@ function update_location_logic() {
 		
 		// Songs
 		Access["Starting Song"] = true;
+		Access["Starting Song 2"] = true;
 		Access["Boss Blue Warp"] = Has.woodfall_clear || Has.snowhead_clear || Has.great_bay_clear || Has.ikana_clear;
 		Access["Romani's Game"] = Has.goron_mask && Has.powder_keg;
 		Access["Day 1 Grave Tablet"] = Has.east_access && Has.captains_hat;

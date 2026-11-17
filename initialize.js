@@ -1,22 +1,22 @@
 if (localStorage.getItem("settings_option")) {document.getElementById("settings_option").value = localStorage.getItem("settings_option");}
 
 var AreaIndexes = [
-	0,1,1,6,15,24,
-	29,41,49,
-	71,77,89,93,97,102,
-	115,125,130,140,142,143,
-	153,162,170,173,177,182,
-	185,189,194,203,208,211,212,
-	215,228,244,259,
-	284
+	0,2,2,7,16,25,
+	30,42,50,
+	72,78,90,94,98,103,
+	116,126,131,141,143,144,
+	154,163,171,174,178,183,
+	186,190,195,204,209,212,213,
+	216,231,250,270,
+	301
 ];
 var SongIndexes = [
-	1000,285/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,287/*swamp statue*/,286/*monkey song*/,
-	1000,1000,289/*eponas*/,291/*elder*/,291/*elder*/,290/*goron*/,1000,1000,292/*eggs*/,
-	1000,1000,1000,1000,1000,1000,1000,293/*grave*/,1000,1000,1000,
-	294/*castle*/,1000,1000,1000,1000,1000
+	1000,303/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,305/*swamp statue*/,304/*monkey song*/,
+	1000,1000,307/*ranch*/,309/*elder*/,309/*elder*/,308/*goron*/,1000,1000,310/*eggs*/,
+	1000,1000,1000,1000,1000,1000,1000,311/*grave*/,1000,1000,1000,
+	312/*castle*/,1000,1000,1000,1000,1000
 ];
-var lastItem = 284;
+var lastItem = 301;
 
 var AreaNames = [
 	"", "Starting", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
@@ -82,7 +82,7 @@ var NonprogressiveItems2 = [
 	"bow1", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "magic_bean1", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "mirror_shield", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var SongItems = [
-	"Starting Song", "Skull Kid Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue", "Goron Elder"
+	"Starting Song", "Starting Song 2", "Skull Kid Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue", "Goron Elder"
 ];
 var SongNames = {
 	"song_of_healing": "Healing", 
@@ -102,6 +102,9 @@ var inputs = [
 var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ba2", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "sar2", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "inv", "spi", "bar", "mir", "anj", "wfa", "sfa", "ofa", "ifa"];
 
 var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #2", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Swamp Archery #2", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest", "Madame Aroma in Bar", "Mirror Shield Chest", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy"];
+
+var GORON_DAMAGE_BOOSTING = false;
+var FD_ANYWHERE = false;
 
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
@@ -135,6 +138,10 @@ else if (document.getElementById("settings_option").value == "SCRUBS") {
 else if (document.getElementById("settings_option").value == "S6") {
 	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses", "Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy"];
 	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \nanj \nwfa \nsfa \nofa \nifa \n";
+}
+else if (document.getElementById("settings_option").value == "S7") {
+	alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses", "Anju and Kafei"];
+	hintbox.innerHTML = "boa \nbut \n\nrac \nali \ncre \n\ndam \ngos \n\nbea \nsea \nfis \n\nswa \noce \n\nanj \n\nmir \nmid \nban \nspi \n";
 }
 else if (document.getElementById("settings_option").value == "SGL_2026") {
 	alwaysHints = ["Bank Reward #3", "Seahorses", "Goron Race", "Boat Archery", "Butler", "Fisherman Game", "Gossip Stones"];
@@ -219,7 +226,7 @@ for (var i = 0; i < Locations.length; i++)
 		}
 	}
 	
-	if(i == AreaIndexes[37]+16) {
+	if(i == AreaIndexes[37]+19) {
 		var elem = document.createElement("small"); 
 		elem.innerHTML = "ISTT"; 
 		elem.className = "area_name";
@@ -434,6 +441,12 @@ if(document.getElementById("settings_option").value == "BLITZ" || document.getEl
 	document.getElementById("Starting Song").value = "epo";
 	if(document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "SGL_2026")
 		document.getElementById("Starting Item").value = "gia";
+}
+else if(document.getElementById("settings_option").value == "S7") {
+	document.getElementById("Starting Item").value = "gar";
+		
+	GORON_DAMAGE_BOOSTING = true;
+	FD_ANYWHERE = true;
 }
 
 var modal = document.getElementById("myModal");

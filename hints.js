@@ -115,7 +115,7 @@ function woth_and_barren_processing() {
 				
 				// Cannot be hinted WotH
 				if (Items[k] == "giants_mask") {continue;}
-				if (Items[k] == "fiercedeity_mask" && document.getElementById("settings_option").value != "S6") {continue;}
+				if (Items[k] == "fiercedeity_mask" && document.getElementById("settings_option").value != "S6" && document.getElementById("settings_option").value != "S7") {continue;}
 				if (Items[k] == Check["Starting Song"]) {continue;} // it doesn't have an area
 				if (Items[k] == Check["Keaton Quiz"] && document.getElementById("settings_option").value != "S6") {continue;} // multi-region check. none of them can be woth
 				if (Items[k] == Check["Postbox"] && document.getElementById("settings_option").value != "S6") {continue;} // multi-region check. none of them can be woth
@@ -129,8 +129,8 @@ function woth_and_barren_processing() {
 				if (Items[k] == "circusleaders_mask") {continue;}
 				if (Items[k] == "stone_mask") {continue;}
 				if (Items[k] == "greatfairy_mask" && document.getElementById("settings_option").value != "S6") {continue;}
-				if (Items[k] == "pendant_of_memories" && document.getElementById("settings_option").value != "S6") {continue;}
-				if (Items[k] == "dongero_mask" && document.getElementById("settings_option").value != "S6" && document.getElementById("settings_option").value != "SGL_2026") {continue;}
+				if (Items[k] == "pendant_of_memories" && document.getElementById("settings_option").value != "S6" && document.getElementById("settings_option").value != "S7") {continue;}
+				if (Items[k] == "dongero_mask" && document.getElementById("settings_option").value != "S6" && document.getElementById("settings_option").value != "SGL_2026" && document.getElementById("settings_option").value != "S7") {continue;}
 
 				if ((alwaysHints.indexOf(ItemLocation[Items[k]]) == -1 && ItemLocation[Items[k]] != null && (Hinted[ItemLocation[Items[k]]] == false || typeof Hinted[ItemLocation[Items[k]]] == "undefined")) || document.getElementById("settings_option").value == "S6") 
 				{

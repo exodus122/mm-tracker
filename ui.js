@@ -140,6 +140,7 @@ function update_check_display() {
 		if (document.getElementById("settings_option").value == "S4" && s4_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S5" && s5_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S6" && s6_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S7" && s7_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "SCRUBS" && scrubs_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "EASTER" && easter_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "SGL_2026" && sgl_disabled_checks.includes(Locations[i])) {continue;}
@@ -830,6 +831,15 @@ function update_settings() {
 		document.getElementById("greatfairy_mask_location_br").style.display = "inline-block";
 		document.getElementById("fairy_eggs_div").style.display = "inline-block";
 	}
+	else if (document.getElementById("settings_option").value == "S7"){
+		document.getElementById("pendant_of_memories_location").style.display = "inline-block";
+		document.getElementById("pendant_of_memories_location_br").style.display = "inline-block";
+		document.getElementById("dongero_mask_location").style.display = "inline-block";
+		document.getElementById("dongero_mask_location_br").style.display = "inline-block";
+		document.getElementById("greatfairy_mask_location").style.display = "none";
+		document.getElementById("greatfairy_mask_location_br").style.display = "none";
+		document.getElementById("fairy_eggs_div").style.display = "none";
+	}
 	else if (document.getElementById("settings_option").value == "SGL_2026"){
 		document.getElementById("pendant_of_memories_location").style.display = "none";
 		document.getElementById("pendant_of_memories_location_br").style.display = "none";
@@ -837,6 +847,7 @@ function update_settings() {
 		document.getElementById("dongero_mask_location_br").style.display = "inline-block";
 		document.getElementById("greatfairy_mask_location").style.display = "none";
 		document.getElementById("greatfairy_mask_location_br").style.display = "none";
+		document.getElementById("fairy_eggs_div").style.display = "none";
 	}
 	else {
 		document.getElementById("pendant_of_memories_location").style.display = "none";

@@ -19,13 +19,14 @@
 				<div id="normalColumn8" class="column"></div>
 				<div id="songColumn" class="column">
 					<div id="songdiv"></div><br class="half_break">
-					<textarea spellcheck="false" rows="21" cols="13" id="hintInput"></textarea><br><br class="half_break">
+					<textarea spellcheck="false" rows="24" cols="13" id="hintInput"></textarea><br><br class="half_break">
 					<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
 					<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
 					<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
 					<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br class="half_break">
 					<label class="settingsLabels" for="settings_option">Mode</label>
 					<select class="settingsOptions" id="settings_option">
+						<option value="S7">S7</option>
 						<option value="SGL_2026">SGL 2026</option>
 						<option value="S6">S6</option>
 						<option value="S5">S5</option>
