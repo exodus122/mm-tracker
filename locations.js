@@ -239,7 +239,7 @@ var Names = [
 ];
 
 var blitz_disabled_checks = [
-	"Starting Song 2", "Goron Elder", "Powder Keg Challenge", "Goron Race", "Fisherman Game", "Boat Archery", "Aliens Defense", "Cremia", "Gossip Stones", "Seahorses", 
+	"Starting Item 2", "Starting Song 2", "Goron Elder", "Powder Keg Challenge", "Goron Race", "Fisherman Game", "Boat Archery", "Aliens Defense", "Cremia", "Gossip Stones", "Seahorses", 
 	"Bank Reward #2", "Bank Reward #3", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
 	"Ocean Spider House Day 1 Reward", "Ocean Spider House Chest", "Kamaro", "Beaver Race #1", "Beaver Race #2", 
 	"Old Lady", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Hungry Goron", "Butler", "Dampe Digging", 
@@ -252,7 +252,9 @@ var blitz_disabled_checks = [
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
-	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel", 
+	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3"
 ];
 var blitz_disabled_checks_wft = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Boss Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", 
@@ -279,17 +281,19 @@ var blitz_disabled_checks_stt = [
 ];
 
 var s3_disabled_checks = [
-	"Starting Song 2", "Swamp Music Statue", "Goron Elder", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", 
+	"Starting Item 2", "Starting Song 2", "Swamp Music Statue", "Goron Elder", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", 
 	"Stone Tower Boss Key Chest", "Swamp Archery #2", "Starting Item",
 	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
 	"Frog in the Laundry Pool", "Frog in the Swamp", "Frog in Woodfall Temple", "Frog in Great Bay Temple",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
-	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel", 
+	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3" 
 ];
 
 var s4_disabled_checks = [
-	"Starting Song 2", "Swamp Music Statue", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Starting Item 2", "Starting Song 2", "Swamp Music Statue", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Starting Item",
 	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
 	"Ranch Cow #1", "Ranch Cow #2", "Ranch Cow #3", "Good Pictograph of Lulu", 
@@ -311,11 +315,13 @@ var s4_disabled_checks = [
 	
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
-	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel", 
+	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3" 
 ];
 
 var s5_disabled_checks = [
-	"Starting Song 2", "Swamp Music Statue", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Starting Item 2", "Starting Song 2", "Swamp Music Statue", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
 	"Swamp Archery #2", "Curiosity Shop Man #2", 
 	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
@@ -338,12 +344,14 @@ var s5_disabled_checks = [
 	
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
-	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel", 
+	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3" 
 ];
 
 
 var easter_disabled_checks = [
-	"Starting Song 2", "Swamp Music Statue", "Goron Elder", "Skull Kid Song", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Starting Item 2", "Starting Song 2", "Swamp Music Statue", "Goron Elder", "Skull Kid Song", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Swamp Archery #2", 
 	"Curiosity Shop Man #2", "Starting Item",
 	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
@@ -366,11 +374,13 @@ var easter_disabled_checks = [
 	
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
-	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel", 
+	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3" 
 ];
 
 var scrubs_disabled_checks = [
-	"Starting Song 2", "Skull Kid Song", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Starting Item 2", "Starting Song 2", "Skull Kid Song", "Goron Elder", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", 
 	"Swamp Archery #2", "Curiosity Shop Man #2", 
 	"Anju and Kafei", "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy",
@@ -393,11 +403,13 @@ var scrubs_disabled_checks = [
 	
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe",
 	"Woodfall Poison Water Bubble", "Woodfall Jar Fairy", "Woodfall Platform Room Hive", 
-	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel", 
+	"Snowhead Snow Room Bubble", "Great Bay Dexihands Jar", "Great Bay Underwater Barrel",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3"
 ];
 
 var s6_disabled_checks = [
-	"Starting Song 2", "Swamp Music Statue", "Baby Goron", "Romani's Game", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
+	"Starting Item 2", "Starting Song 2", "Swamp Music Statue", "Baby Goron", "Romani's Game", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Swamp Archery #2", "Curiosity Shop Man #2", 
 	
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
@@ -413,7 +425,9 @@ var s6_disabled_checks = [
 	"Stone Tower Mirror Sun Switch", "Stone Tower Lava Room Fire Ring",
 	"Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
 	
-	"Stone Tower Updraft Fire Ring"
+	"Stone Tower Updraft Fire Ring",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3"
 ];
 
 var PeekableItemLocations = [
@@ -430,7 +444,7 @@ var PeekableItemLocations = [
 ];
 
 var sgl_disabled_checks = [
-	"Starting Song 2", "Swamp Music Statue", "Skull Kid Song", "Goron Elder", 
+	"Starting Item 2", "Starting Song 2", "Swamp Music Statue", "Skull Kid Song", "Goron Elder", 
     "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", 
 	"Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", 
 	
@@ -451,7 +465,9 @@ var sgl_disabled_checks = [
     
     "Woodfall Great Fairy", "Snowhead Great Fairy", "Ocean Great Fairy", "Ikana Great Fairy", "Anju and Kafei",
     
-    "Frog Choir", "Frog in Woodfall Temple", "Frog in Great Bay Temple", "Curiosity Shop Man #2"
+    "Frog Choir", "Frog in Woodfall Temple", "Frog in Great Bay Temple", "Curiosity Shop Man #2",
+
+	"Woodfall Temple Pre-Boss Left Pillar Item", "Woodfall Temple Pre-Boss Right Pillar Item", "Snowhead Temple Icicle Room Frozen Item", "Snowhead Temple Icicle Room Frozen Item 2", "Snowhead Temple Icicle Room Frozen Item 3", "Great Bay Temple Water Control Room Item 5", "Great Bay Temple Green Pump Item", "Great Bay Temple Green Pump Item 2", "Great Bay Temple Dexihand Item", "Great Bay Temple Dexihand Item 2", "Stone Tower Temple Eyegore Room Item", "Stone Tower Temple Eyegore Room Item 2", "Stone Tower Temple Lava Room Item 6", "Inverted Stone Tower Temple Updraft Room Item", "Inverted Stone Tower Temple Updraft Room Item 2", "Inverted Stone Tower Temple Dexihand Item 3"
 ];
 
 var s7_disabled_checks = [
