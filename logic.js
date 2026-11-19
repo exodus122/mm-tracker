@@ -559,6 +559,8 @@ function update_location_logic() {
 	Location_Logic["Swamp Music Statue"] = Logic.poison_swamp_access && Logic.deku_mask;
 	Location_Logic["Baby Goron"] = Logic.north_access && Logic.goron_mask;
 	Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && ((Logic.hookshot && (Logic.shoot_deku_bubble || Logic.bow)) || (document.getElementById("settings_option").value == "S6" && document.getElementById("fairy_eggs_option").value == "ON") || (document.getElementById("settings_option").value == "SGL_2026"));
+	if (document.getElementById("settings_option").value == "S7")
+		Location_Logic["Baby Zoras"] = Logic.west_access && Logic.zora_mask && Logic.any_bottle && (Logic.hookshot || (FD_ANYWHERE && Logic.fiercedeity_mask && Logic.goron_mask));
 	if (document.getElementById("settings_option").value == "S6" || document.getElementById("settings_option").value == "S7")
 		Location_Logic["Ikana King"] = Logic.upper_ikana_access && Logic.shoot_fire_arrow && Logic.mirror_shield && (Logic.shoot_light_arrow || (Logic.deku_mask && Logic.powder_keg && Logic.goron_mask));
 	else
@@ -933,6 +935,8 @@ function update_location_logic() {
 		Access["Swamp Music Statue"] = Has.poison_swamp_access && Has.deku_mask;
 		Access["Baby Goron"] = Has.north_access && Has.goron_mask;
 		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && ((Has.hookshot && (Has.shoot_deku_bubble || Has.bow)) || (document.getElementById("settings_option").value == "S6" && document.getElementById("fairy_eggs_option").value == "ON") || (document.getElementById("settings_option").value == "SGL_2026"));
+		if (document.getElementById("settings_option").value == "S7")
+			Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && (Has.hookshot || (FD_ANYWHERE && Has.fiercedeity_mask && Has.goron_mask));
 		Access["Ikana King"] = Has.upper_ikana_access && Has.shoot_fire_arrow && Has.mirror_shield && (Has.shoot_light_arrow || ((Has.deku_mask || Has.zora_mask) && Has.powder_keg && Has.goron_mask));
 		Access["Skull Kid Song"] = Has.shoot_deku_bubble || Has.bow || Has.zora_mask || Has.hookshot || Has.bomb || Has.blast_mask;
 		
